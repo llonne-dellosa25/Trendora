@@ -1,103 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trendora</title>st
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #5e0663;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        nav {
-            margin: 10px 0;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        .product {
-            background: #fff;
-            border: 1px solid #ddd;
-            margin: 20px 0;
-            padding: 20px;
-            text-align: center;
-        }
-        .product img {
-            max-width: 100%;
-            height: auto;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trendora</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* Search Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      background-color: white;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .search-box {
+      display: flex;
+      flex-grow: 1;
+      max-width: 600px;
+      margin: 0 30px;
+    }
+
+    .search-box input {
+      flex-grow: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-right: none;
+      font-size: 14px;
+    }
+
+    .search-box button {
+      background-color: #333;
+      color: white;
+      border: 1px solid #333;
+      padding: 0 15px;
+      cursor: pointer;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 20px;
+    }
+
+    .icon {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -10px;
+      background: black;
+      color: white;
+      border-radius: 50%;
+      font-size: 10px;
+      padding: 2px 6px;
+    }
+
+    /* Main Header/Nav */
+    header {
+      background: #5e0663;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    nav {
+      margin: 10px 0;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .product {
+      background: #fff;
+      border: 1px solid #ddd;
+      margin: 20px 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<header>
-    <h1>Trendora</h1>
+  <!-- Search Header -->
+  <div class="header">
+    <div class="logo">TRENDORA</div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Jeans For Teens" />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="icons">
+      <div class="icon"><i class="fas fa-user"></i></div>
+      <div class="icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">10</span>
+      </div>
+      <div class="icon">
+        <i class="fas fa-heart"></i>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header>
+    <h1>Welcome to Trendora</h1>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
     </nav>
-</header>
+  </header>
 
-<div class="container">
+  <div class="container">
     <h2>Featured Products</h2>
-    
+
     <div class="product">
-        <img src="products/ecommerce-bg1.jpg" alt="Lifestyle">
-        <h3>Product 1</h3>
-        <p>Price: $29.99</p>
-        <button>Add to Cart</button>
+      <img src="products/ecommerce-bg1.jpg" alt="Lifestyle" />
+      <h3>Product 1</h3>
+      <p>Price: $29.99</p>
+      <button>Add to Cart</button>
     </div>
 
     <div class="product">
-        <img src="Home Decor.jpg" alt="Home Decor">
-        <h3>Product 2</h3>
-        <p>Price: $39.99</p>
-        <button>Add to Cart</button>
+      <img src="Home Decor.jpg" alt="Home Decor" />
+      <h3>Product 2</h3>
+      <p>Price: $39.99</p>
+      <button>Add to Cart</button>
     </div>
 
     <div class="product">
-        <img src="products/ecommerce-bg2.jpg" alt="Fashion">
-        <h3>Product 3</h3>
-        <p>Price: $49.99</p>
-        <button>Add to Cart</button>
+      <img src="products/ecommerce-bg2.jpg" alt="Fashion" />
+      <h3>Product 3</h3>
+      <p>Price: $49.99</p>
+      <button>Add to Cart</button>
     </div>
-    <div class="product">
-        <img src="Kitchen.jpg" alt="Kitchen">
-        <h3>Product 3</h3>
-        <p>Price: $49.99</p>
-        <button>Add to Cart</button>
-</div>
 
-<footer>
+    <div class="product">
+      <img src="Kitchen.jpg" alt="Kitchen" />
+      <h3>Product 4</h3>
+      <p>Price: $49.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Carousel Text-->>
+  <script>
+    const phrases = [
+      "Jeans For Teens",
+      "Stylish Tops",
+      "Trendy Accessories",
+      "Affordable Fashion",
+      "Best Deals Today"
+    ];
+
+    let index = 0;
+    const input = document.getElementById("searchInput");
+
+    if (input) {
+      setInterval(() => {
+        index = (index + 1) % phrases.length;
+        input.setAttribute("placeholder", phrases[index]);
+      }, 2000);
+    }
+  </script>
+
+  <footer>
     <p>&copy; 2025 Trendora. All rights reserved.</p>
-</footer>
+  </footer>
+  
 
 </body>
 </html>
