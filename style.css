@@ -1,8 +1,161 @@
-.icon {
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.page-wrapper {
+  flex: 1;
+  padding-top: 70px; /* To avoid content hiding behind fixed navbar */
+}
+
+/* Navbar */
+.top-bar {
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+/* Banner */
+.banner {
+  background-color: #f4a5b6;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-text {
+  font-size: 0.9rem;
+  color: #000;
+}
+
+/* Categories Section */
+.categories {
+  background-color: #fef4f3;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.categories h2 {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  transition: transform 1s linear;
+}
+
+.category-card {
+  flex: 1 0 30%; /* Cards will take up 30% of the width */
+  height: 350px; /* Adjust height of the card */
+  margin-right: 20px; /* Space between the cards */
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.category-image {
+  width: calc(100% - 30px); /* 100% of the card's width minus padding (15px left and right) */
+  height: calc(100% - 30px); /* 100% of the card's height minus padding (15px top and bottom) */
+  margin: 15px; /* 15px padding around the image */
+  object-fit: contain; /* Ensures the image keeps its aspect ratio */
+  border-radius: 8px; /* Rounded corners for the image */
+}
+
+.category-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  
-  .icon:hover {
-    transform: scale(1.1);
+  100% {
+    transform: translateX(-100%); /* Moves the track completely to the left */
   }
+}
+
+.shop-all-btn {
+  background-color: #d9d9d9;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  font-size: 0.7rem;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-right .icons span {
+  margin-right: 5px;
+  font-size: 1rem;
+}
