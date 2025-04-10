@@ -87,7 +87,7 @@ body {
 
 .category-card {
   flex: 1 0 30%; /* Cards will take up 30% of the width */
-  height: 350px; /* Adjust height of the card */
+  height: 900px; /* Fixed height for all cards */
   margin-right: 20px; /* Space between the cards */
   text-align: center;
   background-color: #111010;
@@ -95,18 +95,22 @@ body {
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
+  padding: 10px; /* Add padding inside the card */
 }
 
 .category-image {
-  width: calc(100% - 30px); /* 100% of the card's width minus padding (15px left and right) */
-  height: calc(100% - 30px); /* 100% of the card's height minus padding (15px top and bottom) */
-  margin: 15px; /* 15px padding around the image */
-  object-fit: contain; /* Ensures the image keeps its aspect ratio */
+  width: 100%; /* Make the image take up the full width of the card */
+  height: 800px; /* Set a fixed height for the image */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  margin: 0 auto; /* Center the image horizontally */
   border-radius: 8px; /* Rounded corners for the image */
+  display: block; /* Ensures the image is displayed as a block element */
 }
+
 
 .category-text {
   position: absolute;
+  margin-top: 20px;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
