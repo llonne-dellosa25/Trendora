@@ -49,8 +49,8 @@ body {
 
 /* Banner */
 .banner {
-  background-color: #f4a5b6;
-  height: 250px;
+  background-image: url('products/lalisa.jpg'); /* Placeholder image */
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +90,7 @@ body {
   height: 350px; /* Adjust height of the card */
   margin-right: 20px; /* Space between the cards */
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #111010;
   border-radius: 8px;
   position: relative;
   box-sizing: border-box;
@@ -128,7 +128,8 @@ body {
 
 .shop-all-btn {
   background-color: #d9d9d9;
-  padding: 8px 20px;
+  margin-top: 40px;
+  padding: 20px 20px;
   border: none;
   cursor: pointer;
   font-size: 0.85rem;
