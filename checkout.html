@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - Trendora</title>
+  <link rel="stylesheet" href="checkout.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="header">
+    <div class="logo">TRENDORA</div>
+    <div class="search-icons">
+      <input type="text" class="search-bar" placeholder="Search" />
+      <svg class="icon" fill="currentColor" viewBox="0 0 20 20"><path d="M...Z" /></svg>
+      <div class="icon-group">
+        <span>&#128100;</span>
+        <span>&#128717;</span>
+        <span>&#10084;</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="form-section">
+      <h1 class="section-title">Checkout</h1>
+
+      <div class="form-block">
+        <h2 class="form-heading">1. Contact Information</h2>
+        <div class="form-grid">
+          <input type="text" placeholder="First Name" class="input">
+          <input type="text" placeholder="Last Name" class="input">
+          <input type="text" placeholder="Phone" class="input">
+          <input type="email" placeholder="E-mail" class="input">
+        </div>
+      </div>
+
+      <div class="form-block">
+        <h2 class="form-heading">2. Delivery method</h2>
+        <div class="delivery-options">
+          <button class="delivery-btn"><span>&#127970;</span> Store</button>
+          <button class="delivery-btn"><span>&#128666;</span> Delivery</button>
+        </div>
+        <div class="form-grid">
+          <input type="date" class="input">
+          <input type="date" class="input">
+        </div>
+        <div class="form-grid-3">
+          <input type="text" placeholder="City" class="input">
+          <input type="text" placeholder="Address" class="input">
+          <input type="text" placeholder="Zip Code" class="input">
+        </div>
+      </div>
+
+      <div class="form-block">
+        <h2 class="form-heading">3. Payment method</h2>
+        <div class="payment-method space-y-2">
+          <label class="flex items-center gap-2">
+            <input type="radio" name="payment" value="cod">
+            <span>Cash on Delivery</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="payment" value="gcash">
+            <div class="w-20 h-10 bg-white border rounded shadow flex items-center justify-center">
+              <img src="gcash-logo.png" alt="GCash" class="h-6">
+            </div>
+            <span>GCash</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="payment" value="maya">
+            <div class="w-20 h-10 bg-white border rounded shadow flex items-center justify-center">
+              <img src="maya-logo.png" alt="Maya" class="h-6">
+            </div>
+            <span>Maya</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="payment" value="paypal">
+            <div class="w-20 h-10 bg-white border rounded shadow flex items-center justify-center">
+              <img src="paypal-logo.png" alt="PayPal" class="h-6">
+            </div>
+            <span>PayPal</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <aside class="summary-section">
+      <h2 class="summary-title">Order</h2>
+      <div class="product-image">Product Image</div>
+      <p class="product-info">Product Name and Categories</p>
+      <div class="product-meta">
+        <span>Size</span>
+        <span>Color</span>
+      </div>
+      <div class="divider"></div>
+      <div class="summary-details">
+        <div class="summary-item"><span>Subtotal</span><span>$120</span></div>
+        <div class="summary-item"><span>Discount</span><span>-$10</span></div>
+        <div class="summary-item"><span>Shipping</span><span>$33</span></div>
+        <div class="summary-item total"><span>Total</span><span>$143</span></div>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+      <div class="terms">
+        <input type="checkbox"> by confirming order, I accept the terms of the user agreement
+      </div>
+    </aside>
+  </main>
+</body>
+</html>
