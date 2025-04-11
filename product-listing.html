@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trendora</title>
+
+  <!-- ✅ Bootstrap 5 Only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ✅ Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <!-- ✅ External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .search-box {
+      display: flex;
+      flex-grow: 1;
+      max-width: 600px;
+      margin: 0 30px;
+    }
+
+    .search-box input {
+      flex-grow: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-right: none;
+    }
+
+    .search-box button {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #333;
+      padding: 0 15px;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+      font-size: 20px;
+    }
+
+    .icon {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -10px;
+      background: black;
+      color: white;
+      border-radius: 50%;
+      font-size: 10px;
+      padding: 2px 6px;
+    }
+
+    header {
+      background-color: #5e0663;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    
+    .carousel-container {
+      width: 50%;
+      max-width: 1000px;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .carousel-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-trend-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 50px;
+      flex-wrap: wrap;
+    }
+
+    .top-trends {
+      width: 400px;
+      background-color: #e5b9fa;
+      padding: 10px;
+    }
+
+    .trends {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .trend-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+
+
+    .trend-item {
+      width: 100%;
+      padding-top: 100%;
+      position: relative;
+    }
+
+    .trend-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .category-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 30px;
+    }
+
+    .product-card {
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔍 Search Header -->
+  <div class="header">
+    <div class="logo">TRENDORA</div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Jeans for Teens">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="icons">
+      <div class="icon"><i class="fas fa-user"></i></div>
+      <div class="icon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count">30</span>
+      </div>
+      <div class="icon">
+        <i class="fas fa-heart"></i>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Banner -->
+  <header>
+    <h1>WELCOME TO Trendora</h1>
+  </header>
+
+  <!-- Carousel &  Top Trends -->
+  <div class="carousel-trend-wrapper">
+    <!-- Carousel -->
+    <div class="carousel-container">
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="listing-product-carousel/3.png" class="d-block w-100" alt="Trend 1">
+          </div>
+          <div class="carousel-item">
+            <img src="listing-product-carousel/1.png" class="d-block w-100" alt="Trend 2">
+          </div>
+          <div class="carousel-item">
+            <img src="listing-product-carousel/2.png" class="d-block w-100" alt="Trend 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Top Trends -->
+    <div class="top-trends">
+      <div class="trends">
+        <h5 class="m-0">TOP TRENDS</h5>
+        <button class="btn btn-sm btn-dark">View all</button>
+      </div>
+      <div class="trend-grid">
+        <div class="trend-item"><img src="products/Electronics & Gadgets.jpg" alt="Electronics"></div>
+        <div class="trend-item"><img src="products/ecommerce-bg1.jpg" alt="Fashion"></div>
+        <div class="trend-item"><img src="products/Books & Stationery.jpg" alt="Books"></div>
+        <div class="trend-item"><img src="products/s9.jpg" alt="Trend 4"></div>
+        <div class="trend-item"><img src="products/Books & Stationery.jpg" alt="Trend 5"></div>
+        <div class="trend-item"><img src="products/s9.jpg" alt="Trend 6"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--Category Navigation -->
+  <nav class="category-nav">
+    <a href="#">WOMEN</a>
+    <a href="#men">MEN</a>
+    <a href="#kids">KIDS</a>
+    <a href="#footwear">FOOTWEAR</a>
+    <a href="#groceries">GROCERIES</a>
+    <a href="#beauty">BEAUTY</a>
+    <a href="#appliances">APPLIANCES</a>
+  </nav>
+
+  <!--  Product Section -->
+  <main class="container category-section">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-6 g-4">
+      <!-- Repeatable Product Card -->
+      <div class="col">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Product">
+          <div class="card-body text-center">
+            <h6 class="card-title mb-1">Product Name</h6>
+            <p class="card-text text-muted">₱0.00</p>
+            <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <!-- Duplicate this block as needed -->
+      <div class="col">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Product">
+          <div class="card-body text-center">
+            <h6 class="card-title mb-1">Product Name</h6>
+            <p class="card-text text-muted">₱0.00</p>
+            <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Product">
+          <div class="card-body text-center">
+            <h6 class="card-title mb-1">Product Name</h6>
+            <p class="card-text text-muted">₱0.00</p>
+            <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Product">
+          <div class="card-body text-center">
+            <h6 class="card-title mb-1">Product Name</h6>
+            <p class="card-text text-muted">₱0.00</p>
+            <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Product">
+          <div class="card-body text-center">
+            <h6 class="card-title mb-1">Product Name</h6>
+            <p class="card-text text-muted">₱0.00</p>
+            <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Product">
+          <div class="card-body text-center">
+            <h6 class="card-title mb-1">Product Name</h6>
+            <p class="card-text text-muted">₱0.00</p>
+            <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card product-card">
+          <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Product">
+          <div class="card-body text-center">
+            <h6 class="card-title mb-1">Product Name</h6>
+            <p class="card-text text-muted">₱0.00</p>
+            <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ⚓ Footer -->
+  <footer>
+    <p>&copy; 2025 Trendora. All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const phrases = [
+      "Jeans For Teens",
+      "Stylish Tops",
+      "Trendy Accessories",
+      "Affordable Fashion",
+      "Best Deals Today"
+    ];
+    let index = 0;
+    const input = document.getElementById("searchInput");
+    setInterval(() => {
+      if (input) {
+        index = (index + 1) % phrases.length;
+        input.placeholder = phrases[index];
+      }
+    }, 2000);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
