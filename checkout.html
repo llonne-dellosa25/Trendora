@@ -2,108 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Checkout - Trendora</title>
   <link rel="stylesheet" href="checkout.css">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body class="bg-gray-100 font-sans">
-  <header class="header">
-    <div class="logo">TRENDORA</div>
-    <div class="search-icons">
-      <input type="text" class="search-bar" placeholder="Search" />
-      <svg class="icon" fill="currentColor" viewBox="0 0 20 20"><path d="M...Z" /></svg>
-      <div class="icon-group">
-        <span>&#128100;</span>
-        <span>&#128717;</span>
-        <span>&#10084;</span>
-      </div>
+  <!-- Header -->
+  <header class="header flex justify-between items-center p-4 bg-white shadow">
+    <div class="logo text-2xl font-bold text-black">TRENDORA</div>
+    <div class="search-icons flex items-center gap-4">
+      <input type="text" class="search-bar p-2 border rounded" placeholder="Search" />
+      <div class="icon-group flex gap-4 text-xl">
+        <span title="Account"><i class="fas fa-user"></i></span>
+        <span title="Cart"><i class="fas fa-shopping-cart"></i></span>
+        <span title="Logout"><i class="fas fa-right-from-bracket"></i></span>
+      </div>      
     </div>
   </header>
 
-  <main class="main">
-    <section class="form-section">
-      <h1 class="section-title">Checkout</h1>
+  <!-- Checkout Form -->
+  <form action="checkout.php" method="POST">
+    <main class="main flex flex-col md:flex-row gap-8 p-6">
+      
+      <!-- Left: Form Section -->
+      <section class="form-section flex-1">
+        <h1 class="text-2xl font-bold mb-4">Checkout</h1>
 
-      <div class="form-block">
-        <h2 class="form-heading">1. Contact Information</h2>
-        <div class="form-grid">
-          <input type="text" placeholder="First Name" class="input">
-          <input type="text" placeholder="Last Name" class="input">
-          <input type="text" placeholder="Phone" class="input">
-          <input type="email" placeholder="E-mail" class="input">
+        <!-- 1. Contact Information -->
+        <div class="form-block mb-6">
+          <h2 class="font-semibold mb-2">1. Contact Information</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <input type="text" name="first_name" placeholder="First Name" class="input p-2 border rounded" required>
+            <input type="text" name="last_name" placeholder="Last Name" class="input p-2 border rounded" required>
+            <input type="text" name="phone" placeholder="Phone" class="input p-2 border rounded">
+            <input type="email" name="email" placeholder="E-mail" class="input p-2 border rounded" required>
+          </div>
         </div>
-      </div>
 
-      <div class="form-block">
-        <h2 class="form-heading">2. Delivery method</h2>
-        <div class="delivery-options">
-          <button class="delivery-btn"><span>&#127970;</span> Store</button>
-          <button class="delivery-btn"><span>&#128666;</span> Delivery</button>
+        <!-- 2. Delivery Method -->
+        <div class="form-block mb-6">
+          <h2 class="font-semibold mb-2">2. Delivery Method</h2>
+          <div class="flex gap-4 mb-4">
+            <label class="flex items-center gap-1"><input type="radio" name="delivery_method" value="store" required> Store</label>
+            <label class="flex items-center gap-1"><input type="radio" name="delivery_method" value="delivery"> Delivery</label>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <input type="date" name="delivery_date_start" class="input p-2 border rounded">
+            <input type="date" name="delivery_date_end" class="input p-2 border rounded">
+          </div>
+          <div class="grid grid-cols-3 gap-4">
+            <input type="text" name="city" placeholder="City" class="input p-2 border rounded">
+            <input type="text" name="address" placeholder="Address" class="input p-2 border rounded">
+            <input type="text" name="zip" placeholder="Zip Code" class="input p-2 border rounded">
+          </div>
         </div>
-        <div class="form-grid">
-          <input type="date" class="input">
-          <input type="date" class="input">
-        </div>
-        <div class="form-grid-3">
-          <input type="text" placeholder="City" class="input">
-          <input type="text" placeholder="Address" class="input">
-          <input type="text" placeholder="Zip Code" class="input">
-        </div>
-      </div>
 
-      <div class="form-block">
-        <h2 class="form-heading">3. Payment method</h2>
-        <div class="payment-method space-y-2">
-          <label class="flex items-center gap-2">
-            <input type="radio" name="payment" value="cod">
-            <span>Cash on Delivery</span>
-          </label>
-          <label class="flex items-center gap-2">
-            <input type="radio" name="payment" value="gcash">
-            <div class="w-20 h-10 bg-white border rounded shadow flex items-center justify-center">
-              <img src="gcash-logo.png" alt="GCash" class="h-6">
-            </div>
-            <span>GCash</span>
-          </label>
-          <label class="flex items-center gap-2">
-            <input type="radio" name="payment" value="maya">
-            <div class="w-20 h-10 bg-white border rounded shadow flex items-center justify-center">
-              <img src="maya-logo.png" alt="Maya" class="h-6">
-            </div>
-            <span>Maya</span>
-          </label>
-          <label class="flex items-center gap-2">
-            <input type="radio" name="payment" value="paypal">
-            <div class="w-20 h-10 bg-white border rounded shadow flex items-center justify-center">
-              <img src="paypal-logo.png" alt="PayPal" class="h-6">
-            </div>
-            <span>PayPal</span>
+        <!-- 3. Payment Method -->
+        <div class="form-block mb-6">
+          <h2 class="font-semibold mb-2">3. Payment Method</h2>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2">
+              <input type="radio" name="payment_method" value="cod" required>
+              <span>Cash on Delivery</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" name="payment_method" value="gcash">
+              <div class="w-20 h-10 bg-white border rounded shadow flex items-center justify-center">
+                <img src="media/gcash.jpg" alt="GCash" class="h-6">
+              </div>
+              <span>GCash</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" name="payment_method" value="maya">
+              <div class="w-20 h-10 bg-white border rounded shadow flex items-center justify-center">
+                <img src="media/maya.jpg" alt="Maya" class="h-6">
+              </div>
+              <span>Maya</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" name="payment_method" value="paypal">
+              <div class="w-20 h-10 bg-white border rounded shadow flex items-center justify-center">
+                <img src="media/Paypal.jpg" alt="PayPal" class="h-6">
+              </div>
+              <span>PayPal</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: Order Summary -->
+      <aside class="summary-section w-full md:w-1/4 bg-white p-6 rounded shadow">
+        <h2 class="text-xl font-bold mb-4">Order Summary</h2>
+        <div class="product-image mb-4">
+          <img src="media/s1.jpeg" alt="Product" class="w-full h-80 object-cover rounded">
+        </div>
+        <p class="font-medium mb-2">Product Name and Categories</p>
+
+        <!-- Size & Color -->
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Size</label>
+            <select name="size" class="w-full border rounded p-2" required>
+              <option value="" disabled selected>Choose</option>
+              <option value="s">Small</option>
+              <option value="m">Medium</option>
+              <option value="l">Large</option>
+              <option value="xl">XL</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Color</label>
+            <select name="color" class="w-full border rounded p-2" required>
+              <option value="" disabled selected>Choose</option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="black">Black</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="border-t my-2"></div>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between"><span>Subtotal</span><span>$120</span></div>
+          <div class="flex justify-between"><span>Discount</span><span>-$10</span></div>
+          <div class="flex justify-between"><span>Shipping</span><span>$33</span></div>
+          <div class="flex justify-between font-bold text-lg"><span>Total</span><span>$143</span></div>
+        </div>
+
+      <!-- Visible product details -->
+<div class="mt-4 space-y-1 text-sm">
+  <div>
+    <label class="font-medium">Product Name:</label>
+    <input type="text" name="product_name" value="Sample Product" class="w-full border rounded p-1" readonly>
+  </div>
+  <div>
+    <label class="font-medium">Product ID:</label>
+    <input type="text" name="product_id" value="123" class="w-full border rounded p-1" readonly>
+  </div>
+  <div>
+    <label class="font-medium">Price:</label>
+    <input type="text" name="price" value="143" class="w-full border rounded p-1" readonly>
+  </div>
+</div>
+
+
+        <!-- Checkout Button -->
+        <button type="submit" class="checkout-btn w-full bg-black text-white py-2 mt-4 rounded">Checkout</button>
+
+        <!-- Terms Agreement -->
+        <div class="terms mt-4 text-sm text-gray-600">
+          <label>
+            <input type="checkbox" required> I accept the terms of the user agreement
           </label>
         </div>
-      </div>
-    </section>
+      </aside>
+    </main>
+  </form>
 
-    <aside class="summary-section">
-      <h2 class="summary-title">Order</h2>
-      <div class="product-image">Product Image</div>
-      <p class="product-info">Product Name and Categories</p>
-      <div class="product-meta">
-        <span>Size</span>
-        <span>Color</span>
+  <!-- Footer -->
+  <footer class="footer bg-white shadow mt-8 p-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+    <div class="footer-left space-x-4">
+      <a href="#">ABOUT US</a>
+      <a href="#">CONTACT US</a>
+    </div>
+    <div class="footer-center mt-2 md:mt-0">
+      © 2025 TRENDORA. All rights reserved.
+    </div>
+    <div class="footer-right mt-2 md:mt-0 flex items-center gap-2">
+      <span>FOLLOW US</span>
+      <div class="icons flex gap-3 text-xl">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-x-twitter"></i>
       </div>
-      <div class="divider"></div>
-      <div class="summary-details">
-        <div class="summary-item"><span>Subtotal</span><span>$120</span></div>
-        <div class="summary-item"><span>Discount</span><span>-$10</span></div>
-        <div class="summary-item"><span>Shipping</span><span>$33</span></div>
-        <div class="summary-item total"><span>Total</span><span>$143</span></div>
-      </div>
-      <button class="checkout-btn">Checkout</button>
-      <div class="terms">
-        <input type="checkbox"> by confirming order, I accept the terms of the user agreement
-      </div>
-    </aside>
-  </main>
+    </div>
+  </footer>
 </body>
 </html>
