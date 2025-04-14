@@ -16,11 +16,20 @@
     <div class="search-icons flex items-center gap-4">
       <input type="text" class="search-bar p-2 border rounded" placeholder="Search" />
       <div class="icon-group flex gap-4 text-xl">
-        <span title="Account"><i class="fas fa-user"></i></span>
-        <span title="Cart"><i class="fas fa-shopping-cart"></i></span>
-        <span title="Logout"><i class="fas fa-right-from-bracket"></i></span>
-      </div>      
-    </div>
+        <!-- Account -->
+        <a href="account.html" title="Account">
+          <i class="fas fa-user"></i>
+        </a>
+        <!-- Cart -->
+        <a href="cart.html" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+        <!-- Logout -->
+        <a href="login.html?logout=success" title="Logout">
+          <i class="fas fa-right-from-bracket"></i>
+        </a>
+      </div>
+      
   </header>
 
   <!-- Checkout Form -->
@@ -181,4 +190,11 @@
     </div>
   </footer>
 </body>
+<script>
+  function handleLogout() {
+    // Redirect to login page with a query string indicating logout
+    window.location.href = "login.html?logout=success";
+  }
+</script>
+
 </html>
