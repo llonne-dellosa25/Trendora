@@ -4,7 +4,6 @@ session_start();
 // Connect to the database
 $conn = new mysqli("localhost", "root", "", "trendora");
 
-
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
@@ -24,7 +23,9 @@ $result = $stmt->get_result();
 if ($result->num_rows === 1) {
   $user = $result->fetch_assoc();
   
-  if (password_verify($password, $user['password'])) {
+  // Check if password matches for manual sign-ups, or check if it's the default password for Google users
+  if ($password === "google_signup" || password_verify($password, $user['password'])) {
+    // Login successful
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['email'] = $user['email'];
     echo "Login successful!";
@@ -35,7 +36,9 @@ if ($result->num_rows === 1) {
 } else {
   echo "Email not found.";
 }
-header("Access-Control-Allow-Origin: *");  // Allows any domain
+
+// Access control headers for CORS (allow all origins, methods, headers)
+header("Access-Control-Allow-Origin: *");  
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 

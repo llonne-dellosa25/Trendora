@@ -1,19 +1,27 @@
 <?php
+// Access control headers for CORS
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+// Handle OPTIONS request (preflight)
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    exit(0);
+}
+
 // Connect to DB
 $conn = new mysqli("localhost", "root", "", "trendora");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} else {
-    echo "Connected to database successfully.<br>";
 }
 
 // Get JSON input
 $data = json_decode(file_get_contents("php://input"));
 
-// Debugging: Output the incoming data for verification (remove in production)
-var_dump($data); // Check the incoming data
+// Debugging: log incoming data to a file (remove in production)
+file_put_contents("debug_log.txt", print_r($data, true), FILE_APPEND);
 
-// Check if the email and fullName are set
+// Validate required fields
 if (isset($data->email) && isset($data->fullName)) {
     $email = $conn->real_escape_string($data->email);
     $fullname = $conn->real_escape_string($data->fullName);
@@ -21,16 +29,14 @@ if (isset($data->email) && isset($data->fullName)) {
     // Check if the user already exists
     $check = $conn->query("SELECT * FROM users WHERE email='$email'");
     if ($check->num_rows === 0) {
-        // Set a default password for the user (Google login doesn't provide one)
-        $defaultPassword = password_hash("google_signup", PASSWORD_DEFAULT);
+        // Use password from user (manual signup) or fallback for Google signup
+        $password = isset($data->password)
+            ? password_hash($data->password, PASSWORD_DEFAULT)
+            : password_hash("google_signup", PASSWORD_DEFAULT);
 
-        // Prepare the query for better debugging
-        $query = "INSERT INTO users (email, password) VALUES ('$email', '$defaultPassword')";
-        echo "Query: " . $query;  // Debugging: check the SQL query
-        
-        // Insert the new user into the database
-        $insert = $conn->query($query);
-        if ($insert) {
+        // Insert new user
+        $query = "INSERT INTO users (email, password, fullname) VALUES ('$email', '$password', '$fullname')";
+        if ($conn->query($query)) {
             echo "User registered successfully.";
         } else {
             echo "Error inserting user: " . $conn->error;
@@ -40,16 +46,6 @@ if (isset($data->email) && isset($data->fullName)) {
     }
 } else {
     echo "Invalid data received.";
-}
-
-// Access control headers for CORS
-header("Access-Control-Allow-Origin: *");  // Allows any domain
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
-
-// Handle OPTIONS request (preflight request)
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    exit(0);
 }
 
 $conn->close();
