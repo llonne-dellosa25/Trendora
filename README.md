@@ -23,7 +23,6 @@ Subscription-Based Product Listings for Sellers
 - *GitHub Manager:* Allysa Belga
 - *Tester & Debugger/Documentation Officer:* Llonne Dellosa
 
----
 
 ##  Class Section
 BSIT 2B
