@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trendora Seller Center</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .header {
+     background-color: #270a47; /* or whatever your purple is */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* make it span full width */
+    margin: 0;    /* prevent any default margin */
+     }
+    .header h1 {
+      margin: 0;
+    }
+    .header .top-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .topbar-input {
+      padding: 5px 10px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+    .menu {
+  background-color: #270a47;
+  color: white;
+  display: flex;
+  padding: 10px 20px;
+  gap: 50px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+    .dashboard-main {
+      padding: 30px;
+    }
+
+    .getting-started {
+      background-color: #ddd;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .product-placeholder {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .circle-placeholder {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .add-product-btn {
+      background-color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .change-product {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #333;
+      text-decoration: underline;
+    }
+
+    .dashboard-cards {
+      display: flex;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      flex: 1;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .card input {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      margin-top: 2px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .social-icons a {
+      margin-left: 10px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>  
+      <h1>TRENDORA <br><span style="font-size:20px;">ADMIN DASHBOARD</span></h1>
+    </div>
+    <div class="top-nav">
+      <input type="text" placeholder="Search dashboard..." class="topbar-input" />
+      <span>Notifications</span>
+      <span>Help</span>
+      <span>Account</span>
+    </div>
+  </div>
+
+  <div class="menu">
+    <a href="dashboard.html"class="active">Admin</a>
+    <a href="users.html">Product Ratings</a>
+    <a href="admin_catalog.html">Catalog</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="product_order.html">Orders</a>
+  </div>
+
+  <main class="dashboard-main">
+    <section class="getting-started">
+      <h2>Getting Started</h2>
+      <p>List a product to Sell in these Categories</p>
+      <div class="product-placeholder">
+        <div class="circle-placeholder"></div>
+        <button class="add-product-btn">Add Product</button>
+      </div>
+      <a href="#" class="change-product">Change or Add Product</a>
+    </section>
+
+    <section class="dashboard-cards">
+      <div class="card">
+        <h3>Total Orders</h3>
+      </div>
+      <div class="card">
+        <h3>Sales Summary</h3>
+        <p>Product Sales</p>
+        <input type="text" placeholder="₱">
+        <p>SKU</p>
+        <input type="text">
+        <p>Units</p>
+        <input type="text">
+      </div>
+      <div class="card">
+        <h3>Total Sales/Account Balance</h3>
+      </div>
+    </section>
+  </main>   
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div>ABOUT US</div>
+      <div>CONTACT US</div>
+    </div>
+    <div class="footer-center">
+      2025 TRENDORA. All rights reserved.
+    </div>
+    <div class="footer-right">
+      <span>FOLLOW US</span>
+      <div class="icons">
+        <span><i class="fab fa-facebook-f"></i></span>
+        <span><i class="fab fa-instagram"></i></span>
+        <span><i class="fab fa-x-twitter"></i></span>
+      </div>      
+    </div>
+  </footer>
+
+  <!-- Link to JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

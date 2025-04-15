@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trendora Seller Center</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .header {
+      background-color: #270a47;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+    }
+    .header h1 {
+      margin: 0;
+    }
+    .header .top-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .topbar-input {
+      padding: 5px 10px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+    .menu {
+      background-color: #270a47;
+      color: white;
+      display: flex;
+      padding: 10px 20px;
+      gap: 50px;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+    }
+    .inventory-section {
+      padding: 20px;
+    }
+    .inventory-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .inventory-table th, .inventory-table td {
+      border: 1px solid #ddd;
+      padding: 30px;
+      text-align: left;
+    }
+    .inventory-table th {
+      background-color: #8a2be2;
+      color: white;
+    }
+    .inventory-table tr:hover {
+      background-color: #f1f1f1;
+    }
+    .footer {
+      background-color: #270a47;
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: rgb(255, 255, 255);
+      border-top: 1px solid #ccc;
+      margin-top: 30px;
+    }
+    .footer-left, .footer-center, .footer-right {
+      margin-bottom: 10px;
+    }
+    .footer-right .icons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div>  
+      <h1>TRENDORA <br><span style="font-size:20px;">CENTER</span></h1>
+    </div>
+    <div class="top-nav">
+      <input type="text" placeholder="Search inventory..." class="topbar-input" />
+      <span>Notifications</span>
+      <span>Help</span>
+      <span>Account</span>
+    </div>
+  </div>
+
+  <!-- Menu -->
+  <div class="menu">
+    <a href="dashboard.html">Admin</a>
+    <a href="users.html">Product Ratings</a>
+    <a href="admin_catalog.html">Catalog</a>
+    <a href="inventory.html"class="active">Inventory</a>
+    <a href="product_order.html">Orders</a>
+  </div>
+
+  <!-- Inventory Table Section -->
+<div class="inventory-section">
+    <h2 style="color: #8a2be2;">Inventory List</h2>
+    <table class="inventory-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>SKU</th>
+          <th>Product Description</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+          <th>Value</th>
+          <th>Reorder Level</th>
+          <th>Reorder Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Wireless Earbuds</td>
+          <td>WE1234</td>
+          <td>High-quality sound with long battery life</td>
+          <td>120</td>
+          <td>₱1,499.00</td>
+          <td>₱179,880.00</td>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Smart Watch</td>
+          <td>SW5678</td>
+          <td>Fitness tracking and notifications</td>
+          <td>45</td>
+          <td>₱2,999.00</td>
+          <td>₱134,955.00</td>
+          <td>30</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Bluetooth Speaker</td>
+          <td>BS9101</td>
+          <td>Portable speaker with deep bass</td>
+          <td>0</td>
+          <td>₱1,199.00</td>
+          <td>₱0.00</td>
+          <td>20</td>
+          <td>40</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-left">
+      <div>ABOUT US</div>
+      <div>CONTACT US</div>
+    </div>
+    <div class="footer-center">
+      2025 TRENDORA.
+      <div>All rights reserved.</div>
+    </div>
+    <div class="footer-right">
+      <span>FOLLOW US</span>
+      <div class="icons">
+        <span><i class="fab fa-facebook-f"></i></span>
+        <span><i class="fab fa-instagram"></i></span>
+        <span><i class="fab fa-x-twitter"></i></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
