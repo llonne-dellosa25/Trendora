@@ -137,7 +137,7 @@
       </form>
     </div>
     <div class="left-section">
-      <img src="images/Shopaholics - Online Shopping.png" alt="Fashion illustration" style="width: 75%; height: auto;" />
+      <img src="<?php echo BASE_URL; ?>products/Shopaholics - Online Shopping.png" alt="Fashion illustration" style="width: 75%; height: auto;" /> 
     </div>
   </div>
 </body>

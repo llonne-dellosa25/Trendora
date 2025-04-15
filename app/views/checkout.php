@@ -63,9 +63,9 @@
           <h2>3. Payment Method</h2>
           <div class="payment-method flex-wrap">
             <label><input type="radio" name="payment_method" value="cod" required> Cash on Delivery</label>
-            <label><input type="radio" name="payment_method" value="gcash"><img src="products/gcash.jpg" alt="GCash" class="h-6 inline"></label>
-            <label><input type="radio" name="payment_method" value="maya"><img src="products/maya.jpg" alt="Maya" class="h-6 inline"></label>
-            <label><input type="radio" name="payment_method" value="paypal"><img src="products/Paypal.jpg" alt="PayPal" class="h-6 inline"></label>
+            <label><input type="radio" name="payment_method" value="gcash"><img src="<?php echo BASE_URL; ?>products/gcash.jpg" alt="GCash" class="h-6 inline" /></label>
+            <label><input type="radio" name="payment_method" value="maya"><img src="<?php echo BASE_URL; ?>products/maya.jpg" alt="GCash" class="h-6 inline" /></label>
+            <label><input type="radio" name="payment_method" value="paypal"><img src="<?php echo BASE_URL; ?>products/Paypal.jpg" alt="GCash" class="h-6 inline" /></label>
           </div>
         </div>
       </section>
@@ -74,7 +74,7 @@
       <aside class="summary-section">
         <h2>Order Summary</h2>
         <div class="product-image">
-          <img src="products/s1.jpeg" alt="Product">
+        <img src="<?php echo BASE_URL; ?>products/s1.jpeg" alt="Product"/>
         </div>
         <p>Product Name and Categories</p>
 

@@ -103,7 +103,7 @@
   <div class="container">
     <div class="left-panel">
       <h1>TRENDORA</h1>
-      <img src="images/login.png" alt="Fashion Illustration" class="illustration"/>
+      <img src="<?php echo BASE_URL; ?>products/login.png"  alt="Fashion Illustration" class="illustration" />
     </div>
     <div class="right-panel">
       <h2>Login</h2>
@@ -134,12 +134,12 @@
 
         <!-- Facebook Sign-In Button -->
         <a href="#" id="facebook-signin">
-          <img src="images/facebook (1).jpg" alt="Facebook" class="social-icon">
+          <img src="<?php echo BASE_URL; ?>products/facebook (1).jpg" alt="Facebook" class="social-icon" />
         </a>
 
         <!-- Apple Sign-In Button -->
         <a href="#" id="apple-signin">
-          <img src="images/apple.jpg" alt="Apple" class="social-icon">
+        <img src="<?php echo BASE_URL; ?>products/apple.jpg" alt="Apple" class="social-icon" />
         </a>
       </div>
 
