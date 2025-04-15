@@ -26,7 +26,7 @@
       const fullName = data.name;
 
       // Send to backend
-      fetch("signup.php", {
+      fetch("/Trendora/public/Home/processSignup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email, fullName: fullName, password: "google_signup" }), // Password set for Google Sign-In
@@ -35,7 +35,7 @@
       .then(result => {
         alert(result);
         if (result.includes("User registered") || result.includes("already exists")) {
-          window.location.href = "login.html";
+          window.location.href = "/Trendora/public/Home/login";
         }
       })
       .catch(err => console.error("Error:", err));
@@ -57,7 +57,7 @@
         }
 
         // Send to backend
-        fetch("signup.php", {
+        fetch("/Trendora/public/Home/processSignup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ fullName, email, password }),
