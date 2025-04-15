@@ -180,7 +180,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 
 .footer-left,
@@ -248,6 +248,7 @@ body {
   display: flex;
   gap: 15px;
   font-size: 20px;
+  color: #e6e6e6;
 }
 
 .icon {
@@ -298,12 +299,3 @@ header {
   height: 200px;
   object-fit: cover;
 }
-
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
-}
-
