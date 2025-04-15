@@ -42,6 +42,14 @@ body {
   cursor: pointer;
 }
 
+
+/* Payment Method */
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
 /* Main Layout */
 .main {
   padding: 2rem;
