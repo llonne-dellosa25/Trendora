@@ -47,7 +47,9 @@ body {
 .payment-method {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 10rem;
+  margin-top: 10rem;
+  padding: 1rem;
   margin-bottom: 1rem;
 }
 /* Main Layout */
