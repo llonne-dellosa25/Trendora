@@ -15,22 +15,29 @@ Collaborative Seller Bundles
 Gamified Customer Rewards & Seller Challenges
 Subscription-Based Product Listings for Sellers
 
-## Section
-BSIT-2B
+##  Group Members and Roles
+- *Project Manager:* Aran Joshua P. Ofracio
+- *Frontend Developer:* Ella Mae R. Dolon
+- *Backend Developer:* Victor Ronel P. Lumayad
+- *Database Manager:* Paulina C. Dela Cruz
+- *GitHub Manager:* Alona P. Odoño
+- *Tester & Debugger/Documentation Officer:* Noelissa S. Noble
 
-## Member and Roles
-Llonne Dellosa        Project Leader/Documentaion Officer
-Angeline Sandagon     Back-End Developer
-Erika Ranjo           Database Manager
-Ma. Danielle Sapico   Front-End Developer
-Allysa Belga          GitHub Manager
+---
 
-## Project Progress
-Phase       	Description                       	Completion
-Phase 1	        Project Planning                     100%
-Phase 2	        Frontend Design                       50%
-Phase 3       	Backend Setup                         20%
-Phase 4	        Form Submission & Data Insertion	    0%
-Phase 5	        Data Retrieval & Display            	0%
-Phase 6         Update & Delete Functionality         0%
-Phase 7         Project Polishing & Documentation     0%
+##  Class Section
+BSIT 2B
+
+---
+
+## 📈 Project Progress
+| Phase       | Progress      |
+|-------------|--------------|
+| Phase 1 (Week 11) | ✅ 100% |
+| Phase 2 (Week 12) | 🟡 80%  |
+| Phase 3 (Week 13) | 🟡 10%  |
+| Phase 4 (Week 14) | ⚪ 0%   |
+| Phase 5 (Week 15) | ⚪ 0%   |
+| Phase 6 (Week 16) | ⚪ 0%   |
+
+This will continue to be updated until everything reaches 100%.
