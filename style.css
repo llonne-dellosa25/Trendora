@@ -88,7 +88,7 @@ body {
 .category-card {
   flex: 1 0 30%; /* Cards will take up 30% of the width */
   height: 900px; /* Fixed height for all cards */
-  margin-right: 20px; /* Space between the cards */
+  margin-right: 10px; /* Space between the cards */
   text-align: center;
   background-color: #111010;
   border-radius: 8px;
