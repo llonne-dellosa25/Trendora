@@ -24,7 +24,7 @@ body {
 
 /* Navbar */
 .top-bar {
-  background-color: #d9d9d9;
+  background-color: 	#270a47;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,29 +36,30 @@ body {
 }
 
 .logo {
-  font-weight: bold;
+  font-weight: bold; 
+  color: #fff;
   font-size: 1.2rem;
 }
 
 .nav-links a {
   margin-left: 20px;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-size: 0.9rem;
 }
 
 /* Banner */
 .banner {
-  background-image: url('products/lalisa.jpg'); /* Placeholder image */
-  height: 600px;
-  display: flex;
+  background-image: url('Images/calvin-klein-2025-spring-collection-campaign-minji-hanni-danielle-haerin-hyein-news-ft.avif'); /* Placeholder image */
+  height: 500px;
+  display: flex ;
   justify-content: center;
   align-items: center;
 }
 
 .banner-text {
   font-size: 0.9rem;
-  color: #000;
+  color: #fff;
 }
 
 /* Categories Section */
@@ -87,10 +88,10 @@ body {
 
 .category-card {
   flex: 1 0 30%; /* Cards will take up 30% of the width */
-  height: 900px; /* Fixed height for all cards */
+  height: 500px; /* Fixed height for all cards */
   margin-right: 10px; /* Space between the cards */
   text-align: center;
-  background-color: #111010;
+  background-color: 	#270a47;
   border-radius: 8px;
   position: relative;
   box-sizing: border-box;
@@ -100,7 +101,7 @@ body {
 
 .category-image {
   width: 100%; /* Make the image take up the full width of the card */
-  height: 800px; /* Set a fixed height for the image */
+  height: 400px; /* Set a fixed height for the image */
   object-fit: cover; /* Ensures the image covers the area without distortion */
   margin: 0 auto; /* Center the image horizontally */
   border-radius: 8px; /* Rounded corners for the image */
@@ -131,12 +132,14 @@ body {
 }
 
 .shop-all-btn {
-  background-color: #d9d9d9;
-  margin-top: 40px;
-  padding: 20px 20px;
+  background-color: #FFFF00;
+  height: 50px;
+  width: 200px;
+  margin-top: 20px;
+  padding: 10px 10px;
   border: none;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.90rem;
 }
 /* Sale Summary */
 .sales-summary .summary-row {
@@ -159,7 +162,7 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #d9d9d9;
+  background-color: 	#270a47;
   display: flex;
   justify-content: space-between;
   align-items: center;
