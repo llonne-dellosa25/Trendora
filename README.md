@@ -27,8 +27,6 @@ Subscription-Based Product Listings for Sellers
 ##  Class Section
 BSIT 2B
 
----
-
 ## 📈 Project Progress
 | Phase       | Progress      |
 |-------------|--------------|
