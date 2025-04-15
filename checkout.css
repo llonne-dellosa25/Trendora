@@ -12,14 +12,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: white;
+  background-color: #270a47;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: rgb(243, 236, 236);
 }
 
 .search-icons {
@@ -143,7 +143,7 @@ body {
   gap: 1rem;
   text-align: center;
   font-size: 0.875rem;
-  color: #555;
+  color: #270a47;
 }
 
 @media (min-width: 768px) {
