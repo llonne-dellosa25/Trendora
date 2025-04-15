@@ -1,5 +1,4 @@
 
-/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +20,7 @@ body {
 
 .page-wrapper {
   flex: 1;
-  padding-top: 70px; /* To avoid content hiding behind fixed navbar */
+  padding-top: 70px; 
 }
 
 /* Navbar */
