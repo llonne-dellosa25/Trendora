@@ -52,7 +52,7 @@ body {
 
 /* Banner */
 .banner {
-  background-image: url('Images/calvin-klein-2025-spring-collection-campaign-minji-hanni-danielle-haerin-hyein-news-ft.avif'); /* Placeholder image */
+  background-image: url('products/calvin-klein-2025-spring-collection-campaign-minji-hanni-danielle-haerin-hyein-news-ft.avif'); /* Placeholder image */
   height: 500px;
   display: flex ;
   justify-content: center;
