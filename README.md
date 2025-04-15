@@ -17,10 +17,10 @@ Subscription-Based Product Listings for Sellers
 
 ##  Group Members and Roles
 - *Project Manager:* Llonne T. Dellosa
-- *Frontend Developer:* Ma. Danielle Sapico
-- *Backend Developer:* Angeline Sandagon
-- *Database Manager:* Erika Ranjo
-- *GitHub Manager:* Allysa Belga
+- *Frontend Developer:* Ma. Danielle A. Sapico
+- *Backend Developer:* Angeline B. Sandagon
+- *Database Manager:* Erika F.  Ranjo
+- *GitHub Manager:* Allysa R. Belga
 - *Tester & Debugger/Documentation Officer:* Llonne Dellosa
 
 
