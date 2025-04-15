@@ -1,0 +1,309 @@
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #e6e6e6;
+}
+
+.page-wrapper {
+  flex: 1;
+  padding-top: 70px; /* To avoid content hiding behind fixed navbar */
+}
+
+/* Navbar */
+.top-bar {
+  background-color: #270a47;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.logo {
+  font-weight: bold; 
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.banner {
+  background-image: url('products/calvin-klein-2025-spring-collection-campaign-minji-hanni-danielle-haerin-hyein-news-ft.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.banner-text {
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+/* Categories Section */
+.categories {
+  background-color: #fef4f3;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.categories h2 {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  transition: transform 1s linear;
+}
+
+.category-card {
+  flex: 1 0 30%; /* Cards will take up 30% of the width */
+  height: 500px; /* Fixed height for all cards */
+  margin-right: 10px; /* Space between the cards */
+  text-align: center;
+  background-color: 	#270a47;
+  border-radius: 8px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 10px; /* Add padding inside the card */
+}
+
+.category-image {
+  width: 100%; /* Make the image take up the full width of the card */
+  height: 400px; /* Set a fixed height for the image */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  margin: 0 auto; /* Center the image horizontally */
+  border-radius: 8px; /* Rounded corners for the image */
+  display: block; /* Ensures the image is displayed as a block element */
+}
+
+
+.category-text {
+  position: absolute;
+  margin-top: 20px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Moves the track completely to the left */
+  }
+}
+
+.shop-all-btn {
+  background-color: #FFFF00;
+  height: 50px;
+  width: 200px;
+  margin-top: 20px;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.90rem;
+}
+/* Sale Summary */
+.sales-summary .summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.sales-summary .summary-row label {
+  font-size: 0.9rem;
+}
+
+.sales-summary .summary-box {
+  width: 100px;
+  height: 25px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+/* Admin Side */
+.menu a.active {
+  background-color: white;
+  color: #6a1bbf;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+
+/* Footer */
+.footer {
+  background-color: 	#270a47;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  font-size: 0.7rem;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-right .icons span {
+  margin-right: 5px;
+  font-size: 1rem;
+}
+
+/*product-listing*/ 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-top: 50px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.search-box {
+  display: flex;
+  flex-grow: 1;
+  max-width: 600px;
+  margin: 0 30px;
+}
+
+.search-box input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-right: none;
+}
+
+.search-box button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 0 15px;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: black;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  padding: 2px 6px;
+}
+
+header {
+  background-color: #5e0663;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.category-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+.category-nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.product-card {
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
