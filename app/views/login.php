@@ -28,7 +28,7 @@
       const fullName = decoded.name;
 
       // Try to login the user using Google email
-      fetch('login.php', {
+      fetch('Home/processLogin', {  <!-- Updated route -->
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -42,7 +42,7 @@
           window.location.href = "dashboard.html";  // Redirect to dashboard
         } else if (data.includes('Email not found')) {
           // If email is not found, sign up first
-          fetch('signup.php', {
+          fetch('Home/processSignup', {  <!-- Updated route -->
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -67,8 +67,8 @@
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
-      // Send the form data to login.php
-      fetch('login.php', {
+      // Send the form data to HomeController's processLogin method
+      fetch('Home/processLogin', {  <!-- Updated route -->
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -97,7 +97,8 @@
       );
       google.accounts.id.prompt();  // Show the One Tap prompt
     };
-  </script>
+</script>
+
 </head>
 <body>
   <div class="container">
