@@ -16,12 +16,12 @@ Gamified Customer Rewards & Seller Challenges
 Subscription-Based Product Listings for Sellers
 
 ##  Group Members and Roles
-- *Project Manager:* Aran Joshua P. Ofracio
-- *Frontend Developer:* Ella Mae R. Dolon
-- *Backend Developer:* Victor Ronel P. Lumayad
-- *Database Manager:* Paulina C. Dela Cruz
-- *GitHub Manager:* Alona P. Odoño
-- *Tester & Debugger/Documentation Officer:* Noelissa S. Noble
+- *Project Manager:* Llonne T. Dellosa
+- *Frontend Developer:* Ma. Danielle Sapico
+- *Backend Developer:* Angeline Sandagon
+- *Database Manager:* Erika Ranjo
+- *GitHub Manager:* Allysa Belga
+- *Tester & Debugger/Documentation Officer:* Llonne Dellosa
 
 ---
 
