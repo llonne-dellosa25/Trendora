@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trendora</title>
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Header -->
+    <nav class="top-bar fixed-top">
+      <div class="logo">TRENDORA</div>
+      <div class="nav-links">
+        <a href="#">Products</a>
+        <a href="login.html">Login</a>
+        <a href="#">Signup</a>
+      </div>
+    </nav>
+
+    <!-- Hero / Banner -->
+    <section class="banner">
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+      <h2>Shop by Category</h2>
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+          <!-- 10 cards -->
+          <div class="category-card">
+            <img src="products/Beauty & Personal Care.jpg" alt="Category Image" class="category-image"/>
+            <div class="category-text">Beauty & Personal Care</div>
+          </div>
+          <div class="category-card">
+            <img src="products/ecommerce-bg2.jpg" alt="Category Image" class="category-image"/>
+            <div class="category-text">Women</div>
+          </div>
+          <div class="category-card">
+            <img src="products/Gadgets-December-14-2022.webp" alt="Category Image" class="category-image"/>
+            <div class="category-text">Electronics & Gadgets</div>
+          </div>
+          <div class="category-card">
+            <img src="products/s1.jpeg" alt="Category Image" class="category-image"/>
+            <div class="category-text">Men</div>
+          </div>
+          <div class="category-card">
+            <img src="products/Books & Stationery.jpg" alt="Category Image" class="category-image"/>
+            <div class="category-text">Books & Stationery</div>
+          </div>
+          <div class="category-card">
+            <img src="products/Groceries & Essentials.jpg" alt="Category Image" class="category-image"/>
+            <div class="category-text">Groceries & Essentials</div>
+          </div>
+          <div class="category-card">
+            <img src="products/s2.jpeg" alt="Category Image" class="category-image"/>
+            <div class="category-text">Women</div>
+          </div>
+          <div class="category-card">
+            <img src="products/s9.jpg" alt="Category Image" class="category-image"/>
+            <div class="category-text">Fashion & Apparel</div>
+          </div>
+          <div class="category-card">
+            <img src="products/Pet Supplies.jpg" alt="Category Image" class="category-image"/>
+            <div class="category-text">Pet Supplies</div>
+          </div>
+        </div>
+      </div>  
+      <button class="shop-all-btn">Shop All</button>
+    </section>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div>ABOUT US</div>
+      <div>CONTACT US</div>
+    </div>
+    <div class="footer-center">
+      2025 TRENDORA. All rights reserved.
+    </div>
+    <div class="footer-right">
+      <span>FOLLOW US</span>
+      <div class="icons">
+        <span><i class="fab fa-facebook-f"></i></span>
+        <span><i class="fab fa-instagram"></i></span>
+        <span><i class="fab fa-x-twitter"></i></span>
+      </div>      
+    </div>
+  </footer>
+
+  <!-- Link to JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

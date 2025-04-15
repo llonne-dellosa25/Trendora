@@ -6,7 +6,7 @@
   <title>Login - Trendora</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/login.css" />
   <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="https://connect.facebook.net/en_US/sdk.js" async defer></script>
