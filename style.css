@@ -50,14 +50,17 @@ body {
   font-size: 0.9rem;
 }
 
-/* Banner */
 .banner {
-  background-image: url('products/calvin-klein-2025-spring-collection-campaign-minji-hanni-danielle-haerin-hyein-news-ft.avif'); /* Placeholder image */
-  height: 500px;
-  display: flex ;
+  background-image: url('products/calvin-klein-2025-spring-collection-campaign-minji-hanni-danielle-haerin-hyein-news-ft.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 1000px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 .banner-text {
   font-size: 0.9rem;
