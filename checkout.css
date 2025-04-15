@@ -38,21 +38,7 @@ body {
   font-size: 1.25rem;
 }
 
-<<<<<<< HEAD
-
-/* Payment Method */
-.payment-method {
-  display: flex;
-  align-items: center;
-  gap: 10rem;
-  margin-top: 10rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-/* Main Layout */
-=======
 /* Main layout */
->>>>>>> 3033da9adaeb52e8712dc0174386d435a3493327
 .main {
   display: flex;
   flex-direction: column;
