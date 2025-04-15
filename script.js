@@ -33,3 +33,45 @@ document.getElementById('userIcon').addEventListener('click', function() {
     }, 50); // Adjust this time for speed
   });
   
+
+    // Carousel auto scroll
+    const track = document.querySelector('.carousel-track');
+    const cards = document.querySelectorAll('.category-card');
+  
+    if (track && cards.length > 0) {
+      const cardWidth = cards[0].offsetWidth + 10;
+      const totalCards = cards.length;
+  
+      cards.forEach(card => {
+        track.appendChild(card.cloneNode(true));
+      });
+  
+      let currentPosition = 0;
+  
+      setInterval(() => {
+        currentPosition -= cardWidth;
+        track.style.transform = `translateX(${currentPosition}px)`;
+  
+        if (currentPosition <= -cardWidth * totalCards) {
+          currentPosition = 0;
+          track.appendChild(track.firstElementChild);
+        }
+      }, 50);
+    }
+  
+
+   // Filter sidebar logic
+   const filterBtn = document.getElementById("filterBtn");
+  const sidebar = document.getElementById("filterSidebar");
+
+  if (filterBtn && sidebar) {
+    filterBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!sidebar.contains(e.target) && !filterBtn.contains(e.target)) {
+        sidebar.classList.remove("active");
+      }
+    });
+  }
