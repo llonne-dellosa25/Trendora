@@ -7,21 +7,20 @@
   <title>Trendora Seller Center</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-    }
-    .header {
-      background-color: #8a2be2;
-      color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+   
+   .header {
+     background-color: #8a2be2; /* or whatever your purple is */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* make it span full width */
+    margin: 0;    /* prevent any default margin */
+     }
     .header h1 {
       margin: 0;
     }
@@ -102,7 +101,7 @@
    <!-- Header -->
   <div class="header">
     <div>
-      <h1>TRENDORA <br><span style="font-size:20px;">SELLER CENTER</span></h1>
+      <h1>TRENDORA <br><span style="font-size:20px;">CENTER</span></h1>
     </div>
     <div class="top-nav">
       <input type="text" placeholder="" class="topbar-input" />
@@ -111,11 +110,16 @@
       <span>Account</span>
     </div>
   </div>
+
+<!-- Menus -->
   <div class="menu">
-    <a href="#">Catalog</a>
-    <a href="#">Inventory</a>
-    <a href="#">Orders</a>
+    <a href="dashboard.html">Admin</a>
+    <a href="users.html">Users</a>
+    <a href="admin_catalog.html" class="active">Catalog</a>
+    <a href="inventory.html" >Inventory</a>
+    <a href="product_order.html">Orders</a>
   </div>
+
  <!-- Catalog Section -->
   <div class="catalog-section">
     <div class="catalog-title">Catalog</div>

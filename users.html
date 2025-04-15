@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trendora Seller Center</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .header {
+     background-color: #8a2be2; 
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+    margin: 0;   
+     }
+    .header h1 {
+      margin: 0;
+    }
+    .header .top-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .topbar-input {
+      padding: 5px 10px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+    .menu {
+      background-color: #6a1bbf;
+      color: white;
+      display: flex;
+      padding: 10px 20px;
+      gap: 50px;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+    }
+    .container {
+      width: 80%;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+    }
+    h2 {
+      color: #5e0663;
+      margin-top: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #d4a6ec;
+      color: #000;
+    }
+    td {
+      background-color: #f5e6fa;
+    }
+    button {
+      padding: 6px 12px;
+      background-color: #5e0663;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4a0050;
+    }
+    .footer {
+      background-color: #ddd;
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #333;
+      margin-top: 40px;
+    }
+    .footer .icons {
+      margin-top: 10px;
+    }
+    .footer .icons i {
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h1>TRENDORA <br><span style="font-size:20px;">CENTER</span></h1>
+    </div>
+    <div class="top-nav">
+      <span>Notifications</span>
+      <span>Help</span>
+      <span>Account</span>
+    </div>
+  </div>
+
+  <!-- Menu -->
+  <div class="menu">
+    <a href="dashboard.html">Admin</a>
+    <a href="users.html"class="active">Users</a>
+    <a href="admin_catalog.html">Catalog</a>
+    <a href="inventory.html" >Inventory</a>
+    <a href="product_order.html">Orders</a>
+  </div>
+
+  <!-- User Management Section -->
+  <div class="container">
+    <h2>User Management</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>User Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>John Doe</td>
+          <td>john@example.com</td>
+          <td><button>Edit</button><button>Delete</button></td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>Jane Smith</td>
+          <td>jane@example.com</td>
+          <td><button>Edit</button><button>Delete</button></td>
+        </tr>
+        <tr>
+          <td>003</td>
+          <td>Alex Brown</td>
+          <td>alex@example.com</td>
+          <td><button>Edit</button><button>Delete</button></td>
+        </tr>
+        <!-- Additional sample rows -->
+        <tr>
+          <td>004</td>
+          <td>Maria White</td>
+          <td>maria@example.com</td>
+          <td><button>Edit</button><button>Delete</button></td>
+        </tr>
+        <tr>
+          <td>005</td>
+          <td>Tom Black</td>
+          <td>tom@example.com</td>
+          <td><button>Edit</button><button>Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div>ABOUT US &nbsp; | &nbsp; CONTACT US</div>
+    <div>2025 TRENDORA. All rights reserved.</div>
+    <div class="icons">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-x-twitter"></i>
+    </div>
+  </footer>
+</body>
+</html>
