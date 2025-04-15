@@ -34,3 +34,9 @@ stdClass Object
     [email] => Victor@gmail.com
     [password] => victor
 )
+stdClass Object
+(
+    [email] => llonnedellosa@gmail.com
+    [fullName] => Llonne Dellosa
+    [password] => google_signup
+)
