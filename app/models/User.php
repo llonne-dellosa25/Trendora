@@ -31,6 +31,7 @@ class User {
     public function __destruct() {
         $this->db->close();
     }
+}
 
     class User {
         private $db;
@@ -65,4 +66,3 @@ class User {
         }
     }
     
-}

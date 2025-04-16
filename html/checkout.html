@@ -5,22 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Checkout - Trendora</title>
   <link rel="stylesheet" href="checkout.css" />
+  <!--External CSS -->
+  <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">TRENDORA</div>
-    <div class="search-icons">
-      <input type="text" class="search-bar" placeholder="Search" />
-      <div class="icon-group">
-        <a href="account.html"><i class="fas fa-user"></i></a>
-        <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-        <a href="login.html?logout=success"><i class="fas fa-right-from-bracket"></i></a>
+  <!-- Search Header -->
+  <div class="header">
+    <nav class="top-bar fixed-top">
+      <div class="logo">TRENDORA</div>
+    <div class="icons">
+      <div class="icon"><i class="fas fa-user"></i></div>
+      <div class="icon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count">30</span>
+      </div>
+      <div class="icon">
+        <i class="fas fa-heart"></i>
+        <span class="cart-count">0</span>
       </div>
     </div>
-  </header>
+  </div>
+    </nav>
+    
 
   <!-- Checkout Form -->
   <form action="checkout.php" method="POST">
@@ -154,5 +162,6 @@
       </div>
     </div>
   </footer>
+
 </body>
 </html>

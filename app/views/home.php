@@ -68,7 +68,7 @@
           </div>
         </div>
       </div>  
-      <button class="shop-all-btn">Shop All</button>
+      <button class="shop-all-btn" onclick="window.location.href='product-listing.php'">Shop All</button>
     </section>
   </div>
 
