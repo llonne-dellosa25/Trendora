@@ -19,6 +19,90 @@
     <!--External CSS -->
     <link rel="stylesheet" href="style.css" />
 
+
+
+    <style>
+      /* Common card style */
+      .product-card, .deal-item {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        width: 180px;
+        flex-shrink: 0;
+        text-align: center;
+        padding: 12px;
+      }
+  
+      /* Image container: consistent size */
+      .product-card img, .deal-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+  
+      .product-card .title, .deal-item .price {
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+  
+      .product-card .price, .deal-item .discount {
+        font-size: 14px;
+        color: #555;
+      }
+  
+      .product-card .rating, .deal-item .countdown {
+        font-size: 12px;
+        color: #777;
+      }
+  
+      /* Flash Deals Section */
+      .flash-deals {
+        background: linear-gradient(to right, #e5ebff, #005d96);
+        padding: 20px 0;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+      }
+  
+      .flash-deals h4 {
+        color: #fff;
+        font-size: 24px;
+        margin: 0;
+      }
+  
+      .flash-deals a {
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+      }
+  
+      .flash-deals-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 16px;
+        padding: 0 16px;
+      }
+  
+      @media (min-width: 768px) {
+        .flash-deals-grid {
+          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          gap: 20px;
+          overflow: visible;
+          padding: 0 40px;
+        }
+  
+        .product-card, .deal-item {
+          width: 100%;
+        }
+      }
+    </style>
 </head>
 <body>
   <!-- Search Header -->
@@ -66,18 +150,65 @@
       </div>
     </div>
 
-
+    <!-- Flash Deals Section -->
+  <section class="flash-deals">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="text-danger fw-bold">🔥 Flash Deals</h4>
+        <a href="#">VIEW MORE ›</a>
+      </div>
+      <div class="flash-deals-grid">
+        <!-- Flash Deal Items -->
+        <div class="deal-item">
+          <img src="" alt="Flash Deal 1" />
+          <div class="price">₱999</div>
+          <div class="discount">50% OFF</div>
+          <div class="countdown">Ends in 02:30:45</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 2" />
+          <div class="price">₱799</div>
+          <div class="discount">30% OFF</div>
+          <div class="countdown">Ends in 01:15:20</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 3" />
+          <div class="price">₱499</div>
+          <div class="discount">60% OFF</div>
+          <div class="countdown">Ends in 04:45:10</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 4" />
+          <div class="price">₱1299</div>
+          <div class="discount">20% OFF</div>
+          <div class="countdown">Ends in 00:59:59</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 5" />
+          <div class="price">₱699</div>
+          <div class="discount">45% OFF</div>
+          <div class="countdown">Ends in 03:30:00</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 6" />
+          <div class="price">₱599</div>
+          <div class="discount">35% OFF</div>
+          <div class="countdown">Ends in 01:00:00</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!--Category Navigation -->
   <nav class="category-nav">
     <div class="nav-links">
     <a href="#">WOMEN</a>
     <a href="#men">MEN</a>
-    <a href="#kids">KIDS</a>
     <a href="#footwear">FOOTWEAR</a>
-    <a href="#groceries">GROCERIES</a>
-    <a href="#beauty">BEAUTY</a>
-    <a href="#appliances">APPLIANCES</a>
+    <a href="#groceries">JEWELRIES</a>
+    <a href="#beauty">BEAUTY & PERSONAL CARE</a>
+    <a href="#kids">BOOKS</a>
+    <a href="#appliances">ELECTRONIC GADGETS</a>
   </div>
   
   <div class="actions">
@@ -152,7 +283,7 @@
           </div>
         </div>
       </div>
-      <!-- Duplicate this block as needed -->
+
       <div class="col">
         <div class="card product-card">
           <img src="products/w-2.jpg" class="card-img-top" alt="Product">
@@ -262,6 +393,33 @@
       }
     });
   }
+</script>
+
+<!-- Real-time Countdown Script -->
+<script>
+  function updateCountdowns() {
+    const countdowns = document.querySelectorAll('.countdown');
+    countdowns.forEach(el => {
+      const endTime = new Date(el.getAttribute('data-end'));
+      const now = new Date();
+      const diff = endTime - now;
+
+      if (diff <= 0) {
+        el.textContent = "Expired";
+        return;
+      }
+
+      const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+      const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+
+      el.textContent = `Ends in ${hours}:${minutes}:${seconds}`;
+    });
+  }
+
+  // Start countdown timer updates every second
+  setInterval(updateCountdowns, 1000);
+  updateCountdowns(); // initial run
 </script>
   <!-- JS Dependencies -->
   <script src="../script.js"></script>

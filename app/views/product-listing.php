@@ -72,13 +72,14 @@
   <!--Category Navigation -->
   <nav class="category-nav">
     <div class="nav-links">
+    <div class="nav-links">
     <a href="#">WOMEN</a>
     <a href="#men">MEN</a>
-    <a href="#kids">KIDS</a>
     <a href="#footwear">FOOTWEAR</a>
-    <a href="#groceries">GROCERIES</a>
-    <a href="#beauty">BEAUTY</a>
-    <a href="#appliances">APPLIANCES</a>
+    <a href="#groceries">JEWELRIES</a>
+    <a href="#beauty">BEAUTY & PERSONAL CARE</a>
+    <a href="#kids">BOOKS</a>
+    <a href="#appliances">ELECTRONIC GADGETS</a>
   </div>
     <div class="actions">
       <span class="material-symbols-outlined">filter_list</span>
