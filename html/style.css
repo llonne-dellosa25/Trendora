@@ -1,5 +1,4 @@
 
-/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +20,7 @@ body {
 
 .page-wrapper {
   flex: 1;
-  padding-top: 70px; /* To avoid content hiding behind fixed navbar */
+  padding-top: 70px; 
 }
 
 /* Navbar */
@@ -180,7 +179,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  font-size: 0.7rem;
+  font-size: 1rem;
+  color: #f0f0f0;
 }
 
 .footer-left,
@@ -248,6 +248,7 @@ body {
   display: flex;
   gap: 15px;
   font-size: 20px;
+  color: #e6e6e6;
 }
 
 .icon {
@@ -299,11 +300,26 @@ header {
   object-fit: cover;
 }
 
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
+.filter-sidebar {
+  position: absolute;
+  top: 120%; /* Places it right below the filter icon */
+  right: 0;
+  width: 250px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  display: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.filter-sidebar.active {
+  display: block;
+}
+.filter-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
 }
 
