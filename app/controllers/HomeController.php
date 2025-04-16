@@ -9,56 +9,47 @@ class HomeController {
         require_once '../app/views/login.php';
     }
 
-    public function signup() {
-        require_once '../app/views/signup.php';
-    }
-
-    public function checkout() {
-        require_once '../app/views/checkout.php';
-    }
-
     public function processLogin() {
-        require_once '../app/models/User.php';
-        
-        // Get and sanitize input
+        // Start session for login tracking
+        session_start();
+
+        // Connect to the database
+        $conn = new mysqli("localhost", "root", "", "trendora");
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Sanitize inputs
         $email = trim($_POST['email']);
         $password = $_POST['password'];
 
-        $user = new User();
-        $userData = $user->getUserByEmail($email);  // Added getUserByEmail method in User model
+        // Fetch user
+        $sql = "SELECT * FROM users WHERE email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        if ($userData) {
-            if ($password === "google_signup" || password_verify($password, $userData['password'])) {
-                $_SESSION['user_id'] = $userData['id'];
-                $_SESSION['email'] = $userData['email'];
-                echo "Login successful!";
+        if ($result->num_rows === 1) {
+            $user = $result->fetch_assoc();
+
+            // Check if password matches for manual sign-ups, or check if it's the default password for Google users
+            if ($password === "google_signup" || password_verify($password, $user['password'])) {
+                // Login successful
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['email'] = $user['email'];
+                header("Location: /Trendora/public/dashboard"); // Redirect to a dashboard or another page
+                exit();
             } else {
                 echo "Incorrect password.";
             }
         } else {
             echo "Email not found.";
         }
-    }
 
-    public function processSignup() {
-        require_once '../app/models/User.php';
-        
-        $data = json_decode(file_get_contents("php://input"), true);
-        $email = $data['email'];
-        $fullName = $data['fullName'];
-
-        $user = new User();
-        
-        // If user doesn't exist, register them
-        if (!$user->userExists($email)) {
-            $success = $user->registerUser($fullName, $email, "google_signup");
-            if ($success) {
-                echo "User signed up via Google.";
-            } else {
-                echo "Something went wrong with the signup.";
-            }
-        } else {
-            echo "User already exists.";
-        }
+        // Close connection
+        $conn->close();
     }
 }

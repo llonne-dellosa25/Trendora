@@ -12,6 +12,7 @@
   <script src="https://connect.facebook.net/en_US/sdk.js" async defer></script>
   <script src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js" async defer></script>
   <script>
+    // Toggle password visibility
     function togglePassword(icon) {
       const passwordInput = document.getElementById("password");
       const isPassword = passwordInput.type === "password";
@@ -28,7 +29,7 @@
       const fullName = decoded.name;
 
       // Try to login the user using Google email
-      fetch('Home/processLogin', {  <!-- Updated route -->
+      fetch('/Trendora/public/Home/processLogin', {  // Correct route for Home/processLogin
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -39,10 +40,10 @@
       .then(data => {
         console.log(data);
         if (data.includes('Login successful')) {
-          window.location.href = "dashboard.html";  // Redirect to dashboard
+          window.location.href = "/Trendora/public/dashboard";  // Redirect to dashboard
         } else if (data.includes('Email not found')) {
           // If email is not found, sign up first
-          fetch('Home/processSignup', {  <!-- Updated route -->
+          fetch('/Trendora/public/Home/processSignup', {  // Correct route for processSignup
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -60,15 +61,15 @@
       });
     }
 
-    // Manual login function to handle the login form submission
+    // Manual login function to handle form submission
     function handleManualLogin(event) {
       event.preventDefault();  // Prevent the default form submission
 
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
-      // Send the form data to HomeController's processLogin method
-      fetch('Home/processLogin', {  <!-- Updated route -->
+      // Send the form data to HomeController's processLogin method using the full path
+      fetch('/Trendora/public/Home/processLogin', {  // Correct route for Home/processLogin
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -79,7 +80,7 @@
       .then(data => {
         console.log(data);
         if (data.includes('Login successful')) {
-          window.location.href = "dashboard.html";  // Redirect to dashboard
+          window.location.href = "/Trendora/public/dashboard";  // Redirect to dashboard
         } else {
           alert('Login failed: ' + data);
         }
@@ -97,14 +98,14 @@
       );
       google.accounts.id.prompt();  // Show the One Tap prompt
     };
-</script>
+  </script>
 
 </head>
 <body>
   <div class="container">
     <div class="left-panel">
       <h1>TRENDORA</h1>
-      <img src="<?php echo BASE_URL; ?>products/login.png"  alt="Fashion Illustration" class="illustration" />
+      <img src="<?php echo BASE_URL; ?>products/login.png" alt="Fashion Illustration" class="illustration" />
     </div>
     <div class="right-panel">
       <h2>Login</h2>
@@ -131,7 +132,7 @@
 
       <div class="social-icons">
         <!-- Google Sign-In Button -->
-        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="sign_in_with" data-size="large" data-logo_alignment="left"></div>
+        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with" data-size="large" data-logo_alignment="left"></div>
 
         <!-- Facebook Sign-In Button -->
         <a href="#" id="facebook-signin">
