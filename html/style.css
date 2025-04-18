@@ -406,3 +406,49 @@ header {
     width: 100%;
   }
 }
+
+
+/*FOR SHOPPING CART*/
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 800px;
+  height: 100vh;
+  background: #fcfefe;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 999;
+  padding: 20px;
+}
+
+.cart-overlay.active {
+  right: 0;
+}
+
+.cart-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.close-cart {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.cart-count {
+position: absolute;
+top: -10px;
+right: -15px;
+color: rgb(136, 236, 236);
+font-size: 14px;
+font-weight: bold;
+background: transparent !important;
+border: none;
+padding: 0;
+margin: 0;
+border-radius: 0;
+}
