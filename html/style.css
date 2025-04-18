@@ -323,3 +323,132 @@ header {
   font-size: 12px;
 }
 
+/*FLASH DEALS*/
+
+
+/* Common card style */
+.product-card, .deal-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  flex-shrink: 0;
+  text-align: center;
+  padding: 12px;
+}
+
+/* Image container: consistent size */
+.product-card img, .deal-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.product-card .title, .deal-item .price {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.product-card .price, .deal-item .discount {
+  font-size: 14px;
+  color: #555;
+}
+
+.product-card .rating, .deal-item .countdown {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Flash Deals Section */
+.flash-deals {
+  background: linear-gradient(to right, #e5ebff, #005d96);
+  padding: 20px 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.flash-deals h4 {
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+}
+
+.flash-deals a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.flash-deals-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .flash-deals-grid {
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    overflow: visible;
+    padding: 0 40px;
+  }
+
+  .product-card, .deal-item {
+    width: 100%;
+  }
+}
+
+
+/*FOR SHOPPING CART*/
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 800px;
+  height: 100vh;
+  background: #fcfefe;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 999;
+  padding: 20px;
+}
+
+.cart-overlay.active {
+  right: 0;
+}
+
+.cart-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.close-cart {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.cart-count {
+position: absolute;
+top: -10px;
+right: -15px;
+color: rgb(136, 236, 236);
+font-size: 14px;
+font-weight: bold;
+background: transparent !important;
+border: none;
+padding: 0;
+margin: 0;
+border-radius: 0;
+}

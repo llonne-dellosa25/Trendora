@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Books</title>
+
+  <!--Bootstrap 5 Only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!--Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <!--Filter Icon-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=filter_list" />
+
+    <!--External CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+
+
+   
+</head>
+<body>
+  <!-- Search Header -->
+  <div class="header">
+    <nav class="top-bar fixed-top">
+      <div class="logo">TRENDORA</div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Jeans for Teens">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="icons">
+      <div class="icon"><i class="fas fa-user"></i></div>
+      <div class="icon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count">30</span>
+      </div>
+      <div class="icon">
+        <i class="fas fa-heart"></i>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+  </div>
+    </nav>
+    
+    <!-- Carousel-->
+    <div class="carousel-container">
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="listing-product-carousel/slide-01.jpg" class="d-block w-100" alt="Trend 1">
+          </div>
+          <div class="carousel-item">
+            <img src="listing-product-carousel/slide-02.jpg" class="d-block w-100" alt="Trend 2">
+          </div>
+          <div class="carousel-item">
+            <img src="listing-product-carousel/slide-03.jpg" class="d-block w-100" alt="Trend 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Flash Deals Section -->
+  <section class="flash-deals">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="text-danger fw-bold">🔥 Flash Deals</h4>
+        <a href="#">VIEW MORE ›</a>
+      </div>
+      <div class="flash-deals-grid">
+        <!-- Flash Deal Items -->
+        <div class="deal-item">
+          <img src="" alt="Flash Deal 1" />
+          <div class="price">₱999</div>
+          <div class="discount">50% OFF</div>
+          <div class="countdown">Ends in 02:30:45</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 2" />
+          <div class="price">₱799</div>
+          <div class="discount">30% OFF</div>
+          <div class="countdown">Ends in 01:15:20</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 3" />
+          <div class="price">₱499</div>
+          <div class="discount">60% OFF</div>
+          <div class="countdown">Ends in 04:45:10</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 4" />
+          <div class="price">₱1299</div>
+          <div class="discount">20% OFF</div>
+          <div class="countdown">Ends in 00:59:59</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 5" />
+          <div class="price">₱699</div>
+          <div class="discount">45% OFF</div>
+          <div class="countdown">Ends in 03:30:00</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 6" />
+          <div class="price">₱599</div>
+          <div class="discount">35% OFF</div>
+          <div class="countdown">Ends in 01:00:00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Category Navigation -->
+  <nav class="category-nav">
+    <div class="nav-links">
+    <a href="#">WOMEN</a>
+    <a href="#men">MEN</a>
+    <a href="#footwear">FOOTWEAR</a>
+    <a href="#groceries">JEWELRIES</a>
+    <a href="#beauty">BEAUTY & PERSONAL CARE</a>
+    <a href="#kids">BOOKS</a>
+    <a href="#appliances">ELECTRONIC GADGETS</a>
+  </div>
+  
+  <div class="actions">
+    <button id="filterBtn" class="filter-button" aria-label="Open filter">
+      <span class="material-symbols-outlined">filter_list</span>
+    </button>
+
+  </div>
+  </nav>
+  
+<!--Books Categoy-->
+<section class="books-products my-5">
+    <div class="container">
+      <h4 class="fw-bold mb-4">📚 Books for You</h4>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+  
+        <!-- Product 1 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="products/book1.jpg" class="card-img-top" alt="Book 1">
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-1">-45%</span>
+              <h6 class="card-title">SHEIN EZwear Casual Mini...</h6>
+              <p class="text-danger fw-bold mb-1">₱150</p>
+              <small class="text-muted">20 sold</small>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Product 2 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="products/book2.jpg" class="card-img-top" alt="Book 2">
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-1">-24%</span>
+              <h6 class="card-title">INAWLY Women's Collared...</h6>
+              <p class="text-danger fw-bold mb-1">₱190</p>
+              <small class="text-muted">6.5k+ sold</small>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Product 3 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="products/book3.jpg" class="card-img-top" alt="Book 3">
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-1">-50%</span>
+              <h6 class="card-title">DAZY Women's Textured...</h6>
+              <p class="text-danger fw-bold mb-1">₱359</p>
+              <small class="text-muted">2.3k+ sold</small>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Product 4 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="products/book4.jpg" class="card-img-top" alt="Book 4">
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-1">-31%</span>
+              <h6 class="card-title">SHEIN EZwear Blue Striped...</h6>
+              <p class="text-danger fw-bold mb-1">₱165</p>
+              <small class="text-muted">6.0k+ sold</small>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div>ABOUT US</div>
+      <div>CONTACT US</div>
+    </div>
+    <div class="footer-center">
+      2025 TRENDORA. All rights reserved.
+    </div>
+    <div class="footer-right">
+      <span>FOLLOW US</span>
+      <div class="icons">
+        <span><i class="fab fa-facebook-f"></i></span>
+        <span><i class="fab fa-instagram"></i></span>
+        <span><i class="fab fa-x-twitter"></i></span>
+      </div>      
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const phrases = [
+      "Jeans For Teens",
+      "Stylish Tops",
+      "Trendy Accessories",
+      "Affordable Fashion",
+      "Best Deals Today"
+    ];
+    let index = 0;
+    const input = document.getElementById("searchInput");
+    setInterval(() => {
+      if (input) {
+        index = (index + 1) % phrases.length;
+        input.placeholder = phrases[index];
+      }
+    }, 2000);
+  </script>
+
+
+<!-- Real-time Countdown Script -->
+<script>
+  function updateCountdowns() {
+    const countdowns = document.querySelectorAll('.countdown');
+    countdowns.forEach(el => {
+      const endTime = new Date(el.getAttribute('data-end'));
+      const now = new Date();
+      const diff = endTime - now;
+
+      if (diff <= 0) {
+        el.textContent = "Expired";
+        return;
+      }
+
+      const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+      const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+
+      el.textContent = `Ends in ${hours}:${minutes}:${seconds}`;
+    });
+  }
+
+  // Start countdown timer updates every second
+  setInterval(updateCountdowns, 1000);
+  updateCountdowns(); // initial run
+</script>
+  <!-- JS Dependencies -->
+  <script src="../script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

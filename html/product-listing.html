@@ -18,7 +18,7 @@
 
     <!--External CSS -->
     <link rel="stylesheet" href="style.css" />
-
+     
 </head>
 <body>
   <!-- Search Header -->
@@ -31,7 +31,7 @@
     </div>
     <div class="icons">
       <div class="icon"><i class="fas fa-user"></i></div>
-      <div class="icon">
+      <div class="icon" id="cartIcon">
         <i class="fa-solid fa-bag-shopping"></i>
         <span class="cart-count">30</span>
       </div>
@@ -42,6 +42,77 @@
     </div>
   </div>
     </nav>
+
+    <!-- Cart Overlay -->
+<div class="cart-overlay" id="cartOverlay">
+  <div class="cart-content">
+    <button class="close-cart" id="closeCart">&times;</button>
+ <!-- Shopping Cart Simplified -->
+ <div class="container my-1">
+  <h2 class="mb-4">ALL ITEMS</h2>
+  <table class="table table-bordered text-center align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th>
+          <input type="checkbox" id="selectAllCheckbox" />
+        </th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Product Row 1 -->
+      <tr>
+        <td>
+          <input type="checkbox" class="itemCheckbox" />
+        </td>
+        <td class="text-start">
+          <img src="listing-product-carousel/slide-02.jpg" alt="Product Image" style="width: 50px; vertical-align: middle;">
+          <span class="ms-2">Fresh Strawberries</span>
+        </td>
+        <td>
+          <input type="number" class="form-control text-center" value="1" min="1" style="width: 80px; margin: auto;">
+        </td>
+        <td>$36.00</td>
+        <td>
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      </tr>
+
+      <!-- Product Row 2 -->
+      <tr>
+        <td>
+          <input type="checkbox" class="itemCheckbox" />
+        </td>
+        <td class="text-start">
+          <img src="images/item-cart-05.jpg" alt="Product Image" style="width: 50px; vertical-align: middle;">
+          <span class="ms-2">Lightweight Jacket</span>
+        </td>
+        <td>
+          <input type="number" class="form-control text-center" value="1" min="1" style="width: 80px; margin: auto;">
+        </td>
+        <td>$16.00</td>
+        <td>
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="text-end mt-4">
+    <h4>Total: $52.00</h4>
+    <button class="btn btn-success mt-2">Proceed to Checkout</button>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+
+     
     
     <!-- Carousel-->
     <div class="carousel-container">
@@ -66,18 +137,65 @@
       </div>
     </div>
 
-
+    <!-- Flash Deals Section -->
+  <section class="flash-deals">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="text-danger fw-bold">🔥 Flash Deals</h4>
+        <a href="#">VIEW MORE ›</a>
+      </div>
+      <div class="flash-deals-grid">
+        <!-- Flash Deal Items -->
+        <div class="deal-item">
+          <img src="" alt="Flash Deal 1" />
+          <div class="price">₱999</div>
+          <div class="discount">50% OFF</div>
+          <div class="countdown">Ends in 02:30:45</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 2" />
+          <div class="price">₱799</div>
+          <div class="discount">30% OFF</div>
+          <div class="countdown">Ends in 01:15:20</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 3" />
+          <div class="price">₱499</div>
+          <div class="discount">60% OFF</div>
+          <div class="countdown">Ends in 04:45:10</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 4" />
+          <div class="price">₱1299</div>
+          <div class="discount">20% OFF</div>
+          <div class="countdown">Ends in 00:59:59</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 5" />
+          <div class="price">₱699</div>
+          <div class="discount">45% OFF</div>
+          <div class="countdown">Ends in 03:30:00</div>
+        </div>
+        <div class="deal-item">
+          <img src="products/flash-item.jpg" alt="Flash Deal 6" />
+          <div class="price">₱599</div>
+          <div class="discount">35% OFF</div>
+          <div class="countdown">Ends in 01:00:00</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!--Category Navigation -->
   <nav class="category-nav">
     <div class="nav-links">
-    <a href="#">WOMEN</a>
-    <a href="#men">MEN</a>
-    <a href="#kids">KIDS</a>
+    <a href="women_clothing.html">WOMEN</a>
+    <a href="men_clothing.html">MEN</a>
     <a href="#footwear">FOOTWEAR</a>
-    <a href="#groceries">GROCERIES</a>
-    <a href="#beauty">BEAUTY</a>
-    <a href="#appliances">APPLIANCES</a>
+    <a href="#groceries">JEWELRIES</a>
+    <a href="#beauty">BEAUTY & PERSONAL CARE</a>
+    <a href="books.html">BOOKS</a>
+    <a href="#appliances">ELECTRONIC GADGETS</a>
   </div>
   
   <div class="actions">
@@ -152,7 +270,7 @@
           </div>
         </div>
       </div>
-      <!-- Duplicate this block as needed -->
+
       <div class="col">
         <div class="card product-card">
           <img src="products/w-2.jpg" class="card-img-top" alt="Product">
@@ -207,6 +325,7 @@
     </div>
   </main>
 
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-left">
@@ -246,6 +365,21 @@
   </script>
 
 
+<!-- JS -->
+<script>
+  const cartIcon = document.getElementById("cartIcon");
+  const cartOverlay = document.getElementById("cartOverlay");
+  const closeCart = document.getElementById("closeCart");
+
+  cartIcon.addEventListener("click", () => {
+    cartOverlay.classList.add("active");
+  });
+
+  closeCart.addEventListener("click", () => {
+    cartOverlay.classList.remove("active");
+  });
+</script>
+
 <script>
    // Filter sidebar logic
    const filterBtn = document.getElementById("filterBtn");
@@ -262,6 +396,55 @@
       }
     });
   }
+</script>
+
+
+<!--CHECBOXES-->
+<script>
+  // Handle Select All / Deselect All
+  const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+  const itemCheckboxes = document.querySelectorAll('.itemCheckbox');
+
+  selectAllCheckbox.addEventListener('change', () => {
+    itemCheckboxes.forEach(checkbox => {
+      checkbox.checked = selectAllCheckbox.checked;
+    });
+  });
+
+  // Keep Select All checkbox in sync if individual boxes are toggled
+  itemCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      const allChecked = [...itemCheckboxes].every(cb => cb.checked);
+      selectAllCheckbox.checked = allChecked;
+    });
+  });
+</script>
+
+<!-- Real-time Countdown Script -->
+<script>
+  function updateCountdowns() {
+    const countdowns = document.querySelectorAll('.countdown');
+    countdowns.forEach(el => {
+      const endTime = new Date(el.getAttribute('data-end'));
+      const now = new Date();
+      const diff = endTime - now;
+
+      if (diff <= 0) {
+        el.textContent = "Expired";
+        return;
+      }
+
+      const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+      const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+
+      el.textContent = `Ends in ${hours}:${minutes}:${seconds}`;
+    });
+  }
+
+  // Start countdown timer updates every second
+  setInterval(updateCountdowns, 1000);
+  updateCountdowns(); // initial run
 </script>
   <!-- JS Dependencies -->
   <script src="../script.js"></script>
