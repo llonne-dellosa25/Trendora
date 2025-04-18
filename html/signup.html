@@ -29,7 +29,11 @@
       fetch("signup.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email, fullName: fullName, password: "google_signup" }), // Password set for Google Sign-In
+        body: JSON.stringify({
+          email: email,
+          fullName: fullName,
+          password: "google_signup"
+        }),
       })
       .then(res => res.text())
       .then(result => {
@@ -46,17 +50,15 @@
       const form = document.querySelector("form");
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        const fullName = document.getElementById("fullname").value;
-        const email = document.getElementById("email").value;
+        const fullName = document.getElementById("fullname").value.trim();
+        const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value;
 
-        // Check if fields are empty
         if (!fullName || !email || !password) {
           alert("Please fill all fields.");
           return;
         }
 
-        // Send to backend
         fetch("signup.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -73,7 +75,15 @@
       });
     }
 
-    // Initialize Google Sign-In (wait for the script to load)
+    // Toggle password visibility
+    function togglePassword(icon) {
+      const input = document.getElementById("password");
+      const isPassword = input.type === "password";
+      input.type = isPassword ? "text" : "password";
+      icon.classList.toggle("fa-eye-slash", isPassword);
+    }
+
+    // Initialize Google Sign-In
     function initializeGoogleSignIn() {
       if (window.google && google.accounts && google.accounts.id) {
         google.accounts.id.initialize({
@@ -85,28 +95,15 @@
           { theme: "outline", size: "large", text: "sign_up_with" }
         );
       } else {
-        // Retry if the script hasn't loaded yet
-        setTimeout(initializeGoogleSignIn, 300);
+        setTimeout(initializeGoogleSignIn, 300); // Retry if not loaded
       }
     }
 
-    // Wait for DOM and run setup
+    // Run when DOM is ready
     window.addEventListener("DOMContentLoaded", () => {
       setupManualSignup();
       initializeGoogleSignIn();
     });
-
-    // Toggle password visibility
-    function togglePassword(icon) {
-      const input = document.getElementById("password");
-      if (input.type === "password") {
-        input.type = "text";
-        icon.classList.add("fa-eye-slash");
-      } else {
-        input.type = "password";
-        icon.classList.remove("fa-eye-slash");
-      }
-    }
   </script>
 </head>
 <body>
@@ -119,15 +116,15 @@
       <form>
         <div class="form-group">
           <label for="fullname">Full Name</label>
-          <input type="text" id="fullname" placeholder="Enter your name" required>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
         </div>
         <div class="form-group password-wrapper">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" required>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
           <i class="fa-solid fa-eye" onclick="togglePassword(this);"></i>
         </div>
         <button class="submit-btn" type="submit">Submit</button>

@@ -1,52 +1,69 @@
 <?php
-// Access control headers for CORS
+// CORS headers (adjust domain in production)
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-// Handle OPTIONS request (preflight)
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+// Handle preflight request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit(0);
 }
 
-// Connect to DB
+// Connect to database
 $conn = new mysqli("localhost", "root", "", "trendora");
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    http_response_code(500);
+    die("Database connection failed: " . $conn->connect_error);
 }
 
-// Get JSON input
-$data = json_decode(file_get_contents("php://input"));
+// Read JSON input
+$input = file_get_contents("php://input");
+$data = json_decode($input);
 
-// Debugging: log incoming data to a file (remove in production)
-file_put_contents("debug_log.txt", print_r($data, true), FILE_APPEND);
+// Optional debug log (disable in production)
+// file_put_contents("debug_log.txt", print_r($data, true), FILE_APPEND);
 
-// Validate required fields
-if (isset($data->email) && isset($data->fullName)) {
-    $email = $conn->real_escape_string($data->email);
-    $fullname = $conn->real_escape_string($data->fullName);
+// Validate input
+if (!isset($data->email) || !isset($data->fullName)) {
+    http_response_code(400);
+    echo "Missing required fields.";
+    exit;
+}
 
-    // Check if the user already exists
-    $check = $conn->query("SELECT * FROM users WHERE email='$email'");
-    if ($check->num_rows === 0) {
-        // Use password from user (manual signup) or fallback for Google signup
-        $password = isset($data->password)
-            ? password_hash($data->password, PASSWORD_DEFAULT)
-            : password_hash("google_signup", PASSWORD_DEFAULT);
+$email = $conn->real_escape_string($data->email);
+$fullname = $conn->real_escape_string($data->fullName);
 
-        // Insert new user
-        $query = "INSERT INTO users (email, password, fullname) VALUES ('$email', '$password', '$fullname')";
-        if ($conn->query($query)) {
-            echo "User registered successfully.";
-        } else {
-            echo "Error inserting user: " . $conn->error;
-        }
-    } else {
-        echo "User already exists.";
-    }
+// Optional password (for manual signup)
+$password = isset($data->password) ? $data->password : null;
+
+// Check if user already exists
+$checkUser = $conn->prepare("SELECT id FROM users WHERE email = ?");
+$checkUser->bind_param("s", $email);
+$checkUser->execute();
+$checkUser->store_result();
+
+if ($checkUser->num_rows > 0) {
+    http_response_code(409);
+    echo "User already exists.";
 } else {
-    echo "Invalid data received.";
+    $hashedPassword = $password
+        ? password_hash($password, PASSWORD_DEFAULT)
+        : password_hash("google_signup", PASSWORD_DEFAULT); // fallback
+
+    $insert = $conn->prepare("INSERT INTO users (email, password, fullname) VALUES (?, ?, ?)");
+    $insert->bind_param("sss", $email, $hashedPassword, $fullname);
+
+    if ($insert->execute()) {
+        http_response_code(201);
+        echo "User registered successfully.";
+    } else {
+        http_response_code(500);
+        echo "Error inserting user: " . $insert->error;
+    }
+
+    $insert->close();
 }
 
+$checkUser->close();
 $conn->close();
 ?>
