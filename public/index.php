@@ -6,6 +6,7 @@ require_once '../config/config.php';
 
 // Get URL from the browser (e.g., /home/index)
 $url = $_GET['url'] ?? 'home/index';
+echo "URL is: " . $url;  // This will print the URL from the browser
 echo $_GET['url']; // Add this to check the value
 
 // Initialize and run the router
