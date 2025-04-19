@@ -44,11 +44,15 @@ if ($result->num_rows === 1) {
     if ($isGoogleLogin || $isPasswordValid) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['email'] = $user['email'];
+        $_SESSION['role'] = ($user['email'] === 'admin@gmail.com') ? 'admin' : 'user';
+
+        // Set redirect based on role
+        $redirect = ($_SESSION['role'] === 'admin') ? 'dashboard.html' : 'women_clothing.html';
 
         echo json_encode([
             'status' => 'success',
             'message' => 'Login successful.',
-            'redirect_url' => 'dashboard.html'
+            'redirect_url' => $redirect
         ]);
     } else {
         http_response_code(401);

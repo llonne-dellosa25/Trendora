@@ -20,14 +20,13 @@
       icon.classList.toggle("fa-eye-slash");
     }
 
-    // Function to handle Google login
+    // Google Login Handler
     function handleCredentialResponse(response) {
       const token = response.credential;
       const decoded = jwt_decode(token);
       const email = decoded.email;
       const fullName = decoded.name;
 
-      // Try to login the user using Google email
       fetch('login.php', {
         method: 'POST',
         headers: {
@@ -35,13 +34,12 @@
         },
         body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent('google_signup')}`
       })
-      .then(res => res.text())
+      .then(res => res.json()) // Parse JSON
       .then(data => {
         console.log(data);
-        if (data.includes('Login successful')) {
-          window.location.href = "dashboard.html";  // Redirect to dashboard
-        } else if (data.includes('Email not found')) {
-          // If email is not found, sign up first
+        if (data.status === 'success') {
+          window.location.href = data.redirect_url; // ✅ dynamic redirect
+        } else if (data.message.includes('Email not found')) {
           fetch('signup.php', {
             method: 'POST',
             headers: {
@@ -55,19 +53,18 @@
             alert('Signed up with Google, please log in again.');
           });
         } else {
-          alert('Something went wrong: ' + data);
+          alert('Something went wrong: ' + data.message);
         }
       });
     }
 
-    // Manual login function to handle the login form submission
+    // Manual Login Handler
     function handleManualLogin(event) {
-      event.preventDefault();  // Prevent the default form submission
+      event.preventDefault();
 
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
-      // Send the form data to login.php
       fetch('login.php', {
         method: 'POST',
         headers: {
@@ -75,27 +72,27 @@
         },
         body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
       })
-      .then(res => res.text())
+      .then(res => res.json()) // Parse JSON
       .then(data => {
         console.log(data);
-        if (data.includes('Login successful')) {
-          window.location.href = "dashboard.html";  // Redirect to dashboard
+        if (data.status === 'success') {
+          window.location.href = data.redirect_url; // ✅ dynamic redirect
         } else {
-          alert('Login failed: ' + data);
+          alert('Login failed: ' + data.message);
         }
       });
     }
 
     window.onload = function() {
       google.accounts.id.initialize({
-        client_id: "488729672496-iq9dleno2kl63gfp0aa5o36rtkfht840.apps.googleusercontent.com", // Your Google Client ID
+        client_id: "488729672496-iq9dleno2kl63gfp0aa5o36rtkfht840.apps.googleusercontent.com",
         callback: handleCredentialResponse
       });
       google.accounts.id.renderButton(
         document.querySelector(".g_id_signin"),
         { theme: "outline", size: "large", text: "signin_with" }
       );
-      google.accounts.id.prompt();  // Show the One Tap prompt
+      google.accounts.id.prompt();
     };
   </script>
 </head>
