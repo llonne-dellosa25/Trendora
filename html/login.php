@@ -47,7 +47,7 @@ if ($result->num_rows === 1) {
         $_SESSION['role'] = ($user['email'] === 'admin@gmail.com') ? 'admin' : 'user';
 
         // Set redirect based on role
-        $redirect = ($_SESSION['role'] === 'admin') ? 'dashboard.html' : 'women_clothing.html';
+        $redirect = ($_SESSION['role'] === 'admin') ? 'dashboard.html' : 'product-listing.html';
 
         echo json_encode([
             'status' => 'success',
