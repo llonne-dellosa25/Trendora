@@ -31,9 +31,9 @@ BSIT 2B
 | Phase       | Progress      |
 |-------------|--------------|
 | Phase 1 (Week 11) | ✅ 100% |
-| Phase 2 (Week 12) | 🟡 80%  |
-| Phase 3 (Week 13) | 🟡 10%  |
-| Phase 4 (Week 14) | ⚪ 0%   |
+| Phase 2 (Week 12) | ✅ 100% |
+| Phase 3 (Week 13) | ✅ 100% |
+| Phase 4 (Week 14) | 🟡 70%  |
 | Phase 5 (Week 15) | ⚪ 0%   |
 | Phase 6 (Week 16) | ⚪ 0%   |
 
