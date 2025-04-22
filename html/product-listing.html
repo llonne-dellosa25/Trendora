@@ -20,6 +20,30 @@
     <link rel="stylesheet" href="style.css" />
      
 </head>
+<!-- Add this just before </body> -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cartIcon = document.getElementById("cartIcon");
+    const cartOverlay = document.getElementById("cartOverlay");
+    const closeCart = document.getElementById("closeCart");
+
+    cartIcon.addEventListener("click", () => {
+      cartOverlay.style.display = "block";
+    });
+
+    closeCart.addEventListener("click", () => {
+      cartOverlay.style.display = "none";
+    });
+
+    // Optional: Click outside the cart to close
+    window.addEventListener("click", function (e) {
+      if (e.target === cartOverlay) {
+        cartOverlay.style.display = "none";
+      }
+    });
+  });
+</script>
+
 <body>
   <!-- Search Header -->
   <div class="header">
@@ -487,6 +511,84 @@
     });
   </script>
   
-
+  <script>
+    // Cart state (simulate cart storage)
+    let cartItems = [];
+  
+    // Update the cart count and overlay display
+    function updateCart() {
+      const cartCount = document.querySelector('.cart-count');
+      cartCount.textContent = cartItems.length;
+  
+      const tbody = document.querySelector('.cart-overlay tbody');
+      tbody.innerHTML = ''; // Clear existing rows
+  
+      let total = 0;
+  
+      cartItems.forEach((item, index) => {
+        total += item.price * item.quantity;
+  
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td><input type="checkbox" class="itemCheckbox" /></td>
+          <td class="text-start">
+            <img src="${item.image}" alt="${item.name}" style="width: 50px; vertical-align: middle;">
+            <span class="ms-2">${item.name}</span>
+          </td>
+          <td>
+            <input type="number" class="form-control text-center" value="${item.quantity}" min="1" style="width: 80px; margin: auto;" onchange="updateQuantity(${index}, this.value)">
+          </td>
+          <td>₱${(item.price * item.quantity).toFixed(2)}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" onclick="removeItem(${index})">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+  
+      document.querySelector('.cart-overlay h4').textContent = `Total: ₱${total.toFixed(2)}`;
+    }
+  
+    // Add to cart button functionality
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        const id = button.getAttribute('data-id');
+        const name = button.getAttribute('data-name');
+        const price = parseFloat(button.getAttribute('data-price'));
+        const image = button.getAttribute('data-image');
+  
+        const existing = cartItems.find(item => item.id === id);
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cartItems.push({ id, name, price, image, quantity: 1 });
+        }
+  
+        updateCart();
+      });
+    });
+  
+    // Remove item
+    function removeItem(index) {
+      cartItems.splice(index, 1);
+      updateCart();
+    }
+  
+    // Update quantity
+    function updateQuantity(index, newQty) {
+      cartItems[index].quantity = parseInt(newQty);
+      updateCart();
+    }
+  
+    // Open/Close cart overlay
+    document.getElementById('cartIcon').addEventListener('click', () => {
+      document.getElementById('cartOverlay').style.display = 'block';
+    });
+  
+    document.getElementById('closeCart').addEventListener('click', () => {
+      document.getElementById('cartOverlay').style.display = 'none';
+    });
+  </script>
+  
 </body>
 </html>

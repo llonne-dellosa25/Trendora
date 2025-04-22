@@ -45,6 +45,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ];
         }
 
+        // Insert or update product in the database (cart table)
+        $stmt = $pdo->prepare("SELECT * FROM cart WHERE product_id = :id");
+        $stmt->execute(['id' => $id]);
+        $existingProduct = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($existingProduct) {
+            // Update quantity if product already exists in cart
+            $stmt = $pdo->prepare("UPDATE cart SET quantity = :quantity WHERE product_id = :id");
+            $stmt->execute([
+                'quantity' => $_SESSION['cart'][$id]['quantity'],
+                'id' => $id
+            ]);
+        } else {
+            // Insert new product into cart table
+            $stmt = $pdo->prepare("INSERT INTO cart (product_id, product_name, price, image, quantity)
+                                   VALUES (:id, :name, :price, :image, :quantity)");
+            $stmt->execute([
+                'id' => $id,
+                'name' => $name,
+                'price' => $price,
+                'image' => $image,
+                'quantity' => $_SESSION['cart'][$id]['quantity']
+            ]);
+        }
+
         // Calculate total items in the cart
         $totalItems = 0;
         foreach ($_SESSION['cart'] as $item) {
