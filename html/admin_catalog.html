@@ -4,23 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trendora Seller Center</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* Reset margins and box-sizing */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    html, body {
+
+    body {
       margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
       background-color: #f0f0f0;
     }
-
     .header {
       background-color: #270a47;
       color: white;
@@ -29,42 +22,36 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      margin: 0;
     }
-
     .header h1 {
       margin: 0;
     }
-
     .header .top-nav {
       display: flex;
       align-items: center;
       gap: 20px;
     }
-
     .topbar-input {
       padding: 5px 10px;
       width: 300px;
       border-radius: 5px;
       border: none;
     }
-
     .menu {
       background-color: #270a47;
       color: white;
       display: flex;
       padding: 10px 20px;
-      gap: 40px;
+      gap: 50px;
     }
-
     .menu a {
       color: white;
       text-decoration: none;
     }
-
     .catalog-section {
-      padding: 30px 30px 100px 30px;
+      padding: 20px;
     }
-
     .catalog-title {
       font-size: 20px;
       color: #6a1bbf;
@@ -75,7 +62,7 @@
     .catalog {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
+      gap: 30px;
     }
 
     .product-card {
@@ -95,46 +82,36 @@
       font-size: 12px;
     }
 
-    footer.footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #270a47;
-      color: white;
-      padding: 20px;
-    }
 
-    .footer .icons span {
-      margin-right: 10px;
-    }
+    
   </style>
 </head>
 <body>
-
   <!-- Header -->
   <div class="header">
-    <div>
+    <div>  
       <h1>TRENDORA <br><span style="font-size:20px;">CENTER</span></h1>
     </div>
     <div class="top-nav">
-      <input type="text" placeholder="" class="topbar-input" />
+      <input type="text" placeholder="Search inventory..." class="topbar-input" />
       <span>Notifications</span>
       <span>Help</span>
       <span>Account</span>
     </div>
   </div>
 
-  <!-- Menus -->
+  <!-- Menu -->
   <div class="menu">
+    <a href="dashboard.html">Admin</a>
     <a href="product_rating.html">Product Ratings</a>
-    <a href="admin_catalog.html" class="active">Catalog</a>
+    <a href="admin_catalog.html"class="active">Catalog</a>
     <a href="inventory.html">Inventory</a>
     <a href="product_order.html">Orders</a>
   </div>
 
-  <!-- Catalog Section -->
-  <section class="catalog-section">
-    <div class="catalog-title">Catalog</div>
+   <!-- Catalog Section -->
+   <section class="catalog-section">
+    <h2 style="color: #8a2be2;">Catalog</h2>
     <div class="catalog">
       <!-- Repeating product cards -->
       
@@ -174,12 +151,68 @@
         <div class="discount">35% OFF</div>
         <div class="countdown">Ends in 01:00:00</div>
       </div>
+      <div class="deal-item">
+        <img src="image/w10.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="countdown">Ends in 01:00:00</div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="countdown">Ends in 01:00:00</div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="countdown">Ends in 01:00:00</div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="countdown">Ends in 01:00:00</div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="countdown">Ends in 01:00:00</div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="countdown">Ends in 01:00:00</div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="countdown">Ends in 01:00:00</div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="countdown">Ends in 01:00:00</div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="countdown">Ends in 01:00:00</div>
+      </div>
+
+
     </div>
-  </div>
 </section>
- 
-  <!-- Footer -->
-  <footer class="footer">
+
+
+   <!-- Footer -->
+   <footer class="footer">
     <div class="footer-left">
       <div>ABOUT US</div>
       <div>CONTACT US</div>
@@ -197,6 +230,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>
