@@ -66,24 +66,52 @@
     }
 
     .product-card {
-      background-color: #f5eaf8;
-      border-radius: 8px;
-      height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      overflow: hidden;
-    }
+    background-color: #f5eaf8;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 30px;
+  }
 
-    .product-card-footer {
-      background-color: #b060e6;
-      color: white;
-      padding: 10px;
-      font-size: 12px;
-    }
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
 
+  .product-card-footer {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8%;
+    border-radius: 0 0 8px 8px;
+  }
 
-    
+  .product-card-footer button {
+    background-color: white;
+    color: #050505;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .product-card-footer button:hover {
+    background-color: #9d74be;
+  }
+
+  .btn-add i, .btn-delete i {
+    font-size: 14px;
+  }
+
+  
   </style>
 </head>
 <body>
@@ -115,98 +143,117 @@
     <div class="catalog">
       <!-- Repeating product cards -->
       
-      <div class="deal-item">
-        <img src="image/product7.jpg" alt="Flash Deal 1" />
-        <div class="price">₱999</div>
-        <div class="discount">50% OFF</div>
-        <div class="countdown">Ends in 02:30:45</div>
+       <div class="product-card">
+      <img src="image/product7.jpg" alt="Product1" />
+      <div class="price">₱999</div>
+      <div class="discount">50% OFF</div>
+      <div class="countdown">Ends in 02:30:45</div>
+      <div class="product-card-footer">
+        <button class="btn-add"><i class="fas fa-plus"></i> Add</button>
+        <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
       </div>
-      <div class="deal-item">
-        <img src="image/product8.jpg" alt="Flash Deal 2" />
-        <div class="price">₱799</div>
-        <div class="discount">30% OFF</div>
-        <div class="countdown">Ends in 01:15:20</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product9.jpg" alt="Flash Deal 3" />
-        <div class="price">₱499</div>
-        <div class="discount">60% OFF</div>
-        <div class="countdown">Ends in 04:45:10</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product10.jpg" alt="Flash Deal 4" />
-        <div class="price">₱1299</div>
-        <div class="discount">20% OFF</div>
-        <div class="countdown">Ends in 00:59:59</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product11.jpg" alt="Flash Deal 5" />
-        <div class="price">₱699</div>
-        <div class="discount">45% OFF</div>
-        <div class="countdown">Ends in 03:30:00</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
-        <div class="price">₱599</div>
-        <div class="discount">35% OFF</div>
-        <div class="countdown">Ends in 01:00:00</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/w10.jpg" alt="Flash Deal 6" />
-        <div class="price">₱599</div>
-        <div class="discount">35% OFF</div>
-        <div class="countdown">Ends in 01:00:00</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
-        <div class="price">₱599</div>
-        <div class="discount">35% OFF</div>
-        <div class="countdown">Ends in 01:00:00</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
-        <div class="price">₱599</div>
-        <div class="discount">35% OFF</div>
-        <div class="countdown">Ends in 01:00:00</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
-        <div class="price">₱599</div>
-        <div class="discount">35% OFF</div>
-        <div class="countdown">Ends in 01:00:00</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
-        <div class="price">₱599</div>
-        <div class="discount">35% OFF</div>
-        <div class="countdown">Ends in 01:00:00</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
-        <div class="price">₱599</div>
-        <div class="discount">35% OFF</div>
-        <div class="countdown">Ends in 01:00:00</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
-        <div class="price">₱599</div>
-        <div class="discount">35% OFF</div>
-        <div class="countdown">Ends in 01:00:00</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
-        <div class="price">₱599</div>
-        <div class="discount">35% OFF</div>
-        <div class="countdown">Ends in 01:00:00</div>
-      </div>
-      <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
-        <div class="price">₱599</div>
-        <div class="discount">35% OFF</div>
-        <div class="countdown">Ends in 01:00:00</div>
-      </div>
+    </div>
 
+    <div class="product-card">
+      <img src="image/product1.jpg" alt="Product1" />
+      <div class="price">₱999</div>
+      <div class="discount">50% OFF</div>
+      <div class="countdown">Ends in 02:30:45</div>
+      <div class="product-card-footer">
+        <button class="btn-add"><i class="fas fa-plus"></i> Add</button>
+        <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+      </div>
+    </div>
 
+    <div class="product-card">
+      <img src="image/men10.jpg" alt="Product1" />
+      <div class="price">₱999</div>
+      <div class="discount">50% OFF</div>
+      <div class="countdown">Ends in 02:30:45</div>
+      <div class="product-card-footer">
+        <button class="btn-add"><i class="fas fa-plus"></i> Add</button>
+        <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="image/w4.jpg" alt="Product1" />
+      <div class="price">₱999</div>
+      <div class="discount">50% OFF</div>
+      <div class="countdown">Ends in 02:30:45</div>
+      <div class="product-card-footer">
+        <button class="btn-add"><i class="fas fa-plus"></i> Add</button>
+        <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+      </div>
+    </div>
+    
+    <div class="product-card">
+      <img src="image/footwear10.jpg" alt="Product1" />
+      <div class="price">₱999</div>
+      <div class="discount">50% OFF</div>
+      <div class="countdown">Ends in 02:30:45</div>
+      <div class="product-card-footer">
+        <button class="btn-add"><i class="fas fa-plus"></i> Add</button>
+        <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="image/men3.jpg" alt="Product1" />
+      <div class="price">₱999</div>
+      <div class="discount">50% OFF</div>
+      <div class="countdown">Ends in 02:30:45</div>
+      <div class="product-card-footer">
+        <button class="btn-add"><i class="fas fa-plus"></i> Add</button>
+        <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="image/product4.jpg" alt="Product1" />
+      <div class="price">₱999</div>
+      <div class="discount">50% OFF</div>
+      <div class="countdown">Ends in 02:30:45</div>
+      <div class="product-card-footer">
+        <button class="btn-add"><i class="fas fa-plus"></i> Add</button>
+        <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="image/book2.jpg" alt="Product1" />
+      <div class="price">₱999</div>
+      <div class="discount">50% OFF</div>
+      <div class="countdown">Ends in 02:30:45</div>
+      <div class="product-card-footer">
+        <button class="btn-add"><i class="fas fa-plus"></i> Add</button>
+        <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="image/book6.jpg" alt="Product1" />
+      <div class="price">₱999</div>
+      <div class="discount">50% OFF</div>
+      <div class="countdown">Ends in 02:30:45</div>
+      <div class="product-card-footer">
+        <button class="btn-add"><i class="fas fa-plus"></i> Add</button>
+        <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="image/w8.jpg" alt="Product1" />
+      <div class="price">₱999</div>
+      <div class="discount">50% OFF</div>
+      <div class="countdown">Ends in 02:30:45</div>
+      <div class="product-card-footer">
+        <button class="btn-add"><i class="fas fa-plus"></i> Add</button>
+        <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+      </div>
+    </div>
+
+      
     </div>
 </section>
 
