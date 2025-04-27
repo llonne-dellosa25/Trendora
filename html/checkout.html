@@ -28,7 +28,6 @@
     </div>
   </div>
     </nav>
-    
 
   <!-- Checkout Form -->
   <form action="checkout.php" method="POST">
@@ -71,9 +70,6 @@
           <h2>3. Payment Method</h2>
           <div class="payment-method flex-wrap">
             <label><input type="radio" name="payment_method" value="cod" required> Cash on Delivery</label>
-            <label><input type="radio" name="payment_method" value="gcash"><img src="products/gcash.jpg" alt="GCash" class="h-6 inline"></label>
-            <label><input type="radio" name="payment_method" value="maya"><img src="products/maya.jpg" alt="Maya" class="h-6 inline"></label>
-            <label><input type="radio" name="payment_method" value="paypal"><img src="products/Paypal.jpg" alt="PayPal" class="h-6 inline"></label>
           </div>
         </div>
       </section>
@@ -81,61 +77,23 @@
       <!-- Right: Order Summary -->
       <aside class="summary-section">
         <h2>Order Summary</h2>
-        <div class="product-image">
-          <img src="image/product1.jpg" alt="Product">
+      
+        <div id="checkoutProductsContainer">
+          <!-- Products will be inserted here by JavaScript -->
         </div>
-        <p>The Silent Patient (Books)</p>
-
-        <!-- Size & Color -->
-        <div class="grid grid-cols-2 gap-4 mb-4">
-          <div>
-            <label>Size</label>
-            <select name="size" required>
-              <option disabled selected>Choose</option>
-              <option value="s">Small</option>
-              <option value="m">Medium</option>
-              <option value="l">Large</option>
-              <option value="xl">XL</option>
-            </select>
-          </div>
-          <div>
-            <label>Color</label>
-            <select name="color" required>
-              <option disabled selected>Choose</option>
-              <option value="red">Red</option>
-              <option value="blue">Blue</option>
-              <option value="black">Black</option>
-            </select>
-          </div>
-        </div>
-
+      
         <div class="border-t my-2"></div>
+      
         <div class="space-y-2 text-sm">
-          <div class="flex justify-between"><span>Subtotal</span><span>209</span></div>
-          <div class="flex justify-between"><span>Discount</span><span>0</span></div>
-          <div class="flex justify-between"><span>Shipping</span><span>30</span></div>
-          <div class="flex justify-between font-bold"><span>Total</span><span>239</span></div>
-        </div>
-
-        <!-- Hidden Inputs -->
-        <div class="mt-4 space-y-2 text-sm">
-          <div>
-            <label>Atomic Habits:</label>
-            <input type="text" name="product_name" value="Sample Product" readonly>
-          </div>
-          <div>
-            <label>Product ID:</label>
-            <input type="text" name="product_id" value="12345" readonly>
-          </div>
-          <div>
-            <label>Price:</label>
-            <input type="text" name="price" value="239" readonly>
-          </div>
+          <div class="flex justify-between"><span>Subtotal</span><span id="subtotal">₱0</span></div>
+          <div class="flex justify-between"><span>Discount</span><span>₱0</span></div>
+          <div class="flex justify-between"><span>Shipping</span><span>₱30</span></div>
+          <div class="flex justify-between font-bold"><span>Total</span><span id="total">₱0</span></div>
         </div>
 
         <!-- Checkout Button -->
         <button type="submit" class="checkout-btn">Checkout</button>
-
+      
         <!-- Terms -->
         <div class="terms">
           <label><input type="checkbox" required> I accept the terms of the user agreement</label>
@@ -162,6 +120,11 @@
       </div>
     </div>
   </footer>
+
+  <script src="checkout.js"></script>
+<script>
+  renderCheckoutItems();
+</script>
 
 </body>
 </html>
