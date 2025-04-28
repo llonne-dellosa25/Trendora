@@ -4,72 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trendora Seller Center</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="inventory.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-    }
-    .header {
-      background-color: #270a47;
-      color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      margin: 0;
-    }
-    .header h1 {
-      margin: 0;
-    }
-    .header .top-nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .topbar-input {
-      padding: 5px 10px;
-      width: 300px;
-      border-radius: 5px;
-      border: none;
-    }
-    .menu {
-      background-color: #270a47;
-      color: white;
-      display: flex;
-      padding: 10px 20px;
-      gap: 50px;
-    }
-    .menu a {
-      color: white;
-      text-decoration: none;
-    }
-    .inventory-section {
-      padding: 20px;
-    }
-    .inventory-table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .inventory-table th, .inventory-table td {
-      border: 1px solid #ddd;
-      padding: 30px;
-      text-align: left;
-    }
-    .inventory-table th {
-      background-color: #8a2be2;
-      color: white;
-    }
-    .inventory-table tr:hover {
-      background-color: #f1f1f1;
-    }
-    
-  </style>
 </head>
 <body>
   <!-- Header -->
@@ -90,21 +26,21 @@
     <a href="dashboard.html">Admin</a>
     <a href="product_rating.html">Product Ratings</a>
     <a href="admin_catalog.html">Catalog</a>
-    <a href="inventory.html"class="active">Inventory</a>
+    <a href="inventory.html" class="active">Inventory</a>
     <a href="product_order.html">Orders</a>
   </div>
 
   <!-- Inventory Table Section -->
-<div class="inventory-section">
+  <div class="inventory-section">
     <h2 style="color: #8a2be2;">Inventory List</h2>
     <table class="inventory-table">
       <thead>
         <tr>
           <th>Product Name</th>
           <th>SKU</th>
-          <th>Product Description</th>
-          <th>Quantity</th>
           <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Product Description</th>
           <th>Value</th>
           <th>Reorder Level</th>
           <th>Reorder Quantity</th>
@@ -112,41 +48,14 @@
       </thead>
       <tbody>
         <tr>
-          <td>Wireless Earbuds</td>
-          <td>WE1234</td>
-          <td>High-quality sound with long battery life</td>
-          <td>120</td>
-          <td>₱1,499.00</td>
-          <td>₱179,880.00</td>
-          <td>50</td>
-          <td>100</td>
-        </tr>
-        <tr>
-          <td>Smart Watch</td>
-          <td>SW5678</td>
-          <td>Fitness tracking and notifications</td>
-          <td>45</td>
-          <td>₱2,999.00</td>
-          <td>₱134,955.00</td>
-          <td>30</td>
-          <td>50</td>
-        </tr>
-        <tr>
-          <td>Bluetooth Speaker</td>
-          <td>BS9101</td>
-          <td>Portable speaker with deep bass</td>
-          <td>0</td>
-          <td>₱1,199.00</td>
-          <td>₱0.00</td>
-          <td>20</td>
-          <td>40</td>
-        </tr>
+          <tbody id="inventory-body">
+            <!-- Products will be inserted here by JavaScript -->
+          </tbody>
       </tbody>
     </table>
   </div>  
 
-   <!-- Footer -->
-   <footer class="footer">
+  <footer class="footer">
     <div class="footer-left">
       <div>ABOUT US</div>
       <div>CONTACT US</div>
@@ -164,5 +73,35 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    fetch('inventory.php')
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.getElementById('inventory-body');
+        tbody.innerHTML = "";
+    
+        if (data.length === 0) {
+          tbody.innerHTML = "<tr><td colspan='4'>No products found.</td></tr>";
+        } else {
+          data.forEach(product => {
+            const totalValue = (product.quantity * product.price).toFixed(2);
+            const row = `
+              <tr>
+                <td>${product.name}</td>
+                <td>${product.quantity}</td>
+                <td>₱${parseFloat(product.price).toLocaleString(undefined, {minimumFractionDigits:2})}</td>
+                <td>${parseFloat(totalValue).toLocaleString(undefined, {minimumFractionDigits:2})}</td>
+              </tr>
+            `;
+            tbody.innerHTML += row;
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+      });
+    </script>
+    
 </body>
 </html>

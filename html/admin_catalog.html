@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trendora Seller Center</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="admin_catalog.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
 
@@ -113,8 +113,15 @@
 
   
   </style>
+
 </head>
 <body>
+   <!-- Show success or error message -->
+   <?php
+   if (isset($_GET['msg'])) {
+       echo "<div class='message'>" . htmlspecialchars($_GET['msg']) . "</div>";
+   }
+   ?>
   <!-- Header -->
   <div class="header">
     <div>  
@@ -141,7 +148,6 @@
    <section class="catalog-section">
     <h2 style="color: #8a2be2;">Catalog</h2>
     <div class="catalog">
-      <!-- Repeating product cards -->
       
        <div class="product-card">
       <img src="image/product7.jpg" alt="Product1" />
@@ -253,7 +259,155 @@
       </div>
     </div>
 
+      <!-- Repeating product cards -->
+      <div class="deal-item">
+        <img src="image/product7.jpg" alt="Flash Deal 1" />
+        <div class="price">₱999</div>
+        <div class="discount">50% OFF</div>
+        <div class="button-group">
+          <!-- Add Button Form -->
+          <form action="manage_inventory.php" method="POST">
+            <input type="hidden" name="action" value="add">
+            <input type="hidden" name="product_id" value="1"> <!-- Product ID -->
+            <button type="submit">Add</button>
+          </form>
+          
+          <form action="manage_inventory.php" method="POST">
+            <input type="hidden" name="action" value="delete">
+            <input type="hidden" name="product_id" value="1"> <!-- Product ID -->
+            <button type="submit">Delete</button>
+          </form>          
+        </div>
+      </div>
       
+      <div class="deal-item">
+        <img src="image/product8.jpg" alt="Flash Deal 2" />
+        <div class="price">₱799</div>
+        <div class="discount">30% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product9.jpg" alt="Flash Deal 3" />
+        <div class="price">₱499</div>
+        <div class="discount">60% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product10.jpg" alt="Flash Deal 4" />
+        <div class="price">₱1299</div>
+        <div class="discount">20% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product11.jpg" alt="Flash Deal 5" />
+        <div class="price">₱699</div>
+        <div class="discount">45% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/w10.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="deal-item">
+        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div class="price">₱599</div>
+        <div class="discount">35% OFF</div>
+        <div class="button-group">
+          <button>Add</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      </div>
+
     </div>
 </section>
 

@@ -1,0 +1,204 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #270a47;
+    color: white;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-top: 0;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .header .top-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .topbar-input {
+    padding: 5px 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  /* Menu */
+  .menu {
+    background-color: #270a47;
+    color: white;
+    display: flex;
+    padding: 10px 20px;
+    gap: 50px;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .menu a.active {
+    background-color: white;
+    color: #6a1bbf;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  /* Catalog Section */
+  .catalog-section {
+    padding: 20px;
+  }
+  
+  .catalog-title {
+    font-size: 20px;
+    color: #6a1bbf;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+  }
+  
+  /* Deal Item (Product Card) */
+  .deal-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 12px;
+  }
+  
+  .deal-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  .deal-item .price {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .deal-item .discount {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .deal-item .countdown {
+    font-size: 12px;
+    color: #777;
+  }
+
+/* Grouping buttons together */
+.button-group {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* space between buttons */
+  }
+  
+  /* Single style for all buttons */
+  .button-group button {
+    padding: 10px 20px;
+    background-color: #8a2be2; /* violet */
+    color: white;
+    border: none;
+    border-radius: 10px; /* nice rounded corners */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* soft shadow */
+  }
+  
+  /* Hover effect */
+  .button-group button:hover {
+    background-color: #072edc; /* darker violet */
+    transform: scale(1.05); /* a slight pop effect */
+  }
+  
+  /* Button styling for Add and Delete */
+  .btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    color: white;
+  }
+  
+  /* Add button */
+  .btn-add {
+    background-color: #4CAF50; /* Green */
+  }
+  
+  .btn-add:hover {
+    background-color: #45a049;
+  }
+  
+  /* Delete button */
+  .btn-delete {
+    background-color: #f44336; /* Red */
+  }
+  
+  .btn-delete:hover {
+    background-color: #e53935;
+  }
+  
+  
+  /* Footer */
+  .footer {
+    background-color: #270a47;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    font-size: 1rem;
+    color: #f0f0f0;
+    margin-top: auto;
+  }
+  
+  .footer-left, .footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .footer-center {
+    text-align: center;
+  }
+  
+  .footer-right .icons span {
+    margin-right: 5px;
+    font-size: 1rem;
+  }
+  

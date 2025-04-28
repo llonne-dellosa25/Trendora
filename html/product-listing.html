@@ -73,36 +73,36 @@
 
 
     <!-- Cart Overlay -->
-<div class="cart-overlay" id="cartOverlay">
-  <div class="cart-content">
-    <button class="close-cart" id="closeCart">&times;</button>
- <!-- Shopping Cart Simplified -->
- <div class="container my-1">
-  <h2 class="mb-4">ALL ITEMS</h2>
-  <table class="table table-bordered text-center align-middle">
-    <thead class="table-dark">
-      <tr>
-        <th>
-          <input type="checkbox" id="selectAllCheckbox" />
-        </th>
-        <th>Product</th>
-        <th>Quantity</th>
-        <th>Total Price</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-
-  <div class="text-end mt-4">
-    <h4>Total: ₱0.00</h4>
-    <a href="checkout.html" class="btn btn-success mt-2">Proceed to Checkout</a>
-  </div>
-</div>
-
-  </div>
-</div>
+    <div class="cart-overlay" id="cartOverlay">
+      <div class="cart-content">
+        <button class="close-cart" id="closeCart">&times;</button>
+    
+        <!-- Shopping Cart Simplified -->
+        <div class="container my-1">
+          <h2 class="mb-4">ALL ITEMS</h2>
+          <table class="table table-bordered text-center align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th><input type="checkbox" id="selectAllCheckbox" /></th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="cartItemsContainer">
+              <!-- JS will render cart items here -->
+            </tbody>
+          </table>
+    
+          <div class="text-end mt-4">
+            <h4>Total: ₱0.00</h4>
+            <a href="checkout.html" class="btn btn-success mt-2">Proceed to Checkout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
     <!-- Carousel-->
     <div class="carousel-container">
@@ -584,6 +584,5 @@
       document.getElementById('cartOverlay').style.display = 'none';
     });
   </script>
-  
 </body>
 </html>
