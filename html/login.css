@@ -5,9 +5,9 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #fef6f7;
-    color: #2b2b2b;
+    font-family: 'Playfair Display', serif;
+    background-color: #270a47;
+    color: #040404;
 }
 
 .container {
@@ -25,7 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #f8dfff;
+    background-color: #fdfdfd;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
     margin-left: 40px;
@@ -35,7 +35,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     margin-bottom: 30px;
-    color: #333;
+    color: hsl(0, 40%, 96%);
 }
 
 .right-panel h2 {
@@ -96,7 +96,7 @@ input[type="password"] {
 }
 
 .btn-login {
-    background-color: #d89aa2;
+    background-color: #270a47;
     border: none;
     color: white;
     width: 100%;
@@ -157,7 +157,7 @@ input[type="password"] {
 
 .signup a {
     text-decoration: none;
-    color: #000;
+    color: #040404;
     font-weight: bold;
 }
 

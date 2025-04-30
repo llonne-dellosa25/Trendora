@@ -6,7 +6,7 @@
   
   body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #fef6f7;
+    background-color: #270a47;
   }
   
   .page-header {
@@ -16,7 +16,7 @@
   .brand-name {
     font-family: 'Playfair Display', serif;
     font-size: 30px;
-    color: #2b2b2b;
+    color: #f9f9f9;
     margin-bottom: 10px;
   }
   
@@ -43,7 +43,7 @@
   .right-section {
     flex: 1;
     max-width: 400px;
-    background-color: #f8dfff;
+    background-color: #f9f9f9;
     padding: 30px;
     border-radius: 10px;
     display: flex;
@@ -98,7 +98,7 @@
   }
   
   .submit-btn {
-    background-color: #d89aa2;
+    background-color: #270a47;
     border: none;
     color: white;
     padding: 10px;
