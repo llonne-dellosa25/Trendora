@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trendora Admin Dashboard</title>
-  <link rel="stylesheet" href="dashboard.css"/>
+  <title>Trendora Seller Center</title>
+  <link rel="stylesheet" href="user_list.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
   <!-- Header -->
   <div class="header">
     <div>
-      <h1>TRENDORA <br><span style="font-size:20px;">ADMIN DASHBOARD</span></h1>
+      <h1>TRENDORA <br><span style="font-size:20px;">CENTER</span></h1>
     </div>
     <div class="top-nav">
       <span>Notifications</span>
@@ -22,27 +23,28 @@
 
   <!-- Menu -->
   <div class="menu">
-    <a href="dashboard.html" class="active">Admin</a>
-    <a href="user_list.html">Users</a>
+    <a href="dashboard.html">Admin</a>
+    <a href="user_list.html" class="active">Users</a>
     <a href="admin_catalog.html">Catalog</a>
     <a href="inventory.html">Inventory</a>
     <a href="product_order.html">Orders</a>
   </div>
 
-  <!-- Dashboard Content -->
+  <!-- User Management Section -->
   <div class="container">
-    <div class="dashboard-top">
-      <div>
-        <strong>Getting Started</strong><br>
-        List a product to sell in these categories
-      </div>
-      <button>Add Product</button>
-    </div>
-    <div class="dashboard-cards">
-      <div class="card">Total Orders</div>
-      <div class="card">Total Items</div>
-      <div class="card">Total Sales/Account Balance</div>
-    </div>
+    <h2>Users</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody">
+        <!-- Data will be inserted here by JavaScript -->
+      </tbody>
+    </table>
   </div>
 
   <!-- Footer -->
@@ -63,5 +65,25 @@
       </div>      
     </div>
   </footer>
+
+  <script>
+    // Fetch users from PHP backend
+    fetch('get_user.php')
+      .then(response => response.json())
+      .then(users => {
+        const tableBody = document.getElementById('userTableBody');
+        users.forEach(user => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${user.fullname}</td>
+            <td>${user.id}</td>
+            <td>${user.email}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      })
+      .catch(error => console.error('Error loading users:', error));
+  </script>
+
 </body>
 </html>

@@ -6,7 +6,114 @@
   <title>Trendora Seller Center</title>
   <link rel="stylesheet" href="admin_catalog.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .header {
+      background-color: #270a47;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+    }
+    .header h1 {
+      margin: 0;
+    }
+    .header .top-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .topbar-input {
+      padding: 5px 10px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+    .menu {
+      background-color: #270a47;
+      color: white;
+      display: flex;
+      padding: 10px 20px;
+      gap: 50px;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+    }
+    .catalog-section {
+      padding: 20px;
+    }
+    .catalog-title {
+      font-size: 20px;
+      color: #6a1bbf;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
+    }
+
+    .product-card {
+    background-color: #f5eaf8;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 30px;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .product-card-footer {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8%;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .product-card-footer button {
+    background-color: white;
+    color: #050505;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .product-card-footer button:hover {
+    background-color: #9d74be;
+  }
+
+  .btn-add i, .btn-delete i {
+    font-size: 14px;
+  }
+
   
+  </style>
+
 </head>
 <body>
    <!-- Show success or error message -->
@@ -31,7 +138,7 @@
   <!-- Menu -->
   <div class="menu">
     <a href="dashboard.html">Admin</a>
-    <a href="product_rating.html">Product Ratings</a>
+    <a href="user_list.html">Users</a>
     <a href="admin_catalog.html"class="active">Catalog</a>
     <a href="inventory.html">Inventory</a>
     <a href="product_order.html">Orders</a>
@@ -42,12 +149,15 @@
     <h2 style="color: #8a2be2;">Catalog</h2>
     <div class="catalog">
       
+       
       <!-- Repeating product cards -->
       <div class="deal-item">
         <img src="image/product7.jpg" alt="Flash Deal 1" />
+        <div> Jacket  </div>
         <div class="price">₱999</div>
         <div class="discount">50% OFF</div>
         <div class="button-group">
+          
           <!-- Add Button Form -->
           <form action="manage_inventory.php" method="POST">
             <input type="hidden" name="action" value="add">
@@ -65,7 +175,8 @@
       
       <div class="deal-item">
         <img src="image/product8.jpg" alt="Flash Deal 2" />
-        <div class="price">₱799</div>
+        <div> Khaki Shorts  </div>
+        <div class="price">₱245</div>
         <div class="discount">30% OFF</div>
         <div class="button-group">
           <button>Add</button>
@@ -74,6 +185,7 @@
       </div>
       <div class="deal-item">
         <img src="image/product9.jpg" alt="Flash Deal 3" />
+        <div> Jacket  </div>
         <div class="price">₱499</div>
         <div class="discount">60% OFF</div>
         <div class="button-group">
@@ -83,6 +195,7 @@
       </div>
       <div class="deal-item">
         <img src="image/product10.jpg" alt="Flash Deal 4" />
+        <div> Book Series  </div>
         <div class="price">₱1299</div>
         <div class="discount">20% OFF</div>
         <div class="button-group">
@@ -92,6 +205,7 @@
       </div>
       <div class="deal-item">
         <img src="image/product11.jpg" alt="Flash Deal 5" />
+        <div> Gold Bracelet  </div>
         <div class="price">₱699</div>
         <div class="discount">45% OFF</div>
         <div class="button-group">
@@ -101,6 +215,7 @@
       </div>
       <div class="deal-item">
         <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <div> Apple Laptop  </div>
         <div class="price">₱599</div>
         <div class="discount">35% OFF</div>
         <div class="button-group">
@@ -110,6 +225,7 @@
       </div>
       <div class="deal-item">
         <img src="image/w10.jpg" alt="Flash Deal 6" />
+        <div> Khaki Shorts  </div>
         <div class="price">₱599</div>
         <div class="discount">35% OFF</div>
         <div class="button-group">
@@ -118,7 +234,8 @@
         </div>
       </div>
       <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <img src="image/footwear10.jpg" alt="Flash Deal 6" />
+        <div> Black Stiletto  </div>
         <div class="price">₱599</div>
         <div class="discount">35% OFF</div>
         <div class="button-group">
@@ -127,7 +244,8 @@
         </div>
       </div>
       <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <img src="image/men5.jpg" alt="Flash Deal 6" />
+        <div> Blue Polo Shirt  </div>
         <div class="price">₱599</div>
         <div class="discount">35% OFF</div>
         <div class="button-group">
@@ -136,7 +254,8 @@
         </div>
       </div>
       <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <img src="image/w4.jpg" alt="Flash Deal 6" />
+        <div> Long Skirt - Khaki  </div>
         <div class="price">₱599</div>
         <div class="discount">35% OFF</div>
         <div class="button-group">
@@ -145,7 +264,8 @@
         </div>
       </div>
       <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <img src="image/footwear4.jpg" alt="Flash Deal 6" />
+        <div> Khaki Shoes  </div>
         <div class="price">₱599</div>
         <div class="discount">35% OFF</div>
         <div class="button-group">
@@ -154,7 +274,8 @@
         </div>
       </div>
       <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <img src="image/w8.jpg" alt="Flash Deal 6" />
+        <div> Long Sleeves  </div>
         <div class="price">₱599</div>
         <div class="discount">35% OFF</div>
         <div class="button-group">
@@ -163,7 +284,8 @@
         </div>
       </div>
       <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <img src="image/men7.jpg" alt="Flash Deal 6" />
+        <div> Brown Jacket  </div>
         <div class="price">₱599</div>
         <div class="discount">35% OFF</div>
         <div class="button-group">
@@ -172,7 +294,8 @@
         </div>
       </div>
       <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
+        <img src="image/book5.jpg" alt="Flash Deal 6" />
+        <div>Are You Listening  </div>
         <div class="price">₱599</div>
         <div class="discount">35% OFF</div>
         <div class="button-group">
@@ -181,8 +304,9 @@
         </div>
       </div>
       <div class="deal-item">
-        <img src="image/product12.jpg" alt="Flash Deal 6" />
-        <div class="price">₱599</div>
+        <img src="image/book8.jpg" alt="Flash Deal 6" />
+        <div> The Voice in My Head  </div>
+        <div class="price">₱205</div>
         <div class="discount">35% OFF</div>
         <div class="button-group">
           <button>Add</button>
@@ -190,6 +314,7 @@
         </div>
       </div>
       </div>
+
     </div>
 </section>
 
