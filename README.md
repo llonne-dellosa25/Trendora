@@ -5,7 +5,7 @@
 
 ## Languages
 Frontend: HTML, CSS, JavaScript
-Backend:  Node.js
+Backend:  Node.js 
 Database:  SQL
 Other: Git, GitHub, Figma
 
