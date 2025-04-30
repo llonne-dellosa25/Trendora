@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Product Listing</title>
+  <title>Gadgets</title>
 
   <!--Bootstrap 5 Only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -207,57 +207,6 @@
 
   </div>
   </nav>
-
-   <!-- Filter Sidebar -->
-   <div id="filterSidebar" class="filter-sidebar">
-    <h4 class="mb-3">FILTER BY</h4>
-
-    <!-- Category Filter -->
-    <div class="filter-section mb-3">
-      <p class="fw-bold mb-2">Category</p>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="cat-women"><label class="form-check-label" for="cat-women">Category1</label></div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="cat-men"><label class="form-check-label" for="cat-men">Category2</label></div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="cat-kids"><label class="form-check-label" for="cat-kids">Category3</label></div>
-    </div>
-
-    <!-- Rating Filter -->
-    <div class="filter-section mb-3">
-      <p class="fw-bold mb-2">Rating</p>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="rate-5"><label class="form-check-label" for="rate-5">★★★★★</label></div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="rate-4"><label class="form-check-label" for="rate-4">★★★★☆</label></div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="rate-3"><label class="form-check-label" for="rate-3">★★★☆☆</label></div>
-    </div>
-
-    <!-- Size Filter -->
-    <div class="filter-section mb-3">
-      <p class="fw-bold mb-2">Size</p>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="size-m"><label class="form-check-label" for="size-m">XS</label></div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="size-s"><label class="form-check-label" for="size-s">S</label></div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="size-m"><label class="form-check-label" for="size-m">M</label></div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="size-l"><label class="form-check-label" for="size-l">L</label></div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="size-xl"><label class="form-check-label" for="size-xl">XL</label></div>
-    </div>
-
-    <!-- Color Filter -->
-    <div class="filter-section mb-3">
-      <p class="fw-bold mb-2">Color</p>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="color-black"><label class="form-check-label" for="color-black">Black</label></div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="color-white"><label class="form-check-label" for="color-white">White</label></div>
-      <div class="form-check"><input class="form-check-input" type="checkbox" id="color-blue"><label class="form-check-label" for="color-blue">Blue</label></div>
-    </div>
-
-    <!-- Price Range Filter -->
-    <div class="filter-section mb-4">
-      <p class="fw-bold mb-2">Price Range</p>
-      <input type="range" class="form-range" min="0" max="5000" step="100" id="priceRange">
-      <div class="d-flex justify-content-between">
-        <small>₱0</small><small>₱5000+</small>
-      </div>
-    </div>
-
-    <button class="btn btn-dark w-100">Apply Filters</button>
-  </div>
-
   <!--Books Categoy-->
 <section class="books-products my-5">
     <div class="container">
@@ -273,9 +222,13 @@
               <p class="text-danger fw-bold mb-1">₱69,990</p>
               <small class="text-muted">201 sold</small>
             </div>
-            <div class="card-footer bg-white border-0">
-                <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
-            </div>
+          <button class="btn btn-sm btn-dark add-to-cart position-absolute bottom-0 start-50 translate-middle-x mb-2"
+            data-id="1"
+            data-name="Iphone 15 Pro & Promax"
+            data-price="69,990"
+            data-image="image/g1.jpg">
+            Add to Cart
+          </button>
           </div>
         </div>
   
@@ -288,9 +241,13 @@
               <p class="text-danger fw-bold mb-1">₱20,000 </p>
               <small class="text-muted">213 sold</small>
             </div>
-            <div class="card-footer bg-white border-0">
-                <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
-            </div>
+          <button class="btn btn-sm btn-dark add-to-cart position-absolute bottom-0 start-50 translate-middle-x mb-2"
+            data-id="2"
+            data-name="H9 Smart Watch Men's and Women"
+            data-price="20,000"
+            data-image="image/g2.jpg">
+            Add to Cart
+          </button>
           </div>
         </div>
   
@@ -303,9 +260,13 @@
               <p class="text-danger fw-bold mb-1">₱10,908</p>
               <small class="text-muted">80 sold</small>
             </div>
-            <div class="card-footer bg-white border-0">
-                <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
-            </div>
+          <button class="btn btn-sm btn-dark add-to-cart position-absolute bottom-0 start-50 translate-middle-x mb-2"
+            data-id="3"
+            data-name="White Boots"
+            data-price="10,908"
+            data-image="image/g3.jpg">
+            Add to Cart
+          </button>
           </div>
         </div>
   
@@ -318,9 +279,13 @@
               <p class="text-danger fw-bold mb-1">₱76,990</p>
               <small class="text-muted">112</small>
             </div>
-            <div class="card-footer bg-white border-0">
-                <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
-            </div>
+           <button class="btn btn-sm btn-dark add-to-cart position-absolute bottom-0 start-50 translate-middle-x mb-2"
+            data-id="4"
+            data-name="Apple MacBook Air Pro"
+            data-price="76,990"
+            data-image="image/product12.jpg">
+            Add to Cart
+          </button>
           </div>
         </div>
 
@@ -333,9 +298,13 @@
                 <p class="text-danger fw-bold mb-1">₱6,787.44</p>
                 <small class="text-muted">101 sold</small>
               </div>
-              <div class="card-footer bg-white border-0">
-                  <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
-              </div>
+           <button class="btn btn-sm btn-dark add-to-cart position-absolute bottom-0 start-50 translate-middle-x mb-2"
+              data-id="5"
+              data-name="Autofocus 16x Digital Camera"
+              data-price="6,787.44"
+              data-image="image/g5.jpg">
+              Add to Cart
+            </button>
             </div>
           </div>
 
@@ -348,9 +317,13 @@
                 <p class="text-danger fw-bold mb-1">₱32,990</p>
                 <small class="text-muted">61 sold</small>
               </div>
-              <div class="card-footer bg-white border-0">
-                  <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
-              </div>
+           <button class="btn btn-sm btn-dark add-to-cart position-absolute bottom-0 start-50 translate-middle-x mb-2"
+              data-id="6"
+              data-name="Apple Airpod Max"
+              data-price="32,990"
+              data-image="image/g6.jpg">
+              Add to Cart
+            </button>
             </div>
           </div>
 
@@ -363,9 +336,13 @@
                 <p class="text-danger fw-bold mb-1">₱7,620</p>
                 <small class="text-muted">45 sold</small>
               </div>
-              <div class="card-footer bg-white border-0">
-                  <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
-              </div>
+          <button class="btn btn-sm btn-dark add-to-cart position-absolute bottom-0 start-50 translate-middle-x mb-2"
+              data-id="7"
+              data-name="Amazon Kindle Paperwhite"
+              data-price="7,620"
+              data-image="image/g7.jpg">
+              Add to Cart
+            </button>
             </div>
           </div>
 
@@ -378,9 +355,13 @@
                 <p class="text-danger fw-bold mb-1">₱29,995</p>
                 <small class="text-muted">78 sold</small>
               </div>
-              <div class="card-footer bg-white border-0">
-                  <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
-              </div>
+            <button class="btn btn-sm btn-dark add-to-cart position-absolute bottom-0 start-50 translate-middle-x mb-2"
+              data-id="8"
+              data-name="MSI Claw AIM Handheld Gaming Console"
+              data-price="29,995"
+              data-image="image/g8.jpg">
+              Add to Cart
+            </button>
             </div>
           </div>
 
@@ -393,9 +374,13 @@
                 <p class="text-danger fw-bold mb-1">₱25,000</p>
                 <small class="text-muted">211 sold</small>
               </div>
-              <div class="card-footer bg-white border-0">
-                  <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
-              </div>
+            <button class="btn btn-sm btn-dark add-to-cart position-absolute bottom-0 start-50 translate-middle-x mb-2"
+              data-id="9"
+              data-name="DJI Mini3 Pro Drone"
+              data-price="25,000"
+              data-image="image/g9.jpg">
+              Add to Cart
+          </button>
             </div>
           </div>
 
@@ -408,9 +393,13 @@
                 <p class="text-danger fw-bold mb-1">₱22,000</p>
                 <small class="text-muted">30 sold</small>
               </div>
-              <div class="card-footer bg-white border-0">
-                  <a href="product-page.html" class="btn btn-sm btn-dark">Add to Cart</a>
-              </div>
+            <button class="btn btn-sm btn-dark add-to-cart position-absolute bottom-0 start-50 translate-middle-x mb-2"
+              data-id="10"
+              data-name="Smart Speaker with 3D Audio & Alexa"
+              data-price="22,000"
+              data-image="image/g10.jpg">
+              Add to Cart
+            </button>
             </div>
           </div>
   
@@ -545,5 +534,112 @@
   <!-- JS Dependencies -->
   <script src="../script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+  
+        const productData = {
+          id: this.dataset.id,
+          name: this.dataset.name,
+          price: this.dataset.price,
+          image: this.dataset.image
+        };
+  
+        fetch('add_to_cart.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: new URLSearchParams(productData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          document.querySelector('#cartIcon .cart-count').textContent = data.count;
+          alert(`${productData.name} added to cart!`);
+        });
+      });
+    });
+  </script>
+
+<script>
+  // Cart state (simulate cart storage)
+  let cartItems = [];
+
+  // Update the cart count and overlay display
+  function updateCart() {
+    const cartCount = document.querySelector('.cart-count');
+    cartCount.textContent = cartItems.length;
+
+    const tbody = document.querySelector('.cart-overlay tbody');
+    tbody.innerHTML = ''; // Clear existing rows
+
+    let total = 0;
+
+    cartItems.forEach((item, index) => {
+      total += item.price * item.quantity;
+
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td><input type="checkbox" class="itemCheckbox" /></td>
+        <td class="text-start">
+          <img src="${item.image}" alt="${item.name}" style="width: 50px; vertical-align: middle;">
+          <span class="ms-2">${item.name}</span>
+        </td>
+        <td>
+          <input type="number" class="form-control text-center" value="${item.quantity}" min="1" style="width: 80px; margin: auto;" onchange="updateQuantity(${index}, this.value)">
+        </td>
+        <td>₱${(item.price * item.quantity).toFixed(2)}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" onclick="removeItem(${index})">Delete</button>
+        </td>
+      `;
+      tbody.appendChild(row);
+    });
+
+    document.querySelector('.cart-overlay h4').textContent = `Total: ₱${total.toFixed(2)}`;
+  }
+
+  // Add to cart button functionality
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const id = button.getAttribute('data-id');
+      const name = button.getAttribute('data-name');
+      const price = parseFloat(button.getAttribute('data-price'));
+      const image = button.getAttribute('data-image');
+
+      const existing = cartItems.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cartItems.push({ id, name, price, image, quantity: 1 });
+      }
+
+      updateCart();
+    });
+  });
+
+  // Remove item
+  function removeItem(index) {
+    cartItems.splice(index, 1);
+    updateCart();
+  }
+
+  // Update quantity
+  function updateQuantity(index, newQty) {
+    cartItems[index].quantity = parseInt(newQty);
+    updateCart();
+  }
+
+  // Open/Close cart overlay
+  document.getElementById('cartIcon').addEventListener('click', () => {
+    document.getElementById('cartOverlay').style.display = 'block';
+  });
+
+  document.getElementById('closeCart').addEventListener('click', () => {
+    document.getElementById('cartOverlay').style.display = 'none';
+  });
+</script>
 </body>
 </html>
