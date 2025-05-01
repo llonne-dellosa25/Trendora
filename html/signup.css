@@ -5,8 +5,9 @@
   }
   
   body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #270a47;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #6a5acd, #6a85b1);
+    color: #040404;
   }
   
   .page-header {
