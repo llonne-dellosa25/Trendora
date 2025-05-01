@@ -29,21 +29,37 @@
     <a href="product_order.html">Orders</a>
   </div>
 
-  <!-- Dashboard Content -->
-  <div class="container">
-    <div class="dashboard-top">
-      <div>
-        <strong>Getting Started</strong><br>
-        List a product to sell in these categories
-      </div>
-      <button>Add Product</button>
-    </div>
-    <div class="dashboard-cards">
-      <div class="card">Total Orders</div>
-      <div class="card">Total Items</div>
-      <div class="card">Total Sales/Account Balance</div>
-    </div>
-  </div>
+ <!-- Dashboard Content -->
+<div class="container">
+  <table class="dashboard-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Address</th>
+        <th>Zip Code</th>
+        <th>Delivery Method</th>
+        <th>Delivery Date Start</th>
+        <th>Delivery Date End</th>
+        <th>Payment Method</th>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Total Price</th>
+        <th>Order Date</th>
+        <th>Zip</th>
+      </tr>
+    </thead>
+    <tbody id="dashboard-body">
+      <!-- Products will be inserted here -->
+    </tbody>
+  </table>
+</div>
+
 
   <!-- Footer -->
   <footer class="footer">
@@ -63,5 +79,40 @@
       </div>      
     </div>
   </footer>
+
+  <script>
+    fetch('dashboard_data.php') 
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.getElementById('dashboard-body');
+        data.forEach(order => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${order.id}</td>
+            <td>${order.first_name}</td>
+            <td>${order.last_name}</td>
+            <td>${order.phone}</td>
+            <td>${order.email}</td>
+            <td>${order.city}</td>
+            <td>${order.address}</td>
+            <td>${order.zip_code}</td>
+            <td>${order.delivery_method}</td>
+            <td>${order.delivery_date_start}</td>
+            <td>${order.delivery_date_end}</td>
+            <td>${order.payment_method}</td>
+            <td>${order.product_id}</td>
+            <td>${order.product_name}</td>
+            <td>${order.product_price}</td>
+            <td>${order.total_price}</td>
+            <td>${order.order_date}</td>
+            <td>${order.zip}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      })
+      .catch(error => console.error('Error loading orders:', error));
+    </script>
+    
+    
 </body>
 </html>

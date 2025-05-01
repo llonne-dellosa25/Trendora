@@ -54,6 +54,7 @@ html, body {
     padding: 30px;
     border-radius: 10px;
     min-height: 500px;
+    overflow-x: auto;
   }
   
   .dashboard-top {
@@ -93,6 +94,30 @@ html, body {
     text-align: center;
   }
   
+  .dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .dashboard-table th, .dashboard-table td {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  .dashboard-table th {
+    background-color: #8a2be2;
+    color: white;
+  }
+  
+  .dashboard-table tr:hover {
+    background-color: #f1f1f1;
+  }
+
+
   .footer {
     background-color: #270a47;
     color: white;
