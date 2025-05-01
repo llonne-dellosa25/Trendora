@@ -5,7 +5,7 @@
 
 ## Languages
 Frontend: HTML, CSS, JavaScript
-Backend:  Node.js 
+Backend:  Php
 Database:  SQL
 Other: Git, GitHub, Figma
 
@@ -36,5 +36,10 @@ BSIT 2B
 | Phase 4 (Week 14) | 🟡 70%  |
 | Phase 5 (Week 15) | ⚪ 0%   |
 | Phase 6 (Week 16) | ⚪ 0%   |
+
+## Project Notes
+
+*Note:*  
+Due to time constraints, we were unable to strictly follow the original project proposal. As a result, some changes were made to the project's scope, design, and/or implementation to better align with the available time and resources.
 
 This will continue to be updated until everything reaches 100%.
