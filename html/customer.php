@@ -38,6 +38,7 @@ $orderResult = $stmt2->get_result();
 $orderHistory = [];
 
 while ($row = $orderResult->fetch_assoc()) {
+    $row['total_price'] = floatval($row['total_price']);
     $orderHistory[] = $row;
 }
 

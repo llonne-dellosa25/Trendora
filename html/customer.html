@@ -15,7 +15,7 @@
 <div class="container">
     <div class="profile-picture">
         <h2>Profile Picture</h2>
-        <img src="profile.jpg" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%;">
+        <img src="image/song-kang.jpg" alt="Profile Picture" style="width: 200px; height: 200px; border-radius: 50%;">
         <button>Change Picture</button>
     </div>
 
@@ -75,10 +75,15 @@ fetch('http://localhost/trendora/html/customer.php')
         const orderHistoryTable = document.getElementById('order-history');
         data.order_history.forEach(order => {
             const row = document.createElement('tr');
+            
+            // Convert total_price to a float safely
+            const total = parseFloat(order.total_price);
+            const formattedTotal = isNaN(total) ? 'N/A' : `$${total.toFixed(2)}`;
+
             row.innerHTML = `
                 <td>#${order.id}</td>
                 <td>${order.date}</td>
-                <td>$${order.total_price.toFixed(2)}</td>
+                <td>${formattedTotal}</td>
             `;
             orderHistoryTable.appendChild(row);
         });
