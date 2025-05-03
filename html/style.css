@@ -409,11 +409,11 @@ header {
 }
 
 
-/*FOR SHOPPING CART*/
+/* FOR SHOPPING CART */
 .cart-overlay {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: -100%;  /* Offscreen initially */
   width: 800px;
   height: 100vh;
   background: #fcfefe;
@@ -424,7 +424,8 @@ header {
 }
 
 .cart-overlay.active {
-  right: 0;
+  right: 0;  /* On-screen when active */
+  display: block;
 }
 
 .cart-content {
@@ -440,16 +441,17 @@ header {
   font-size: 24px;
   cursor: pointer;
 }
+
 .cart-count {
-position: absolute;
-top: -10px;
-right: -15px;
-color: rgb(136, 236, 236);
-font-size: 14px;
-font-weight: bold;
-background: transparent !important;
-border: none;
-padding: 0;
-margin: 0;
-border-radius: 0;
+  position: absolute;
+  top: -10px;
+  right: -15px;
+  color: rgb(136, 236, 236);
+  font-size: 14px;
+  font-weight: bold;
+  background: transparent !important;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
 }

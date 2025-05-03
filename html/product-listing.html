@@ -323,216 +323,194 @@
     </div>
   </footer>
 
-  <!-- JS -->
   <script>
-    const phrases = [
-      "Jeans For Teens",
-      "Stylish Tops",
-      "Trendy Accessories",
-      "Affordable Fashion",
-      "Best Deals Today"
-    ];
-    let index = 0;
-    const input = document.getElementById("searchInput");
-    setInterval(() => {
-      if (input) {
-        index = (index + 1) % phrases.length;
-        input.placeholder = phrases[index];
+    document.addEventListener("DOMContentLoaded", function () {
+      // Placeholder switching
+      const phrases = [
+        "Jeans For Teens",
+        "Stylish Tops",
+        "Trendy Accessories",
+        "Affordable Fashion",
+        "Best Deals Today"
+      ];
+      let index = 0;
+      const input = document.getElementById("searchInput");
+      setInterval(() => {
+        if (input) {
+          index = (index + 1) % phrases.length;
+          input.placeholder = phrases[index];
+        }
+      }, 2000);
+    
+      // Cart Overlay Elements
+      const cartIcon = document.getElementById("cartIcon");
+      const cartOverlay = document.getElementById("cartOverlay");
+      const closeCart = document.getElementById("closeCart");
+    
+      // Open cart and load items
+      if (cartIcon && cartOverlay && closeCart) {
+        cartIcon.addEventListener("click", () => {
+          cartOverlay.classList.add("active"); // Add 'active' class to show overlay
+          loadCartOverlay(); // Load items dynamically into the cart
+        });
+    
+        closeCart.addEventListener("click", () => {
+          cartOverlay.classList.remove("active");  // Remove 'active' class to hide overlay
+        });
       }
-    }, 2000);
-  </script>
-
-
-<!-- JS -->
-<script>
-  const cartIcon = document.getElementById("cartIcon");
-  const cartOverlay = document.getElementById("cartOverlay");
-  const closeCart = document.getElementById("closeCart");
-
-  cartIcon.addEventListener("click", () => {
-    cartOverlay.classList.add("active");
-  });
-
-  closeCart.addEventListener("click", () => {
-    cartOverlay.classList.remove("active");
-  });
-</script>
-
-<script>
-   // Filter sidebar logic
-   const filterBtn = document.getElementById("filterBtn");
-  const sidebar = document.getElementById("filterSidebar");
-
-  if (filterBtn && sidebar) {
-    filterBtn.addEventListener("click", () => {
-      sidebar.classList.toggle("active");
-    });
-
-    document.addEventListener("click", function (e) {
-      if (!sidebar.contains(e.target) && !filterBtn.contains(e.target)) {
-        sidebar.classList.remove("active");
+    
+      // Countdown Timer
+      function updateCountdowns() {
+        const countdowns = document.querySelectorAll('.countdown');
+        countdowns.forEach(el => {
+          const endTime = new Date(el.getAttribute('data-end'));
+          const now = new Date();
+          const diff = endTime - now;
+    
+          if (diff <= 0) {
+            el.textContent = "Expired";
+            return;
+          }
+    
+          const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+          const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+          const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+    
+          el.textContent = `Ends in ${hours}:${minutes}:${seconds}`;
+        });
       }
-    });
-  }
-</script>
-
-
-<!--CHECBOXES-->
-<script>
-  // Handle Select All / Deselect All
-  const selectAllCheckbox = document.getElementById('selectAllCheckbox');
-  const itemCheckboxes = document.querySelectorAll('.itemCheckbox');
-
-  selectAllCheckbox.addEventListener('change', () => {
-    itemCheckboxes.forEach(checkbox => {
-      checkbox.checked = selectAllCheckbox.checked;
-    });
-  });
-
-  // Keep Select All checkbox in sync if individual boxes are toggled
-  itemCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-      const allChecked = [...itemCheckboxes].every(cb => cb.checked);
-      selectAllCheckbox.checked = allChecked;
-    });
-  });
-</script>
-
-<!-- Real-time Countdown Script -->
-<script>
-  function updateCountdowns() {
-    const countdowns = document.querySelectorAll('.countdown');
-    countdowns.forEach(el => {
-      const endTime = new Date(el.getAttribute('data-end'));
-      const now = new Date();
-      const diff = endTime - now;
-
-      if (diff <= 0) {
-        el.textContent = "Expired";
-        return;
-      }
-
-      const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
-      const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-      const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
-
-      el.textContent = `Ends in ${hours}:${minutes}:${seconds}`;
-    });
-  }
-
-  // Start countdown timer updates every second
-  setInterval(updateCountdowns, 1000);
-  updateCountdowns(); // initial run
-</script>
-  <!-- JS Dependencies -->
-  <script src="../script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-      button.addEventListener('click', function (e) {
-        e.preventDefault();
-  
-        const productData = {
-          id: this.dataset.id,
-          name: this.dataset.name,
-          price: this.dataset.price,
-          image: this.dataset.image
-        };
-  
-        fetch('add_to_cart.php', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          body: new URLSearchParams(productData)
-        })
-        .then(response => response.json())
-        .then(data => {
-          document.querySelector('#cartIcon .cart-count').textContent = data.count;
-          alert(`${productData.name} added to cart!`);
+      setInterval(updateCountdowns, 1000);
+      updateCountdowns();
+    
+      // Add to Cart Button Handling
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+           const id = button.dataset.id;
+           const name = button.dataset.name;
+           const price = button.dataset.price;
+           const image = button.dataset.image;
+          
+          const productData = { id, name, price, image };
+          
+          console.log("Adding to cart:", productData);  // 🔍 Check the actual data
+          fetch('add_to_cart.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(productData)
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              const cartCountElement = document.querySelector('#cartIcon .cart-count');
+                if (cartCountElement) {
+                  cartCountElement.textContent = data.count;
+                }
+              alert(`${productData.name} added to cart!`);
+            } else {
+              alert('Failed to add to cart: ' + (data.error || 'Unknown error'));
+            }
+          })
+          .catch(error => console.error('Add to cart error:', error));
         });
       });
+    
+function loadCartOverlay() {
+  const cartItemsContainer = document.getElementById("cartItemsContainer");
+  cartItemsContainer.innerHTML = '';
+
+  fetch('get_cart.php')
+    .then(res => res.json())
+    .then(data => {
+      const tbody = document.getElementById('cartItemsContainer');
+      const totalDisplay = document.querySelector('.text-end h4');
+      tbody.innerHTML = '';
+      let grandTotal = 0;
+
+      if (data.success && data.items.length > 0) {
+        data.items.forEach((item, index) => {
+          const total = item.product_price * item.quantity;
+          grandTotal += total;
+
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td><input type="checkbox" class="itemCheckbox" data-index="${index}" /></td>
+            <td>
+              <img src="${item.product_image}" alt="${item.product_name}" style="width: 50px;"><br>
+              ${item.product_name}
+            </td>
+            <td>${item.quantity}</td>
+            <td>₱${(total).toFixed(2)}</td>
+            <td><button class="btn btn-danger btn-sm remove-btn" data-id="${item.product_id}">Remove</button></td>
+          `;
+          tbody.appendChild(row);
+        });
+
+        totalDisplay.textContent = `Total: ₱${grandTotal.toFixed(2)}`;
+
+        // Attach remove event after rendering all rows
+        document.querySelectorAll('.remove-btn').forEach(button => {
+          button.addEventListener('click', () => {
+            const productId = button.getAttribute('data-id');
+            removeItem(productId);
+          });
+        });
+
+      } else {
+        tbody.innerHTML = '<tr><td colspan="5">Your cart is empty.</td></tr>';
+        totalDisplay.textContent = 'Total: ₱0.00';
+      }
+
+      setupCheckboxLogic();
+    })
+    .catch(err => {
+      console.error('Failed to load cart items:', err);
     });
-  </script>
-  
-  <script>
-    // Cart state (simulate cart storage)
-    let cartItems = [];
-  
-    // Update the cart count and overlay display
-    function updateCart() {
-      const cartCount = document.querySelector('.cart-count');
-      cartCount.textContent = cartItems.length;
-  
-      const tbody = document.querySelector('.cart-overlay tbody');
-      tbody.innerHTML = ''; // Clear existing rows
-  
-      let total = 0;
-  
-      cartItems.forEach((item, index) => {
-        total += item.price * item.quantity;
-  
-        const row = document.createElement('tr');
-        row.innerHTML = `
-          <td><input type="checkbox" class="itemCheckbox" /></td>
-          <td class="text-start">
-            <img src="${item.image}" alt="${item.name}" style="width: 50px; vertical-align: middle;">
-            <span class="ms-2">${item.name}</span>
-          </td>
-          <td>
-            <input type="number" class="form-control text-center" value="${item.quantity}" min="1" style="width: 80px; margin: auto;" onchange="updateQuantity(${index}, this.value)">
-          </td>
-          <td>₱${(item.price * item.quantity).toFixed(2)}</td>
-          <td>
-            <button class="btn btn-danger btn-sm" onclick="removeItem(${index})">Delete</button>
-          </td>
-        `;
-        tbody.appendChild(row);
-      });
-  
-      document.querySelector('.cart-overlay h4').textContent = `Total: ₱${total.toFixed(2)}`;
+}
+
+
+function removeItem(productId) {
+  fetch('remove_from_cart.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `product_id=${encodeURIComponent(productId)}`
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      loadCartOverlay(); // Reload cart UI after removal
+    } else {
+      alert('Failed to remove item: ' + (data.error || 'Unknown error'));
     }
-  
-    // Add to cart button functionality
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-      button.addEventListener('click', () => {
-        const id = button.getAttribute('data-id');
-        const name = button.getAttribute('data-name');
-        const price = parseFloat(button.getAttribute('data-price'));
-        const image = button.getAttribute('data-image');
-  
-        const existing = cartItems.find(item => item.id === id);
-        if (existing) {
-          existing.quantity += 1;
-        } else {
-          cartItems.push({ id, name, price, image, quantity: 1 });
+  })
+  .catch(err => {
+    console.error('Error removing item:', err);
+  });
+}
+
+
+      // Checkbox select all logic
+      function setupCheckboxLogic() {
+        const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+        const itemCheckboxes = document.querySelectorAll('.itemCheckbox');
+    
+        if (selectAllCheckbox) {
+          selectAllCheckbox.addEventListener('change', () => {
+            itemCheckboxes.forEach(cb => cb.checked = selectAllCheckbox.checked);
+          });
+    
+          itemCheckboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+              const allChecked = Array.from(itemCheckboxes).every(c => c.checked);
+              selectAllCheckbox.checked = allChecked;
+            });
+          });
         }
-  
-        updateCart();
-      });
+      }
     });
-  
-    // Remove item
-    function removeItem(index) {
-      cartItems.splice(index, 1);
-      updateCart();
-    }
-  
-    // Update quantity
-    function updateQuantity(index, newQty) {
-      cartItems[index].quantity = parseInt(newQty);
-      updateCart();
-    }
-  
-    // Open/Close cart overlay
-    document.getElementById('cartIcon').addEventListener('click', () => {
-      document.getElementById('cartOverlay').style.display = 'block';
-    });
-  
-    document.getElementById('closeCart').addEventListener('click', () => {
-      document.getElementById('cartOverlay').style.display = 'none';
-    });
-  </script>
+    </script>    
 </body>
 </html>

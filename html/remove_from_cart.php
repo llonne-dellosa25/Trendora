@@ -1,16 +1,28 @@
 <?php
 session_start();
+header('Content-Type: application/json');
 
-if (isset($_POST['index'])) {
-    $index = $_POST['index'];
-    if (isset($_SESSION['cart'][$index])) {
-        unset($_SESSION['cart'][$index]);
-        $_SESSION['cart'] = array_values($_SESSION['cart']); // Reindex array
-        echo json_encode(['success' => true]);
-    } else {
-        echo json_encode(['error' => 'Item not found']);
-    }
-} else {
-    echo json_encode(['error' => 'Invalid request']);
+if (!isset($_SESSION['user_id'])) {
+    echo json_encode(['success' => false, 'error' => 'User not logged in']);
+    exit;
 }
-?>
+
+if (!isset($_POST['product_id'])) {
+    echo json_encode(['success' => false, 'error' => 'Product ID missing']);
+    exit;
+}
+
+$userId = $_SESSION['user_id'];
+$productId = $_POST['product_id'];
+
+try {
+    $pdo = new PDO("mysql:host=localhost;dbname=trendora", "root", "");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $pdo->prepare("DELETE FROM cart WHERE user_id = ? AND product_id = ?");
+    $stmt->execute([$userId, $productId]);
+
+    echo json_encode(['success' => true]);
+} catch (Exception $e) {
+    echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+}
