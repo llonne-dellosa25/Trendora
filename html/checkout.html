@@ -121,10 +121,47 @@
     </div>
   </footer>
 
-  <script src="checkout.js"></script>
-<script>
-  renderCheckoutItems();
-</script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("get_cart.php")
+      .then(response => response.json())
+      .then(data => {
+        if (!data.success) {
+          console.error("Failed to load cart:", data.error);
+          document.getElementById("checkoutProductsContainer").innerHTML = "<p>Could not load cart data.</p>";
+          return;
+        }
+  
+        const container = document.getElementById("checkoutProductsContainer");
+        container.innerHTML = ""; // Clear previous content
+        let subtotal = 0;
+  
+        data.items.forEach(item => {
+          const total = item.product_price * item.quantity;
+          subtotal += total;
+  
+          const itemDiv = document.createElement("div");
+          itemDiv.className = "checkout-item flex justify-between";
+          itemDiv.innerHTML = `
+            <span>${item.product_name} x${item.quantity}</span>
+            <span>₱${total}</span>
+          `;
+          container.appendChild(itemDiv);
+        });
+  
+        const shipping = 30;
+        const total = subtotal + shipping;
+  
+        document.getElementById("subtotal").textContent = `₱${subtotal}`;
+        document.getElementById("total").textContent = `₱${total}`;
+      })
+      .catch(error => {
+        console.error("Error fetching cart:", error);
+        document.getElementById("checkoutProductsContainer").innerHTML = "<p>Error loading cart.</p>";
+      });
+  });
+  </script>
+  
 </body>
 </html>
