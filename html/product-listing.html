@@ -436,9 +436,9 @@ function loadCartOverlay() {
           const row = document.createElement('tr');
           row.innerHTML = `
             <td><input type="checkbox" class="itemCheckbox" data-index="${index}" /></td>
-            <td>
-              <img src="${item.product_image}" alt="${item.product_name}" style="width: 50px;"><br>
-              ${item.product_name}
+           <td class="d-flex align-items-center gap-2">
+              <img src="http://localhost/Trendora/${item.product_image}" alt="${item.product_name}" style="width: 50px;" onerror="this.onerror=null; this.src='http://localhost/Trendora/html/image/default.jpg';">
+              <span>${item.product_name}</span>
             </td>
             <td>${item.quantity}</td>
             <td>₱${(total).toFixed(2)}</td>
@@ -466,6 +466,7 @@ function loadCartOverlay() {
     })
     .catch(err => {
       console.error('Failed to load cart items:', err);
+      console.log("Image Path: ", item.product_image);
     });
 }
 
