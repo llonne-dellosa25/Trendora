@@ -8,14 +8,25 @@ body {
 
 /* Header */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #270a47;
-  color: white;
-}
-
+    background-color: #270a47;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 97%;
+    margin: 0;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .header .top-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -103,34 +114,30 @@ input[readonly] {
 }
 
 /* Footer */
-.footer {
+footer {
   background-color: #270a47;
-  color: white;
-  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  font-size: 1rem;
+  color: #f0f0f0;
+  margin-top: auto;
+}
+
+.footer-left, .footer-right {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 5px;
+}
+
+.footer-center {
   text-align: center;
 }
 
-@media (min-width: 768px) {
-  .footer {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-.footer a {
-  color: white;
-  text-decoration: none;
-  margin-right: 1rem;
-}
-
-.footer .icons {
-  display: flex;
-  gap: 1rem;
-  font-size: 1.25rem;
+.footer-right .icons span {
+  margin-right: 5px;
+  font-size: 1rem;
 }
 
 /* Utility */
