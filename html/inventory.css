@@ -75,26 +75,29 @@ body {
     background-color: #f1f1f1;
   }
   
-  .footer {
-    background-color: #270a47;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-  }
-  
-  .footer-left,
-  .footer-center,
-  .footer-right {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .icons {
-    display: flex;
-    gap: 10px;
-  }
-  
+/* Footer */
+.footer {
+  background-color: #270a47;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  font-size: 1rem;
+  color: #f0f0f0;
+  margin-top: auto;
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-right .icons span {
+  margin-right: 5px;
+  font-size: 1rem;
+}
