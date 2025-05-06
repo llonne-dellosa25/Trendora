@@ -32,12 +32,12 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  width: 300;
+  width: 100px;
 }
 
 .topbar-input {
   padding: 5px 10px;
-  width: 300px;
+  width: 100px;
   border-radius: 5px;
   border: none;
 }
