@@ -5,11 +5,24 @@
 }
 
 body {
-    font-family: 'Playfair Display', serif;
-    background: linear-gradient(135deg, #6a5acd, #6a85b1);
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    background: linear-gradient(135deg, #3f0d68, #af489e);
     color: #040404;
 }
 
+.main-title {
+    text-align: left;
+    padding-left: 1.9in; 
+    position: absolute;
+    top: 110px;
+    font-size: 30px;
+    font-weight: 100;
+    color: #e80dab;
+    font-family: 'Playfair Display', cursive;
+    margin-bottom: 20px;
+}
 .container {
     display: flex;
     justify-content: center; 
@@ -36,6 +49,8 @@ body {
     max-width: 400px;
     padding: 40px 30px;
     display: flex;
+    font-weight: 100;
+    color: #2e0f47;
     flex-direction: column;
     justify-content: center;
     background-color: #ffffff;
@@ -88,13 +103,15 @@ input[type="password"] {
 
 .forgot {
     text-align: right;
-    font-size: 12px;
+    font-weight: arial;
+    color: #2e0f47;
+    font-size: 13px;
     margin-top: -10px;
     margin-bottom: 20px;
 }
 
 .btn-login {
-    background-color: #6a5acd;
+    background-color: #2e0f47;
     border: none;
     color: white;
     width: 100%;
@@ -106,7 +123,7 @@ input[type="password"] {
 }
 
 .btn-login:hover {
-    background-color: #574b9a;
+    background-color: #563f6d;
 }
 
 .or-divider {
@@ -150,8 +167,8 @@ input[type="password"] {
 
 .signup a {
     text-decoration: none;
-    color: #6a5acd;
-    font-weight: bold;
+    color: #2609aa;
+    font-weight: arial;
 }
 
 .signup a:hover {
