@@ -40,7 +40,6 @@
   
   .topbar-input {
     padding: 10px 20px;
-    width: 300px;
     border-radius: 5px;
     border: none;
   }
@@ -87,7 +86,7 @@
   
   /* Deal Item (Product Card) */
   .deal-item {
-    background: #fff;
+    background: #dfc2da;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -176,30 +175,45 @@
   }
   
   
-  /* Footer */
-  .footer {
-    background-color: #3f0d68;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    font-size: 1rem;
-    color: #f0f0f0;
-    margin-top: auto;
-  }
-  
-  .footer-left, .footer-right {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .footer-center {
-    text-align: center;
-  }
-  
-  .footer-right .icons span {
-    margin-right: 5px;
-    font-size: 1rem;
-  }
-  
+  * Footer */
+.footer {
+  background-color: #270a47;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  font-size: 1rem;
+  color: #f0f0f0;
+  margin-top: auto;
+}
+
+.footer {
+  background-color: #3f0d68;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: auto;
+}
+
+.footer-left{
+padding-left: 10px;
+font-size: 12px;
+}
+
+.footer-right{
+  padding-right:5px;
+  font-size: 12px;
+}
+.footer-center {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+}
+
+.footer-right .icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}

@@ -13,15 +13,16 @@ body {
 }
 
 .header {
-  background-color: #3f0d68;
-  color: white;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin: 0;
-  box-sizing: border-box;
+  font-size:15.1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #3f0d68;
+    color: white;
+    width: 97%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-top: 0;
 }
 
 .header h1 {
@@ -30,14 +31,12 @@ body {
 
 .header .top-nav {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  width: 100px;
+    align-items: center;
+    gap: 20px;
 }
 
 .topbar-input {
-  padding: 5px 10px;
-  width: 100px;
+  padding: 10px 85px;
   border-radius: 5px;
   border: none;
 }
@@ -106,11 +105,19 @@ body {
   margin-top: auto;
 }
 
-.footer-left,
-.footer-center,
-.footer-right {
+.footer-left{
+padding-left: 10px;
+font-size: 12px;
+}
+
+.footer-right{
+  padding-right:5px;
+  font-size: 12px;
+}
+.footer-center {
   flex: 1;
   text-align: center;
+  font-size: 12px;
 }
 
 .footer-right .icons {
