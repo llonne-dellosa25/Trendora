@@ -13,7 +13,7 @@ html, body {
   }
   
   .header {
-    background-color: #270a47;
+    background-color: #3f0d68;
     color: white;
     padding: 20px;
     display: flex;
@@ -35,7 +35,7 @@ html, body {
   }
   
   .menu {
-    background-color: #270a47;
+    background-color: #3f0d68;
     color: white;
     display: flex;
     padding: 10px 20px;
@@ -50,7 +50,7 @@ html, body {
   .container {
     width: 80%;
     margin: 30px auto;
-    background: #fff;
+    background: #db7dcc;
     padding: 30px;
     border-radius: 10px;
     min-height: 500px;
@@ -119,7 +119,7 @@ html, body {
 
 
   .footer {
-    background-color: #270a47;
+    background-color:#3f0d68;
     color: white;
     display: flex;
     justify-content: space-between;

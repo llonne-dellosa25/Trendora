@@ -16,13 +16,14 @@
   
   /* Header */
   .header {
+    font-size:15.1px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: #270a47;
+    background-color: #3f0d68;
     color: white;
-    width: 100%;
+    width: 97%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     margin-top: 0;
   }
@@ -38,7 +39,7 @@
   }
   
   .topbar-input {
-    padding: 5px 10px;
+    padding: 10px 20px;
     width: 300px;
     border-radius: 5px;
     border: none;
@@ -46,7 +47,8 @@
   
   /* Menu */
   .menu {
-    background-color: #270a47;
+    background-color: #3f0d68;
+    width: 97%;
     color: white;
     display: flex;
     padding: 10px 20px;
@@ -176,7 +178,7 @@
   
   /* Footer */
   .footer {
-    background-color: #270a47;
+    background-color: #3f0d68;
     display: flex;
     justify-content: space-between;
     align-items: center;
