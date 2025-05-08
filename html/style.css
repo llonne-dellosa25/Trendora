@@ -192,6 +192,11 @@ body {
   gap: 0px;
 }
 
+.footer-left a {
+  color: #f8f7fb;             /* Match your theme color */
+  text-decoration: none;      /* Remove underline */
+}
+
 .footer-center {
   font-size: 12px;
   padding-bottom: 5px;
