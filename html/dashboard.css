@@ -143,6 +143,10 @@ html, body {
 padding-left: 10px;
 font-size: 12px;
 }
+.footer-left a {
+  color: #f8f7fb;             /* Match your theme color */
+  text-decoration: none;      /* Remove underline */
+}
 
 .footer-right{
   padding-right:5px;

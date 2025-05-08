@@ -191,6 +191,11 @@ body {
   gap: 5px;
 }
 
+.footer-left a {
+  color: #f8f7fb;             /* Match your theme color */
+  text-decoration: none;      /* Remove underline */
+}
+
 .footer-center {
   text-align: center;
 }
