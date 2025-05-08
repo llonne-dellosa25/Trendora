@@ -1,0 +1,129 @@
+/* Navbar Styling */
+.navbar {
+    background-color: #270a47; 
+    top: 0; /* Stick to the top */
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: #a0d2eb !important; /* Light blue hover effect */
+}
+/* About Section */
+.about-section {
+    background-color: #f1f1f1;
+    padding: 80px 20px; /* More padding for balance */
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 3rem; /* Larger heading */
+    font-weight: bold;
+    color: #333;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px; /* More space between paragraphs */
+}
+
+/* Team Section */
+.team-section {
+    background-color: #e0e0e0;
+    padding: 80px 20px; /* More space for balance */
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 40px; /* Space between team members */
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 180px; /* Adjusted size */
+    height: 180px;
+    object-fit: cover;
+}
+
+.team-member h5 {
+    font-size: 1.4rem; /* Slightly smaller for better readability */
+    color: #333;
+    margin-top: 20px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #666;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .featured-collection .card {
+        margin-bottom: 20px;
+    }
+
+    .team-member {
+        margin-bottom: 30px;
+    }
+}
+/* Footer Styling */
+footer {
+    background-color: #270a47;
+    color: #fff;
+    padding: 30px 0; /* More space for better balance */
+    text-align: center;
+}
+
+footer a {
+    color: #270a47;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
