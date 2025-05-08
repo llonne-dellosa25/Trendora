@@ -96,6 +96,10 @@ body {
   margin-top: auto;
 }
 
+.footer-left a {
+  color: #f8f7fb;             /* Match your theme color */
+  text-decoration: none;      /* Remove underline */
+}
 .footer {
   background-color: #3f0d68;
   color: white;
