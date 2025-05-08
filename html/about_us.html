@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="about-us.css" />
-
-  <title>About Us - Our E-Commerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Trendora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     /* Reset and base */
     *, *::before, *::after {
@@ -13,195 +12,247 @@
     }
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f7f9fc;
-      color: #333;
+      font-family: 'Open Sans', Arial, sans-serif;
+      background: #f0f4fa;
+      color: #2a2a2a;
       line-height: 1.6;
-      max-width: 350px;
-      margin-left: auto;
-      margin-right: auto;
-      height: 600px;
-      overflow-y: auto;
-      padding: 20px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    main {
+      width: 100%;
+      max-width: 1100px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(20, 93, 191, 0.12);
+      padding: 40px 60px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      -webkit-font-smoothing: antialiased;
     }
-    h1, h2, h3 {
-      margin-top: 0;
-      color: #1a1a1a;
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
     }
     h1 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 0.3em;
-    }
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 0.5em;
-      border-bottom: 2px solid #4a90e2;
-      padding-bottom: 0.3em;
-      color: #215bb5;
-    }
-    p {
-      margin-bottom: 1em;
-      color: #555;
+      font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #0d3c91;
+      margin-bottom: 0.25em;
+      text-transform: uppercase;
     }
     .tagline {
-      text-align: center;
       font-style: italic;
-      font-weight: 500;
+      font-weight: 600;
       color: #4a90e2;
-      margin-bottom: 1.5em;
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      text-shadow: 1px 1px 4px rgba(74,144,226,0.3);
+    }
+    section {
+      margin-bottom: 3.5rem;
+      padding: 0 12px;
+    }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #4a90e2;
+      color: #204a8d;
+    }
+    p {
       font-size: 1.1rem;
+      color: #4a4a4a;
+      max-width: 850px;
+      margin-bottom: 1.5em;
     }
-    .section {
-      margin-bottom: 1.8em;
-    }
+    /* Team Section */
     .team-container {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-around;
-      overflow-x: auto;
-      padding-bottom: 10px;
-      -webkit-overflow-scrolling: touch;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 2.4rem;
+      margin-top: 2rem;
     }
     .team-member {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      width: 120px;
-      flex: 0 0 auto;
-      margin-right: 1em;
-      padding: 1em 0.7em;
+      background: #f7faff;
+      border-radius: 18px;
+      padding: 2.2rem 1.8rem 2.8rem;
       text-align: center;
-      transition: transform 0.3s ease;
+      box-shadow: 0 4px 14px rgba(74, 144, 226, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
-    }
-    .team-member:last-child {
-      margin-right: 0;
+      user-select: none;
     }
     .team-member:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 14px 42px rgba(74, 144, 226, 0.3);
     }
     .team-member img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      margin-bottom: 0.5em;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      border: 2px solid #4a90e2;
+      object-fit: cover;
+      border: 4px solid #4a90e2;
+      margin-bottom: 1rem;
+      box-shadow: 0 5px 12px rgba(74,144,226,0.2);
+      transition: border-color 0.3s ease;
+    }
+    .team-member:hover img {
+      border-color: #0d3c91;
+      box-shadow: 0 8px 20px rgba(13,60,145,0.35);
     }
     .team-member-name {
       font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 0.2em;
-      color: #1a1a1a;
+      font-size: 1.25rem;
+      margin-bottom: 0.4em;
+      color: #163a77;
+      letter-spacing: 0.02em;
     }
     .team-member-role {
-      font-size: 0.85rem;
-      color: #777;
+      font-size: 1.0rem;
+      font-style: italic;
+      color: #6984af;
+      user-select: text;
     }
+    /* Contact Section */
     .contact-info {
-      background: white;
-      border-radius: 12px;
-      padding: 1em 1.2em;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      font-size: 0.9rem;
-      line-height: 1.4;
+      background: #f7faffe8;
+      border-radius: 16px;
+      padding: 2rem 2.4rem;
+      box-shadow: 0 6px 25px rgba(74, 144, 226, 0.15);
+      font-size: 1.1rem;
+      color: #2a2a2a;
+      max-width: 700px;
+      margin: 0 auto;
+      transition: box-shadow 0.3s ease;
+    }
+    .contact-info:hover {
+      box-shadow: 0 14px 48px rgba(74, 144, 226, 0.28);
+    }
+    .contact-info p {
+      margin: 0.65rem 0;
+      line-height: 1.6;
     }
     a.contact-link {
       color: #4a90e2;
+      font-weight: 600;
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: color 0.25s ease;
     }
-    a.contact-link:hover {
+    a.contact-link:hover,
+    a.contact-link:focus {
+      color: #0d3c91;
       text-decoration: underline;
-      color: #215bb5;
+      outline: none;
     }
-    /* Scrollbar styling for horizontal team container */
-    .team-container::-webkit-scrollbar {
-      height: 6px;
-    }
-    .team-container::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    .team-container::-webkit-scrollbar-thumb {
-      background-color: #4a90e2;
-      border-radius: 3px;
-    }
-    @media (max-width: 350px) {
-      body {
-        padding: 10px 15px;
+    /* Utility */
+    @media (max-width: 900px) {
+      main {
+        padding: 30px 40px;
       }
       h1 {
-        font-size: 1.75rem;
+        font-size: 2.4rem;
       }
-      .team-member {
-        width: 100px;
-        padding: 0.8em 0.5em;
+      h2 {
+        font-size: 1.7rem;
+      }
+      p {
+        font-size: 1rem;
       }
       .team-member img {
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
+      }
+      .team-member-name {
+        font-size: 1.1rem;
+      }
+    }
+    @media (max-width: 500px) {
+      main {
+        padding: 20px 24px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+      .team-container {
+        grid-template-columns: 1fr 1fr;
+      }
+      .team-member img {
+        width: 90px;
+        height: 90px;
+      }
+      .team-member-name {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Our E-Commerce</h1>
-    <div class="tagline">Quality products, delivered with care</div>
-  </header>
+  <main>
+    <header>
+      <h1>Our E-Commerce</h1>
+      <div class="tagline" aria-label="Website tagline">Quality products, delivered with care</div>
+    </header>
 
-  <section class="section" id="company-story">
-    <h2>Our Story</h2>
-    <p>Founded in 2020, Our E-Commerce started as a dream to create a trusted online marketplace delivering quality products right to your doorstep. We believe in simplifying shopping while putting customers first.</p>
-  </section>
+    <section id="company-story" tabindex="0" aria-labelledby="story-heading">
+      <h2 id="story-heading">Our Story</h2>
+      <p>Founded in 2020, Our E-Commerce started as a dream to create a trusted online marketplace delivering quality products right to your doorstep. We believe in simplifying shopping while putting customers first.</p>
+    </section>
 
-  <section class="section" id="mission">
-    <h2>Our Mission</h2>
-    <p>To provide a seamless and delightful shopping experience, offering a diverse range of products with unparalleled customer service and fast delivery.</p>
-  </section>
+    <section id="mission" tabindex="0" aria-labelledby="mission-heading">
+      <h2 id="mission-heading">Our Mission</h2>
+      <p>To provide a seamless and delightful shopping experience, offering a diverse range of products with unparalleled customer service and fast delivery.</p>
+    </section>
 
-  <section class="section" id="team">
-    <h2>Meet the Team</h2>
-    <div class="team-container" aria-label="Team members">
-      <article class="team-member">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie Lee" />
-        <div class="team-member-name">Sophie Lee</div>
-        <div class="team-member-role">Founder & CEO</div>
-      </article>
-      <article class="team-member">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James Kim" />
-        <div class="team-member-name">James Kim</div>
-        <div class="team-member-role">Head of Operations</div>
-      </article>
-      <article class="team-member">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria Gonzalez" />
-        <div class="team-member-name">Maria Gonzalez</div>
-        <div class="team-member-role">Lead Designer</div>
-      </article>
-      <article class="team-member">
-        <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="Liam Chen" />
-        <div class="team-member-name">Liam Chen</div>
-        <div class="team-member-role">Marketing Director</div>
-      </article>
-    </div>
-  </section>
+    <section id="team" tabindex="0" aria-labelledby="team-heading">
+      <h2 id="team-heading">Meet the Team</h2>
+      <div class="team-container" aria-label="Team members">
+        <article class="team-member">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie Lee" />
+          <div class="team-member-name">Sophie Lee</div>
+          <div class="team-member-role">Founder & CEO</div>
+        </article>
+        <article class="team-member">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James Kim" />
+          <div class="team-member-name">James Kim</div>
+          <div class="team-member-role">Head of Operations</div>
+        </article>
+        <article class="team-member">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria Gonzalez" />
+          <div class="team-member-name">Maria Gonzalez</div>
+          <div class="team-member-role">Lead Designer</div>
+        </article>
+        <article class="team-member">
+          <img src="https://randomuser.me/api/portraits/men/17.jpg" alt="Liam Chen" />
+          <div class="team-member-name">Liam Chen</div>
+          <div class="team-member-role">Marketing Director</div>
+        </article>
+      </div>
+    </section>
 
-  <section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-info">
-      <p>Email: <a class="contact-link" href="mailto:support@ourecommerce.com">support@ourecommerce.com</a></p>
-      <p>Phone: <a class="contact-link" href="tel:+1234567890">+1 (234) 567-890</a></p>
-      <p>Address: 123 Commerce St, Suite 100, Cityville, State, 12345</p>
-    </div>
-  </section>
+    <section id="contact" tabindex="0" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Us</h2>
+      <div class="contact-info">
+        <p>Email: <a class="contact-link" href="mailto:support@ourecommerce.com">support@ourecommerce.com</a></p>
+        <p>Phone: <a class="contact-link" href="tel:+1234567890">+1 (234) 567-890</a></p>
+        <p>Address: 123 Commerce St, Suite 100, Cityville, State, 12345</p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
 </content>
 </create_file>
-```
