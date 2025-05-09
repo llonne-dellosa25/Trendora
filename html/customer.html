@@ -58,12 +58,13 @@
 
 <script>
 // Fetch the customer data from the PHP backend
-fetch('http://localhost/trendora/html/customer.php')
+fetch('customer.php')
     .then(response => response.json())
     .then(data => {
         // Check for error
         if (data.error) {
             alert(data.error);
+            window.location.href = 'login.html'; // Redirect to login if not logged in
             return;
         }
 

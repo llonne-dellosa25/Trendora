@@ -62,16 +62,14 @@
         <i class="fa-solid fa-bag-shopping"></i>
         <span class="cart-count">0</span>
       </div>
-      <div class="icon">
-        <i class="fas fa-heart"></i>
-        <span class="cart-count">0</span>
+      <div class="icon" id="cartIcon">
+        <a href="javascript:void(0);" id="logout-link" title="Logout" style="color: white;">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
       </div>
     </div>
   </div>
     </nav>
-
-
-
     <!-- Cart Overlay -->
     <div class="cart-overlay" id="cartOverlay">
       <div class="cart-content">
@@ -513,5 +511,13 @@ function removeItem(productId) {
       }
     });
     </script>    
+<script>
+    document.getElementById("logout-link").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default anchor behavior
+        if (confirm("Are you sure you want to logout?")) {
+            window.location.href = "login.html"; // Redirect to login page (or wherever you want)
+        }
+    });
+</script>
 </body>
 </html>

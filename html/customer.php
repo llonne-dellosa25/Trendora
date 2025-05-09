@@ -16,7 +16,7 @@ $mysqli = new mysqli("localhost", "root", "", "trendora"); // update credentials
 if (!isset($_SESSION['email'])) {
     echo json_encode(["error" => "Please log in to view your dashboard."]);
     exit;
-}
+}   
 
 $email = $_SESSION['email'];
 
@@ -25,7 +25,7 @@ $userQuery = "SELECT fullname, email FROM users WHERE email = ?";
 $stmt = $mysqli->prepare($userQuery);
 $stmt->bind_param("s", $email);
 $stmt->execute();
-$stmt->bind_result($fullname, $email);
+$stmt->bind_result($fullname, $userEmail);
 $stmt->fetch();
 $stmt->close();
 
@@ -48,7 +48,7 @@ $mysqli->close();
 // Return data as JSON
 echo json_encode([
     'fullname' => $fullname,
-    'email' => $email,
+    'email' => $userEmail,
     'order_history' => $orderHistory
 ]);
 ?>
