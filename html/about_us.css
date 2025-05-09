@@ -1,3 +1,33 @@
+  /* Header */
+  .header {
+    font-size:15.1px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #3f0d68;
+    color: white;
+    width: 97%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-top: 0;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .header .top-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .topbar-input {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+  }
 /* Navbar Styling */
 .navbar {
     background-color: #270a47; 
@@ -43,6 +73,7 @@
 }
 
 /* Team Section */
+/* Team Section */
 .team-section {
     background-color: #e0e0e0;
     padding: 80px 20px; /* More space for balance */
@@ -85,6 +116,7 @@
     font-size: 1rem;
     color: #666;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar-brand {
