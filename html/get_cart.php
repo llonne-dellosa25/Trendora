@@ -3,7 +3,7 @@ session_start();
 header('Content-Type: application/json');
 
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=trendora", "root", "");
+    $pdo = new PDO("mysql:host=sql313.infinityfree.com;dbname=if0_38912952_wp997", "if0_38912952", "llonnewhennn");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if (!isset($_SESSION['user_id'])) {

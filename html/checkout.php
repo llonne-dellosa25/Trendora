@@ -3,7 +3,7 @@
 $servername = "sql313.infinityfree.com";  // Use 'localhost' or '127.0.0.1'
 $username = "if0_38912952";         // Default username in XAMPP is 'root'
 $password =  "llonnewhennn";             // Default password is an empty string for 'root'
-$dbname = "if0_38912952_XXX";       // Your database name
+$dbname = "if0_38912952_wp997";       // Your database name
 $port = 3306;               // Default port for MySQL is 3306 unless you've changed it
 
 

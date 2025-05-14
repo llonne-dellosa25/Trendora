@@ -1,10 +1,9 @@
 <?php
 // Database connection
-$servername = "localhost";
-$username = "root";
-$password = ""; 
-$database = "trendora";
-
+$servername = "sql:host=sql313.infinityfree.com";
+$username = "if0_38912952";
+$password = "llonnewhennn"; 
+$database = "if0_38912952_wp997";
 $conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection

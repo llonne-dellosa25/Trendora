@@ -1,10 +1,10 @@
 <?php
 header('Content-Type: application/json');
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "trendora";
+$servername = "sql:host=sql313.infinityfree.com";
+$username = "f0_38912952";
+$password = "llonnewhennn";
+$dbname = "if0_38912952_wp997";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

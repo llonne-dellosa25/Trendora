@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 // Connect to database
-$conn = new mysqli("localhost", "root", "", "trendora");
+$conn = new mysqli("sql313.infinityfree.com", "if0_38912952", "llonnewhennn", "if0_38912952_wp997");
 if ($conn->connect_error) {
     http_response_code(500);
     die("Database connection failed: " . $conn->connect_error);

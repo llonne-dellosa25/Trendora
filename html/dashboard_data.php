@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "trendora");
+$conn = new mysqli("sql313.infinityfree.com", "if0_38912952", "llonnewhennn", "if0_38912952_wp997");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

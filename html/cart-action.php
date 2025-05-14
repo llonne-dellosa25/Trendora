@@ -14,7 +14,7 @@ if ($mode === 'fetch') {
     exit;
 }
 // Connect to the database
-$pdo = new PDO("mysql:host=sql313.infinityfree.com;dbname=if0_38912952_XXX", "if0_38912952", "llonnewhennn");
+$pdo = new PDO("mysql:host=sql313.infinityfree.com;dbname=if0_38912952_wp997", "if0_38912952", "llonnewhennn");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Get the action (either 'get', 'update', or 'remove')

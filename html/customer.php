@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 }
 
 session_start();
-$mysqli = new mysqli("localhost", "root", "", "trendora"); // update credentials
+$mysqli = new mysqli("sql313.infinityfree.com", "if0_38912952", "llonnewhennn", "if0_38912952_wp997"); // update credentials
 
 // Check if user is logged in
 if (!isset($_SESSION['email'])) {
