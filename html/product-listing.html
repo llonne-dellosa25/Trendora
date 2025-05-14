@@ -398,16 +398,23 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(productData)
           })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success) {
-              const cartCountElement = document.querySelector('#cartIcon .cart-count');
+          .then(response => response.text()) // Get raw text first
+          .then(text => {
+            console.log("Raw response:", text); // Debug output
+            try {
+              const data = JSON.parse(text);
+              if (data.success) {
+                const cartCountElement = document.querySelector('#cartIcon .cart-count');
                 if (cartCountElement) {
                   cartCountElement.textContent = data.count;
                 }
-              alert(`${productData.name} added to cart!`);
-            } else {
-              alert('Failed to add to cart: ' + (data.error || 'Unknown error'));
+                alert(`${productData.name} added to cart!`);
+              } else {
+                alert('Failed to add to cart: ' + (data.message || 'Unknown error'));
+              }
+            } catch (e) {
+              console.error('❌ JSON Parse Error:', e, '\nRaw text was:', text);
+              alert("Error: Invalid response from server.");
             }
           })
           .catch(error => console.error('Add to cart error:', error));
@@ -435,7 +442,7 @@ function loadCartOverlay() {
           row.innerHTML = `
             <td><input type="checkbox" class="itemCheckbox" data-index="${index}" /></td>
            <td class="d-flex align-items-center gap-2">
-              <img src="http://trendora.fwh.is/Trendora/${item.product_image}" alt="${item.product_name}" style="width: 50px;" onerror="this.onerror=null; this.src='http://localhost/Trendora/html/image/default.jpg';">
+              <img src="http://trendora.fwh.is/Trendora/${item.product_image}" alt="${item.product_name}" style="width: 50px;" onerror="this.onerror=null; this.src='http://trendora.fwh.is/Trendora/image/default.jpg';">
               <span>${item.product_name}</span>
             </td>
             <td>${item.quantity}</td>

@@ -1,8 +1,8 @@
 <?php
 header('Content-Type: application/json');
 
-$servername = "sql:host=sql313.infinityfree.com";
-$username = "f0_38912952";
+$servername = "sql313.infinityfree.com";
+$username = "if0_38912952";
 $password = "llonnewhennn";
 $dbname = "if0_38912952_wp997";
 

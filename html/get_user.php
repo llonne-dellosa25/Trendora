@@ -1,6 +1,6 @@
 <?php
 // Database connection
-$servername = "sql:host=sql313.infinityfree.com";
+$servername = "sql313.infinityfree.com";
 $username = "if0_38912952";
 $password = "llonnewhennn"; 
 $database = "if0_38912952_wp997";
