@@ -442,7 +442,7 @@ function loadCartOverlay() {
           row.innerHTML = `
             <td><input type="checkbox" class="itemCheckbox" data-index="${index}" /></td>
            <td class="d-flex align-items-center gap-2">
-              <img src="http://trendora.fwh.is/Trendora/${item.product_image}" alt="${item.product_name}" style="width: 50px;" onerror="this.onerror=null; this.src='http://trendora.fwh.is/Trendora/image/default.jpg';">
+              <img src="https://trendora.fwh.is/image/${item.product_image}" alt="${item.product_name}" style="width: 50px;" onerror="this.onerror=null; this.src='https://trendora.fwh.is/image/default.jpg';">
               <span>${item.product_name}</span>
             </td>
             <td>${item.quantity}</td>

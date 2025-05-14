@@ -18,7 +18,11 @@ try {
     $stmt = $pdo->prepare("SELECT product_id, product_name, product_price, product_image, quantity FROM cart WHERE user_id = ?");
     $stmt->execute([$userId]);
     $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    
+// Fix the image path
+foreach ($items as &$item) {
+    $item['product_image'] = basename($item['product_image']); // now just 'product1.jpg'
+}
     // Send the data as JSON response
     echo json_encode([
         "success" => true,
