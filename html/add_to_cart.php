@@ -2,9 +2,10 @@
 session_start();
 header('Content-Type: application/json');
 
-// Connect to the database
-$pdo = new PDO("mysql:host=localhost;dbname=trendora", "root", "");
+// Connect to the InfinityFree database
+$pdo = new PDO("mysql:host=sql313.infinityfree.com;dbname=if0_38912952_XXX", "if0_38912952", "llonnewhennn");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
 // Read incoming JSON data
 $data = json_decode(file_get_contents('php://input'), true);
