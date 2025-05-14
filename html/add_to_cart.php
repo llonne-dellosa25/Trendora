@@ -3,7 +3,7 @@ session_start();
 header('Content-Type: application/json');
 
 // Connect to the InfinityFree database
-$pdo = new PDO("mysql:host=sql313.infinityfree.com;dbname=if0_38912952_XXX", "if0_38912952", "llonnewhennn");
+$pdo = new PDO("mysql:host=sql313.infinityfree.com;dbname=if0_38912952_wp997", "if0_38912952", "llonnewhennn");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 

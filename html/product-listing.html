@@ -435,7 +435,7 @@ function loadCartOverlay() {
           row.innerHTML = `
             <td><input type="checkbox" class="itemCheckbox" data-index="${index}" /></td>
            <td class="d-flex align-items-center gap-2">
-              <img src="http://localhost/Trendora/${item.product_image}" alt="${item.product_name}" style="width: 50px;" onerror="this.onerror=null; this.src='http://localhost/Trendora/html/image/default.jpg';">
+              <img src="http://trendora.fwh.is/Trendora/${item.product_image}" alt="${item.product_name}" style="width: 50px;" onerror="this.onerror=null; this.src='http://localhost/Trendora/html/image/default.jpg';">
               <span>${item.product_name}</span>
             </td>
             <td>${item.quantity}</td>
@@ -489,7 +489,6 @@ function removeItem(productId) {
     console.error('Error removing item:', err);
   });
 }
-
 
       // Checkbox select all logic
       function setupCheckboxLogic() {
