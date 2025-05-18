@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Checkout - Trendora</title>
   <link rel="stylesheet" href="checkout.css" />
-  <link rel="stylesheet" href="checkout.css" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -30,7 +29,7 @@
 
   <!-- Page Content wrapper (for sticky footer effect) -->
   <div class="page-content">
-    <form action="checkout.php" method="POST">
+    <form id="checkout-form" action="checkout.php" method="POST">
       <main class="main">
         <!-- Form Section -->
         <section class="form-section">
@@ -99,7 +98,15 @@
       </main>
     </form>
   </div>
-
+  
+  <!-- Order Success Overlay -->
+  <div id="order-success-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white p-6 rounded shadow-lg text-center">
+      <h2 class="text-xl font-bold mb-4">✅ Order Placed Successfully!</h2>
+      <button type="button" onclick="closeOverlay()" class="bg-green-500 text-white px-4 py-2 rounded">OK</button>
+    </div>
+  </div>
+  
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-left">
@@ -136,6 +143,8 @@
           let subtotal = 0;
 
           data.items.forEach(item => {
+            console.log("Image filename:", item.product_image); // ✅ Log the image filename
+
             const total = item.product_price * item.quantity;
             subtotal += total;
 
@@ -143,7 +152,7 @@
             itemDiv.className = "checkout-item flex justify-between";
             itemDiv.innerHTML = `
               <div class="flex">
-                <img src="http://localhost/Trendora/${item.product_image}" alt="${item.product_name}" style="width: 50px; height: auto; margin-right: 10px;">
+                <img src="https://trendora.fwh.is/image/${item.product_image}" alt="${item.product_name}" style="width: 50px; height: auto; margin-right: 10px;">
                 <span>${item.product_name} x${item.quantity}</span>
               </div>
               <span>₱${total}</span>
@@ -170,6 +179,36 @@
             window.location.href = "login.html"; // Redirect to login page (or wherever you want)
         }
     });
-</script>
+  </script>
+  <script>
+    document.getElementById("checkout-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+    
+      const formData = new FormData(this);
+    
+      fetch("checkout.php", {
+        method: "POST",
+        body: formData
+      })
+      .then(res => res.text())
+      .then(data => {
+        if (data.includes("✅")) {
+          document.getElementById("order-success-overlay").classList.remove("hidden");
+        } else {
+          alert("Checkout failed: " + data);
+        }
+      })
+      .catch(err => {
+        console.error("Checkout error:", err);
+        alert("Something went wrong.");
+      });
+    });
+    
+    function closeOverlay() {
+      document.getElementById("order-success-overlay").classList.add("hidden");
+      window.location.href = "product-listing.html"; // Redirect to home or orders page after
+    }  
+  </script>
+  
 </body>
 </html>

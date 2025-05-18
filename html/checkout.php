@@ -44,7 +44,7 @@ $sql = "INSERT INTO orders (
 
 $stmt = $mysqli->prepare($sql);
 $stmt->bind_param(
-    "ssssssssssssdds", // Adjusted for decimal for 'product_price' and 'total_price'
+    "ssssssssssssidd", // Adjusted for decimal for 'product_price' and 'total_price'
     $first_name, $last_name, $email, $phone,
     $delivery_method, $delivery_date_start, $delivery_date_end,
     $city, $address, $zip,
